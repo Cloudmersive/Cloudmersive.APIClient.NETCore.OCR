@@ -28,32 +28,30 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
     /// Response from an OCR to text operation.  Includes the confience rating and converted text result.
     /// </summary>
     [DataContract]
-    public partial class ImageToTextResponse :  IEquatable<ImageToTextResponse>, IValidatableObject
+    public partial class PdfToTextResponse :  IEquatable<PdfToTextResponse>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ImageToTextResponse" /> class.
+        /// Initializes a new instance of the <see cref="PdfToTextResponse" /> class.
         /// </summary>
-        /// <param name="MeanConfidenceLevel">Confidence level rating of the OCR operation; ratings above 80% are strong..</param>
-        /// <param name="TextResult">Converted text string from the image input..</param>
-        public ImageToTextResponse(float? MeanConfidenceLevel = default(float?), string TextResult = default(string))
+        /// <param name="Successful">Successful.</param>
+        /// <param name="OcrPages">OcrPages.</param>
+        public PdfToTextResponse(bool? Successful = default(bool?), List<OcrPageResult> OcrPages = default(List<OcrPageResult>))
         {
-            this.MeanConfidenceLevel = MeanConfidenceLevel;
-            this.TextResult = TextResult;
+            this.Successful = Successful;
+            this.OcrPages = OcrPages;
         }
         
         /// <summary>
-        /// Confidence level rating of the OCR operation; ratings above 80% are strong.
+        /// Gets or Sets Successful
         /// </summary>
-        /// <value>Confidence level rating of the OCR operation; ratings above 80% are strong.</value>
-        [DataMember(Name="MeanConfidenceLevel", EmitDefaultValue=false)]
-        public float? MeanConfidenceLevel { get; set; }
+        [DataMember(Name="Successful", EmitDefaultValue=false)]
+        public bool? Successful { get; set; }
 
         /// <summary>
-        /// Converted text string from the image input.
+        /// Gets or Sets OcrPages
         /// </summary>
-        /// <value>Converted text string from the image input.</value>
-        [DataMember(Name="TextResult", EmitDefaultValue=false)]
-        public string TextResult { get; set; }
+        [DataMember(Name="OcrPages", EmitDefaultValue=false)]
+        public List<OcrPageResult> OcrPages { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -62,9 +60,9 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ImageToTextResponse {\n");
-            sb.Append("  MeanConfidenceLevel: ").Append(MeanConfidenceLevel).Append("\n");
-            sb.Append("  TextResult: ").Append(TextResult).Append("\n");
+            sb.Append("class PdfToTextResponse {\n");
+            sb.Append("  Successful: ").Append(Successful).Append("\n");
+            sb.Append("  OcrPages: ").Append(OcrPages).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -85,29 +83,29 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ImageToTextResponse);
+            return this.Equals(input as PdfToTextResponse);
         }
 
         /// <summary>
-        /// Returns true if ImageToTextResponse instances are equal
+        /// Returns true if PdfToTextResponse instances are equal
         /// </summary>
-        /// <param name="input">Instance of ImageToTextResponse to be compared</param>
+        /// <param name="input">Instance of PdfToTextResponse to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ImageToTextResponse input)
+        public bool Equals(PdfToTextResponse input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.MeanConfidenceLevel == input.MeanConfidenceLevel ||
-                    (this.MeanConfidenceLevel != null &&
-                    this.MeanConfidenceLevel.Equals(input.MeanConfidenceLevel))
+                    this.Successful == input.Successful ||
+                    (this.Successful != null &&
+                    this.Successful.Equals(input.Successful))
                 ) && 
                 (
-                    this.TextResult == input.TextResult ||
-                    (this.TextResult != null &&
-                    this.TextResult.Equals(input.TextResult))
+                    this.OcrPages == input.OcrPages ||
+                    this.OcrPages != null &&
+                    this.OcrPages.SequenceEqual(input.OcrPages)
                 );
         }
 
@@ -120,10 +118,10 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.MeanConfidenceLevel != null)
-                    hashCode = hashCode * 59 + this.MeanConfidenceLevel.GetHashCode();
-                if (this.TextResult != null)
-                    hashCode = hashCode * 59 + this.TextResult.GetHashCode();
+                if (this.Successful != null)
+                    hashCode = hashCode * 59 + this.Successful.GetHashCode();
+                if (this.OcrPages != null)
+                    hashCode = hashCode * 59 + this.OcrPages.GetHashCode();
                 return hashCode;
             }
         }

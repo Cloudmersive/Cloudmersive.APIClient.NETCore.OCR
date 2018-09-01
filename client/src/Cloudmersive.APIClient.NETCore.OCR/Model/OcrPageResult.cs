@@ -25,22 +25,31 @@ using SwaggerDateConverter = Cloudmersive.APIClient.NETCore.OCR.Client.SwaggerDa
 namespace Cloudmersive.APIClient.NETCore.OCR.Model
 {
     /// <summary>
-    /// Response from an OCR to text operation.  Includes the confience rating and converted text result.
+    /// OcrPageResult
     /// </summary>
     [DataContract]
-    public partial class ImageToTextResponse :  IEquatable<ImageToTextResponse>, IValidatableObject
+    public partial class OcrPageResult :  IEquatable<OcrPageResult>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ImageToTextResponse" /> class.
+        /// Initializes a new instance of the <see cref="OcrPageResult" /> class.
         /// </summary>
+        /// <param name="PageNumber">Page number of the page that was OCR-ed, starting with 1 for the first page in the PDF file.</param>
         /// <param name="MeanConfidenceLevel">Confidence level rating of the OCR operation; ratings above 80% are strong..</param>
         /// <param name="TextResult">Converted text string from the image input..</param>
-        public ImageToTextResponse(float? MeanConfidenceLevel = default(float?), string TextResult = default(string))
+        public OcrPageResult(int? PageNumber = default(int?), float? MeanConfidenceLevel = default(float?), string TextResult = default(string))
         {
+            this.PageNumber = PageNumber;
             this.MeanConfidenceLevel = MeanConfidenceLevel;
             this.TextResult = TextResult;
         }
         
+        /// <summary>
+        /// Page number of the page that was OCR-ed, starting with 1 for the first page in the PDF file
+        /// </summary>
+        /// <value>Page number of the page that was OCR-ed, starting with 1 for the first page in the PDF file</value>
+        [DataMember(Name="PageNumber", EmitDefaultValue=false)]
+        public int? PageNumber { get; set; }
+
         /// <summary>
         /// Confidence level rating of the OCR operation; ratings above 80% are strong.
         /// </summary>
@@ -62,7 +71,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ImageToTextResponse {\n");
+            sb.Append("class OcrPageResult {\n");
+            sb.Append("  PageNumber: ").Append(PageNumber).Append("\n");
             sb.Append("  MeanConfidenceLevel: ").Append(MeanConfidenceLevel).Append("\n");
             sb.Append("  TextResult: ").Append(TextResult).Append("\n");
             sb.Append("}\n");
@@ -85,20 +95,25 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ImageToTextResponse);
+            return this.Equals(input as OcrPageResult);
         }
 
         /// <summary>
-        /// Returns true if ImageToTextResponse instances are equal
+        /// Returns true if OcrPageResult instances are equal
         /// </summary>
-        /// <param name="input">Instance of ImageToTextResponse to be compared</param>
+        /// <param name="input">Instance of OcrPageResult to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ImageToTextResponse input)
+        public bool Equals(OcrPageResult input)
         {
             if (input == null)
                 return false;
 
             return 
+                (
+                    this.PageNumber == input.PageNumber ||
+                    (this.PageNumber != null &&
+                    this.PageNumber.Equals(input.PageNumber))
+                ) && 
                 (
                     this.MeanConfidenceLevel == input.MeanConfidenceLevel ||
                     (this.MeanConfidenceLevel != null &&
@@ -120,6 +135,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.PageNumber != null)
+                    hashCode = hashCode * 59 + this.PageNumber.GetHashCode();
                 if (this.MeanConfidenceLevel != null)
                     hashCode = hashCode * 59 + this.MeanConfidenceLevel.GetHashCode();
                 if (this.TextResult != null)
