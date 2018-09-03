@@ -73,7 +73,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Test
             // TODO uncomment below to test the method and replace null with proper value
             //System.IO.Stream imageFile = null;
             //string language = null;
-            //var response = instance.PdfOcrPost(imageFile, language);
+            //string preprocessing = null;
+            //var response = instance.PdfOcrPost(imageFile, language, preprocessing);
             //Assert.IsInstanceOf<PdfToTextResponse> (response, "response is PdfToTextResponse");
         }
         
