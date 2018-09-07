@@ -65,6 +65,32 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Test
 
         
         /// <summary>
+        /// Test ImageOcrImageLinesWithLocation
+        /// </summary>
+        [Test]
+        public void ImageOcrImageLinesWithLocationTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //System.IO.Stream imageFile = null;
+            //string language = null;
+            //var response = instance.ImageOcrImageLinesWithLocation(imageFile, language);
+            //Assert.IsInstanceOf<ImageToLinesWithLocationResult> (response, "response is ImageToLinesWithLocationResult");
+        }
+        
+        /// <summary>
+        /// Test ImageOcrImageWordsWithLocation
+        /// </summary>
+        [Test]
+        public void ImageOcrImageWordsWithLocationTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //System.IO.Stream imageFile = null;
+            //string language = null;
+            //var response = instance.ImageOcrImageWordsWithLocation(imageFile, language);
+            //Assert.IsInstanceOf<ImageToWordsWithLocationResult> (response, "response is ImageToWordsWithLocationResult");
+        }
+        
+        /// <summary>
         /// Test ImageOcrPhotoToText
         /// </summary>
         [Test]
