@@ -73,7 +73,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Test
             // TODO uncomment below to test the method and replace null with proper value
             //System.IO.Stream imageFile = null;
             //string language = null;
-            //var response = instance.ImageOcrImageLinesWithLocation(imageFile, language);
+            //string preprocessing = null;
+            //var response = instance.ImageOcrImageLinesWithLocation(imageFile, language, preprocessing);
             //Assert.IsInstanceOf<ImageToLinesWithLocationResult> (response, "response is ImageToLinesWithLocationResult");
         }
         
@@ -86,7 +87,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Test
             // TODO uncomment below to test the method and replace null with proper value
             //System.IO.Stream imageFile = null;
             //string language = null;
-            //var response = instance.ImageOcrImageWordsWithLocation(imageFile, language);
+            //string preprocessing = null;
+            //var response = instance.ImageOcrImageWordsWithLocation(imageFile, language, preprocessing);
             //Assert.IsInstanceOf<ImageToWordsWithLocationResult> (response, "response is ImageToWordsWithLocationResult");
         }
         
