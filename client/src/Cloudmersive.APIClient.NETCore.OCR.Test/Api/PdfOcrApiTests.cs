@@ -65,6 +65,34 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Test
 
         
         /// <summary>
+        /// Test PdfOcrPdfToLinesWithLocation
+        /// </summary>
+        [Test]
+        public void PdfOcrPdfToLinesWithLocationTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //System.IO.Stream imageFile = null;
+            //string language = null;
+            //string preprocessing = null;
+            //var response = instance.PdfOcrPdfToLinesWithLocation(imageFile, language, preprocessing);
+            //Assert.IsInstanceOf<PdfToLinesWithLocationResult> (response, "response is PdfToLinesWithLocationResult");
+        }
+        
+        /// <summary>
+        /// Test PdfOcrPdfToWordsWithLocation
+        /// </summary>
+        [Test]
+        public void PdfOcrPdfToWordsWithLocationTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //System.IO.Stream imageFile = null;
+            //string language = null;
+            //string preprocessing = null;
+            //var response = instance.PdfOcrPdfToWordsWithLocation(imageFile, language, preprocessing);
+            //Assert.IsInstanceOf<PdfToWordsWithLocationResult> (response, "response is PdfToWordsWithLocationResult");
+        }
+        
+        /// <summary>
         /// Test PdfOcrPost
         /// </summary>
         [Test]

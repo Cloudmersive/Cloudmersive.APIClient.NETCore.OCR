@@ -25,20 +25,20 @@ using SwaggerDateConverter = Cloudmersive.APIClient.NETCore.OCR.Client.SwaggerDa
 namespace Cloudmersive.APIClient.NETCore.OCR.Model
 {
     /// <summary>
-    /// Result of an image to words-with-location OCR operation
+    /// Response from an OCR to words with location operation.  Includes the confience rating and converted text result, along with the locations of the words in the pages.
     /// </summary>
     [DataContract]
-    public partial class ImageToWordsWithLocationResult :  IEquatable<ImageToWordsWithLocationResult>, IValidatableObject
+    public partial class PdfToWordsWithLocationResult :  IEquatable<PdfToWordsWithLocationResult>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ImageToWordsWithLocationResult" /> class.
+        /// Initializes a new instance of the <see cref="PdfToWordsWithLocationResult" /> class.
         /// </summary>
         /// <param name="Successful">Successful.</param>
-        /// <param name="Words">Word elements in the image.</param>
-        public ImageToWordsWithLocationResult(bool? Successful = default(bool?), List<OcrWordElement> Words = default(List<OcrWordElement>))
+        /// <param name="OcrPages">OcrPages.</param>
+        public PdfToWordsWithLocationResult(bool? Successful = default(bool?), List<OcrPageResultWithWordsWithLocation> OcrPages = default(List<OcrPageResultWithWordsWithLocation>))
         {
             this.Successful = Successful;
-            this.Words = Words;
+            this.OcrPages = OcrPages;
         }
         
         /// <summary>
@@ -48,11 +48,10 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         public bool? Successful { get; set; }
 
         /// <summary>
-        /// Word elements in the image
+        /// Gets or Sets OcrPages
         /// </summary>
-        /// <value>Word elements in the image</value>
-        [DataMember(Name="Words", EmitDefaultValue=false)]
-        public List<OcrWordElement> Words { get; set; }
+        [DataMember(Name="OcrPages", EmitDefaultValue=false)]
+        public List<OcrPageResultWithWordsWithLocation> OcrPages { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -61,9 +60,9 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ImageToWordsWithLocationResult {\n");
+            sb.Append("class PdfToWordsWithLocationResult {\n");
             sb.Append("  Successful: ").Append(Successful).Append("\n");
-            sb.Append("  Words: ").Append(Words).Append("\n");
+            sb.Append("  OcrPages: ").Append(OcrPages).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -84,15 +83,15 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ImageToWordsWithLocationResult);
+            return this.Equals(input as PdfToWordsWithLocationResult);
         }
 
         /// <summary>
-        /// Returns true if ImageToWordsWithLocationResult instances are equal
+        /// Returns true if PdfToWordsWithLocationResult instances are equal
         /// </summary>
-        /// <param name="input">Instance of ImageToWordsWithLocationResult to be compared</param>
+        /// <param name="input">Instance of PdfToWordsWithLocationResult to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ImageToWordsWithLocationResult input)
+        public bool Equals(PdfToWordsWithLocationResult input)
         {
             if (input == null)
                 return false;
@@ -104,9 +103,9 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
                     this.Successful.Equals(input.Successful))
                 ) && 
                 (
-                    this.Words == input.Words ||
-                    this.Words != null &&
-                    this.Words.SequenceEqual(input.Words)
+                    this.OcrPages == input.OcrPages ||
+                    this.OcrPages != null &&
+                    this.OcrPages.SequenceEqual(input.OcrPages)
                 );
         }
 
@@ -121,8 +120,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
                 int hashCode = 41;
                 if (this.Successful != null)
                     hashCode = hashCode * 59 + this.Successful.GetHashCode();
-                if (this.Words != null)
-                    hashCode = hashCode * 59 + this.Words.GetHashCode();
+                if (this.OcrPages != null)
+                    hashCode = hashCode * 59 + this.OcrPages.GetHashCode();
                 return hashCode;
             }
         }
