@@ -75,7 +75,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         /// <returns>ApiResponse of PdfToWordsWithLocationResult</returns>
         ApiResponse<PdfToWordsWithLocationResult> PdfOcrPdfToWordsWithLocationWithHttpInfo (System.IO.Stream imageFile, string language = null, string preprocessing = null);
         /// <summary>
-        /// Converts an uploaded PDF file in common formats such as JPEG, PNG into text via Optical Character Recognition.
+        /// Converts an uploaded PDF file into text via Optical Character Recognition.
         /// </summary>
         /// <remarks>
         /// 
@@ -88,7 +88,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         PdfToTextResponse PdfOcrPost (System.IO.Stream imageFile, string language = null, string preprocessing = null);
 
         /// <summary>
-        /// Converts an uploaded PDF file in common formats such as JPEG, PNG into text via Optical Character Recognition.
+        /// Converts an uploaded PDF file into text via Optical Character Recognition.
         /// </summary>
         /// <remarks>
         /// 
@@ -152,7 +152,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         /// <returns>Task of ApiResponse (PdfToWordsWithLocationResult)</returns>
         System.Threading.Tasks.Task<ApiResponse<PdfToWordsWithLocationResult>> PdfOcrPdfToWordsWithLocationAsyncWithHttpInfo (System.IO.Stream imageFile, string language = null, string preprocessing = null);
         /// <summary>
-        /// Converts an uploaded PDF file in common formats such as JPEG, PNG into text via Optical Character Recognition.
+        /// Converts an uploaded PDF file into text via Optical Character Recognition.
         /// </summary>
         /// <remarks>
         /// 
@@ -165,7 +165,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         System.Threading.Tasks.Task<PdfToTextResponse> PdfOcrPostAsync (System.IO.Stream imageFile, string language = null, string preprocessing = null);
 
         /// <summary>
-        /// Converts an uploaded PDF file in common formats such as JPEG, PNG into text via Optical Character Recognition.
+        /// Converts an uploaded PDF file into text via Optical Character Recognition.
         /// </summary>
         /// <remarks>
         /// 
@@ -603,7 +603,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         }
 
         /// <summary>
-        /// Converts an uploaded PDF file in common formats such as JPEG, PNG into text via Optical Character Recognition. 
+        /// Converts an uploaded PDF file into text via Optical Character Recognition. 
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">PDF file to perform OCR on.</param>
@@ -617,7 +617,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         }
 
         /// <summary>
-        /// Converts an uploaded PDF file in common formats such as JPEG, PNG into text via Optical Character Recognition. 
+        /// Converts an uploaded PDF file into text via Optical Character Recognition. 
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">PDF file to perform OCR on.</param>
@@ -684,7 +684,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         }
 
         /// <summary>
-        /// Converts an uploaded PDF file in common formats such as JPEG, PNG into text via Optical Character Recognition. 
+        /// Converts an uploaded PDF file into text via Optical Character Recognition. 
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">PDF file to perform OCR on.</param>
@@ -699,7 +699,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         }
 
         /// <summary>
-        /// Converts an uploaded PDF file in common formats such as JPEG, PNG into text via Optical Character Recognition. 
+        /// Converts an uploaded PDF file into text via Optical Character Recognition. 
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">PDF file to perform OCR on.</param>

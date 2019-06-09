@@ -5,7 +5,7 @@ The powerful Optical Character Recognition (OCR) APIs let you convert scanned im
 This C# SDK is for the [Cloudmersive OCR API](https://www.cloudmersive.com/ocr-api):
 
 - API version: v1
-- SDK version: 1.3.0
+- SDK version: 1.3.1
 - Build package: io.swagger.codegen.languages.CSharpClientCodegen
 
 <a name="frameworks-supported"></a>
@@ -106,10 +106,12 @@ Class | Method | HTTP request | Description
 *ImageOcrApi* | [**ImageOcrImageLinesWithLocation**](docs/ImageOcrApi.md#imageocrimagelineswithlocation) | **POST** /ocr/image/to/lines-with-location | Convert a scanned image into words with location
 *ImageOcrApi* | [**ImageOcrImageWordsWithLocation**](docs/ImageOcrApi.md#imageocrimagewordswithlocation) | **POST** /ocr/image/to/words-with-location | Convert a scanned image into words with location
 *ImageOcrApi* | [**ImageOcrPhotoToText**](docs/ImageOcrApi.md#imageocrphotototext) | **POST** /ocr/photo/toText | Convert a photo of a document into text
+*ImageOcrApi* | [**ImageOcrPhotoWordsWithLocation**](docs/ImageOcrApi.md#imageocrphotowordswithlocation) | **POST** /ocr/photo/to/words-with-location | Convert a photo of a document or receipt into words with location
 *ImageOcrApi* | [**ImageOcrPost**](docs/ImageOcrApi.md#imageocrpost) | **POST** /ocr/image/toText | Convert a scanned image into text
 *PdfOcrApi* | [**PdfOcrPdfToLinesWithLocation**](docs/PdfOcrApi.md#pdfocrpdftolineswithlocation) | **POST** /ocr/pdf/to/lines-with-location | Convert a PDF into text lines with location
 *PdfOcrApi* | [**PdfOcrPdfToWordsWithLocation**](docs/PdfOcrApi.md#pdfocrpdftowordswithlocation) | **POST** /ocr/pdf/to/words-with-location | Convert a PDF into words with location
-*PdfOcrApi* | [**PdfOcrPost**](docs/PdfOcrApi.md#pdfocrpost) | **POST** /ocr/pdf/toText | Converts an uploaded PDF file in common formats such as JPEG, PNG into text via Optical Character Recognition.
+*PdfOcrApi* | [**PdfOcrPost**](docs/PdfOcrApi.md#pdfocrpost) | **POST** /ocr/pdf/toText | Converts an uploaded PDF file into text via Optical Character Recognition.
+*PreprocessingApi* | [**PreprocessingBinarize**](docs/PreprocessingApi.md#preprocessingbinarize) | **POST** /ocr/preprocessing/image/binarize | Convert an image of text into a binary (light and dark) view
 *PreprocessingApi* | [**PreprocessingUnrotate**](docs/PreprocessingApi.md#preprocessingunrotate) | **POST** /ocr/preprocessing/image/unrotate | Detect and unrotate a document image
 *PreprocessingApi* | [**PreprocessingUnskew**](docs/PreprocessingApi.md#preprocessingunskew) | **POST** /ocr/preprocessing/image/unskew | Detect and unskew a photo of a document
 
@@ -124,10 +126,12 @@ Class | Method | HTTP request | Description
  - [Model.OcrPageResult](docs/OcrPageResult.md)
  - [Model.OcrPageResultWithLinesWithLocation](docs/OcrPageResultWithLinesWithLocation.md)
  - [Model.OcrPageResultWithWordsWithLocation](docs/OcrPageResultWithWordsWithLocation.md)
+ - [Model.OcrPhotoTextElement](docs/OcrPhotoTextElement.md)
  - [Model.OcrWordElement](docs/OcrWordElement.md)
  - [Model.PdfToLinesWithLocationResult](docs/PdfToLinesWithLocationResult.md)
  - [Model.PdfToTextResponse](docs/PdfToTextResponse.md)
  - [Model.PdfToWordsWithLocationResult](docs/PdfToWordsWithLocationResult.md)
+ - [Model.PhotoToWordsWithLocationResult](docs/PhotoToWordsWithLocationResult.md)
 
 
 <a name="documentation-for-authorization"></a>

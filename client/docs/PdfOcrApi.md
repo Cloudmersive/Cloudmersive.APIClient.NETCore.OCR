@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**PdfOcrPdfToLinesWithLocation**](PdfOcrApi.md#pdfocrpdftolineswithlocation) | **POST** /ocr/pdf/to/lines-with-location | Convert a PDF into text lines with location
 [**PdfOcrPdfToWordsWithLocation**](PdfOcrApi.md#pdfocrpdftowordswithlocation) | **POST** /ocr/pdf/to/words-with-location | Convert a PDF into words with location
-[**PdfOcrPost**](PdfOcrApi.md#pdfocrpost) | **POST** /ocr/pdf/toText | Converts an uploaded PDF file in common formats such as JPEG, PNG into text via Optical Character Recognition.
+[**PdfOcrPost**](PdfOcrApi.md#pdfocrpost) | **POST** /ocr/pdf/toText | Converts an uploaded PDF file into text via Optical Character Recognition.
 
 
 <a name="pdfocrpdftolineswithlocation"></a>
@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 # **PdfOcrPost**
 > PdfToTextResponse PdfOcrPost (System.IO.Stream imageFile, string language = null, string preprocessing = null)
 
-Converts an uploaded PDF file in common formats such as JPEG, PNG into text via Optical Character Recognition.
+Converts an uploaded PDF file into text via Optical Character Recognition.
 
 ### Example
 ```csharp
@@ -181,7 +181,7 @@ namespace Example
 
             try
             {
-                // Converts an uploaded PDF file in common formats such as JPEG, PNG into text via Optical Character Recognition.
+                // Converts an uploaded PDF file into text via Optical Character Recognition.
                 PdfToTextResponse result = apiInstance.PdfOcrPost(imageFile, language, preprocessing);
                 Debug.WriteLine(result);
             }
