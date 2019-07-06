@@ -32,8 +32,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
-        /// <returns>Object</returns>
-        Object PreprocessingBinarize (System.IO.Stream imageFile);
+        /// <returns>byte[]</returns>
+        byte[] PreprocessingBinarize (System.IO.Stream imageFile);
 
         /// <summary>
         /// Convert an image of text into a binarized (light and dark) view
@@ -43,8 +43,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> PreprocessingBinarizeWithHttpInfo (System.IO.Stream imageFile);
+        /// <returns>ApiResponse of byte[]</returns>
+        ApiResponse<byte[]> PreprocessingBinarizeWithHttpInfo (System.IO.Stream imageFile);
         /// <summary>
         /// Convert an image of text into a binary (light and dark) view with ML
         /// </summary>
@@ -53,8 +53,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
-        /// <returns>Object</returns>
-        Object PreprocessingBinarizeAdvanced (System.IO.Stream imageFile);
+        /// <returns>byte[]</returns>
+        byte[] PreprocessingBinarizeAdvanced (System.IO.Stream imageFile);
 
         /// <summary>
         /// Convert an image of text into a binary (light and dark) view with ML
@@ -64,8 +64,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> PreprocessingBinarizeAdvancedWithHttpInfo (System.IO.Stream imageFile);
+        /// <returns>ApiResponse of byte[]</returns>
+        ApiResponse<byte[]> PreprocessingBinarizeAdvancedWithHttpInfo (System.IO.Stream imageFile);
         /// <summary>
         /// Get the angle of the page / document / receipt
         /// </summary>
@@ -95,8 +95,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
-        /// <returns>Object</returns>
-        Object PreprocessingUnrotate (System.IO.Stream imageFile);
+        /// <returns>byte[]</returns>
+        byte[] PreprocessingUnrotate (System.IO.Stream imageFile);
 
         /// <summary>
         /// Detect and unrotate a document image
@@ -106,8 +106,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> PreprocessingUnrotateWithHttpInfo (System.IO.Stream imageFile);
+        /// <returns>ApiResponse of byte[]</returns>
+        ApiResponse<byte[]> PreprocessingUnrotateWithHttpInfo (System.IO.Stream imageFile);
         /// <summary>
         /// Detect and unskew a photo of a document
         /// </summary>
@@ -116,8 +116,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
-        /// <returns>Object</returns>
-        Object PreprocessingUnskew (System.IO.Stream imageFile);
+        /// <returns>byte[]</returns>
+        byte[] PreprocessingUnskew (System.IO.Stream imageFile);
 
         /// <summary>
         /// Detect and unskew a photo of a document
@@ -127,8 +127,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
-        /// <returns>ApiResponse of Object</returns>
-        ApiResponse<Object> PreprocessingUnskewWithHttpInfo (System.IO.Stream imageFile);
+        /// <returns>ApiResponse of byte[]</returns>
+        ApiResponse<byte[]> PreprocessingUnskewWithHttpInfo (System.IO.Stream imageFile);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -139,8 +139,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> PreprocessingBinarizeAsync (System.IO.Stream imageFile);
+        /// <returns>Task of byte[]</returns>
+        System.Threading.Tasks.Task<byte[]> PreprocessingBinarizeAsync (System.IO.Stream imageFile);
 
         /// <summary>
         /// Convert an image of text into a binarized (light and dark) view
@@ -150,8 +150,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> PreprocessingBinarizeAsyncWithHttpInfo (System.IO.Stream imageFile);
+        /// <returns>Task of ApiResponse (byte[])</returns>
+        System.Threading.Tasks.Task<ApiResponse<byte[]>> PreprocessingBinarizeAsyncWithHttpInfo (System.IO.Stream imageFile);
         /// <summary>
         /// Convert an image of text into a binary (light and dark) view with ML
         /// </summary>
@@ -160,8 +160,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> PreprocessingBinarizeAdvancedAsync (System.IO.Stream imageFile);
+        /// <returns>Task of byte[]</returns>
+        System.Threading.Tasks.Task<byte[]> PreprocessingBinarizeAdvancedAsync (System.IO.Stream imageFile);
 
         /// <summary>
         /// Convert an image of text into a binary (light and dark) view with ML
@@ -171,8 +171,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> PreprocessingBinarizeAdvancedAsyncWithHttpInfo (System.IO.Stream imageFile);
+        /// <returns>Task of ApiResponse (byte[])</returns>
+        System.Threading.Tasks.Task<ApiResponse<byte[]>> PreprocessingBinarizeAdvancedAsyncWithHttpInfo (System.IO.Stream imageFile);
         /// <summary>
         /// Get the angle of the page / document / receipt
         /// </summary>
@@ -202,8 +202,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> PreprocessingUnrotateAsync (System.IO.Stream imageFile);
+        /// <returns>Task of byte[]</returns>
+        System.Threading.Tasks.Task<byte[]> PreprocessingUnrotateAsync (System.IO.Stream imageFile);
 
         /// <summary>
         /// Detect and unrotate a document image
@@ -213,8 +213,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> PreprocessingUnrotateAsyncWithHttpInfo (System.IO.Stream imageFile);
+        /// <returns>Task of ApiResponse (byte[])</returns>
+        System.Threading.Tasks.Task<ApiResponse<byte[]>> PreprocessingUnrotateAsyncWithHttpInfo (System.IO.Stream imageFile);
         /// <summary>
         /// Detect and unskew a photo of a document
         /// </summary>
@@ -223,8 +223,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
-        /// <returns>Task of Object</returns>
-        System.Threading.Tasks.Task<Object> PreprocessingUnskewAsync (System.IO.Stream imageFile);
+        /// <returns>Task of byte[]</returns>
+        System.Threading.Tasks.Task<byte[]> PreprocessingUnskewAsync (System.IO.Stream imageFile);
 
         /// <summary>
         /// Detect and unskew a photo of a document
@@ -234,8 +234,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> PreprocessingUnskewAsyncWithHttpInfo (System.IO.Stream imageFile);
+        /// <returns>Task of ApiResponse (byte[])</returns>
+        System.Threading.Tasks.Task<ApiResponse<byte[]>> PreprocessingUnskewAsyncWithHttpInfo (System.IO.Stream imageFile);
         #endregion Asynchronous Operations
     }
 
@@ -341,10 +341,10 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
-        /// <returns>Object</returns>
-        public Object PreprocessingBinarize (System.IO.Stream imageFile)
+        /// <returns>byte[]</returns>
+        public byte[] PreprocessingBinarize (System.IO.Stream imageFile)
         {
-             ApiResponse<Object> localVarResponse = PreprocessingBinarizeWithHttpInfo(imageFile);
+             ApiResponse<byte[]> localVarResponse = PreprocessingBinarizeWithHttpInfo(imageFile);
              return localVarResponse.Data;
         }
 
@@ -353,8 +353,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
-        /// <returns>ApiResponse of Object</returns>
-        public ApiResponse< Object > PreprocessingBinarizeWithHttpInfo (System.IO.Stream imageFile)
+        /// <returns>ApiResponse of byte[]</returns>
+        public ApiResponse< byte[] > PreprocessingBinarizeWithHttpInfo (System.IO.Stream imageFile)
         {
             // verify the required parameter 'imageFile' is set
             if (imageFile == null)
@@ -406,9 +406,9 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<byte[]>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (byte[]) Configuration.ApiClient.Deserialize(localVarResponse, typeof(byte[])));
         }
 
         /// <summary>
@@ -416,10 +416,10 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> PreprocessingBinarizeAsync (System.IO.Stream imageFile)
+        /// <returns>Task of byte[]</returns>
+        public async System.Threading.Tasks.Task<byte[]> PreprocessingBinarizeAsync (System.IO.Stream imageFile)
         {
-             ApiResponse<Object> localVarResponse = await PreprocessingBinarizeAsyncWithHttpInfo(imageFile);
+             ApiResponse<byte[]> localVarResponse = await PreprocessingBinarizeAsyncWithHttpInfo(imageFile);
              return localVarResponse.Data;
 
         }
@@ -429,8 +429,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> PreprocessingBinarizeAsyncWithHttpInfo (System.IO.Stream imageFile)
+        /// <returns>Task of ApiResponse (byte[])</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<byte[]>> PreprocessingBinarizeAsyncWithHttpInfo (System.IO.Stream imageFile)
         {
             // verify the required parameter 'imageFile' is set
             if (imageFile == null)
@@ -482,9 +482,9 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<byte[]>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (byte[]) Configuration.ApiClient.Deserialize(localVarResponse, typeof(byte[])));
         }
 
         /// <summary>
@@ -492,10 +492,10 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
-        /// <returns>Object</returns>
-        public Object PreprocessingBinarizeAdvanced (System.IO.Stream imageFile)
+        /// <returns>byte[]</returns>
+        public byte[] PreprocessingBinarizeAdvanced (System.IO.Stream imageFile)
         {
-             ApiResponse<Object> localVarResponse = PreprocessingBinarizeAdvancedWithHttpInfo(imageFile);
+             ApiResponse<byte[]> localVarResponse = PreprocessingBinarizeAdvancedWithHttpInfo(imageFile);
              return localVarResponse.Data;
         }
 
@@ -504,8 +504,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
-        /// <returns>ApiResponse of Object</returns>
-        public ApiResponse< Object > PreprocessingBinarizeAdvancedWithHttpInfo (System.IO.Stream imageFile)
+        /// <returns>ApiResponse of byte[]</returns>
+        public ApiResponse< byte[] > PreprocessingBinarizeAdvancedWithHttpInfo (System.IO.Stream imageFile)
         {
             // verify the required parameter 'imageFile' is set
             if (imageFile == null)
@@ -557,9 +557,9 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<byte[]>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (byte[]) Configuration.ApiClient.Deserialize(localVarResponse, typeof(byte[])));
         }
 
         /// <summary>
@@ -567,10 +567,10 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> PreprocessingBinarizeAdvancedAsync (System.IO.Stream imageFile)
+        /// <returns>Task of byte[]</returns>
+        public async System.Threading.Tasks.Task<byte[]> PreprocessingBinarizeAdvancedAsync (System.IO.Stream imageFile)
         {
-             ApiResponse<Object> localVarResponse = await PreprocessingBinarizeAdvancedAsyncWithHttpInfo(imageFile);
+             ApiResponse<byte[]> localVarResponse = await PreprocessingBinarizeAdvancedAsyncWithHttpInfo(imageFile);
              return localVarResponse.Data;
 
         }
@@ -580,8 +580,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> PreprocessingBinarizeAdvancedAsyncWithHttpInfo (System.IO.Stream imageFile)
+        /// <returns>Task of ApiResponse (byte[])</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<byte[]>> PreprocessingBinarizeAdvancedAsyncWithHttpInfo (System.IO.Stream imageFile)
         {
             // verify the required parameter 'imageFile' is set
             if (imageFile == null)
@@ -633,9 +633,9 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<byte[]>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (byte[]) Configuration.ApiClient.Deserialize(localVarResponse, typeof(byte[])));
         }
 
         /// <summary>
@@ -794,10 +794,10 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
-        /// <returns>Object</returns>
-        public Object PreprocessingUnrotate (System.IO.Stream imageFile)
+        /// <returns>byte[]</returns>
+        public byte[] PreprocessingUnrotate (System.IO.Stream imageFile)
         {
-             ApiResponse<Object> localVarResponse = PreprocessingUnrotateWithHttpInfo(imageFile);
+             ApiResponse<byte[]> localVarResponse = PreprocessingUnrotateWithHttpInfo(imageFile);
              return localVarResponse.Data;
         }
 
@@ -806,8 +806,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
-        /// <returns>ApiResponse of Object</returns>
-        public ApiResponse< Object > PreprocessingUnrotateWithHttpInfo (System.IO.Stream imageFile)
+        /// <returns>ApiResponse of byte[]</returns>
+        public ApiResponse< byte[] > PreprocessingUnrotateWithHttpInfo (System.IO.Stream imageFile)
         {
             // verify the required parameter 'imageFile' is set
             if (imageFile == null)
@@ -859,9 +859,9 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<byte[]>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (byte[]) Configuration.ApiClient.Deserialize(localVarResponse, typeof(byte[])));
         }
 
         /// <summary>
@@ -869,10 +869,10 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> PreprocessingUnrotateAsync (System.IO.Stream imageFile)
+        /// <returns>Task of byte[]</returns>
+        public async System.Threading.Tasks.Task<byte[]> PreprocessingUnrotateAsync (System.IO.Stream imageFile)
         {
-             ApiResponse<Object> localVarResponse = await PreprocessingUnrotateAsyncWithHttpInfo(imageFile);
+             ApiResponse<byte[]> localVarResponse = await PreprocessingUnrotateAsyncWithHttpInfo(imageFile);
              return localVarResponse.Data;
 
         }
@@ -882,8 +882,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> PreprocessingUnrotateAsyncWithHttpInfo (System.IO.Stream imageFile)
+        /// <returns>Task of ApiResponse (byte[])</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<byte[]>> PreprocessingUnrotateAsyncWithHttpInfo (System.IO.Stream imageFile)
         {
             // verify the required parameter 'imageFile' is set
             if (imageFile == null)
@@ -935,9 +935,9 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<byte[]>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (byte[]) Configuration.ApiClient.Deserialize(localVarResponse, typeof(byte[])));
         }
 
         /// <summary>
@@ -945,10 +945,10 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
-        /// <returns>Object</returns>
-        public Object PreprocessingUnskew (System.IO.Stream imageFile)
+        /// <returns>byte[]</returns>
+        public byte[] PreprocessingUnskew (System.IO.Stream imageFile)
         {
-             ApiResponse<Object> localVarResponse = PreprocessingUnskewWithHttpInfo(imageFile);
+             ApiResponse<byte[]> localVarResponse = PreprocessingUnskewWithHttpInfo(imageFile);
              return localVarResponse.Data;
         }
 
@@ -957,8 +957,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
-        /// <returns>ApiResponse of Object</returns>
-        public ApiResponse< Object > PreprocessingUnskewWithHttpInfo (System.IO.Stream imageFile)
+        /// <returns>ApiResponse of byte[]</returns>
+        public ApiResponse< byte[] > PreprocessingUnskewWithHttpInfo (System.IO.Stream imageFile)
         {
             // verify the required parameter 'imageFile' is set
             if (imageFile == null)
@@ -1010,9 +1010,9 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<byte[]>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (byte[]) Configuration.ApiClient.Deserialize(localVarResponse, typeof(byte[])));
         }
 
         /// <summary>
@@ -1020,10 +1020,10 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
-        /// <returns>Task of Object</returns>
-        public async System.Threading.Tasks.Task<Object> PreprocessingUnskewAsync (System.IO.Stream imageFile)
+        /// <returns>Task of byte[]</returns>
+        public async System.Threading.Tasks.Task<byte[]> PreprocessingUnskewAsync (System.IO.Stream imageFile)
         {
-             ApiResponse<Object> localVarResponse = await PreprocessingUnskewAsyncWithHttpInfo(imageFile);
+             ApiResponse<byte[]> localVarResponse = await PreprocessingUnskewAsyncWithHttpInfo(imageFile);
              return localVarResponse.Data;
 
         }
@@ -1033,8 +1033,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
-        /// <returns>Task of ApiResponse (Object)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> PreprocessingUnskewAsyncWithHttpInfo (System.IO.Stream imageFile)
+        /// <returns>Task of ApiResponse (byte[])</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<byte[]>> PreprocessingUnskewAsyncWithHttpInfo (System.IO.Stream imageFile)
         {
             // verify the required parameter 'imageFile' is set
             if (imageFile == null)
@@ -1086,9 +1086,9 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<byte[]>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Object) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+                (byte[]) Configuration.ApiClient.Deserialize(localVarResponse, typeof(byte[])));
         }
 
     }

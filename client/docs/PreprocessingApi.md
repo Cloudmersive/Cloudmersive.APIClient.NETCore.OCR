@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="preprocessingbinarize"></a>
 # **PreprocessingBinarize**
-> Object PreprocessingBinarize (System.IO.Stream imageFile)
+> byte[] PreprocessingBinarize (System.IO.Stream imageFile)
 
 Convert an image of text into a binarized (light and dark) view
 
@@ -44,7 +44,7 @@ namespace Example
             try
             {
                 // Convert an image of text into a binarized (light and dark) view
-                Object result = apiInstance.PreprocessingBinarize(imageFile);
+                byte[] result = apiInstance.PreprocessingBinarize(imageFile);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+**byte[]**
 
 ### Authorization
 
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 <a name="preprocessingbinarizeadvanced"></a>
 # **PreprocessingBinarizeAdvanced**
-> Object PreprocessingBinarizeAdvanced (System.IO.Stream imageFile)
+> byte[] PreprocessingBinarizeAdvanced (System.IO.Stream imageFile)
 
 Convert an image of text into a binary (light and dark) view with ML
 
@@ -110,7 +110,7 @@ namespace Example
             try
             {
                 // Convert an image of text into a binary (light and dark) view with ML
-                Object result = apiInstance.PreprocessingBinarizeAdvanced(imageFile);
+                byte[] result = apiInstance.PreprocessingBinarizeAdvanced(imageFile);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+**byte[]**
 
 ### Authorization
 
@@ -211,7 +211,7 @@ Name | Type | Description  | Notes
 
 <a name="preprocessingunrotate"></a>
 # **PreprocessingUnrotate**
-> Object PreprocessingUnrotate (System.IO.Stream imageFile)
+> byte[] PreprocessingUnrotate (System.IO.Stream imageFile)
 
 Detect and unrotate a document image
 
@@ -242,7 +242,7 @@ namespace Example
             try
             {
                 // Detect and unrotate a document image
-                Object result = apiInstance.PreprocessingUnrotate(imageFile);
+                byte[] result = apiInstance.PreprocessingUnrotate(imageFile);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -262,7 +262,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+**byte[]**
 
 ### Authorization
 
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 
 <a name="preprocessingunskew"></a>
 # **PreprocessingUnskew**
-> Object PreprocessingUnskew (System.IO.Stream imageFile)
+> byte[] PreprocessingUnskew (System.IO.Stream imageFile)
 
 Detect and unskew a photo of a document
 
@@ -308,7 +308,7 @@ namespace Example
             try
             {
                 // Detect and unskew a photo of a document
-                Object result = apiInstance.PreprocessingUnskew(imageFile);
+                byte[] result = apiInstance.PreprocessingUnskew(imageFile);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -328,7 +328,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+**byte[]**
 
 ### Authorization
 

@@ -73,7 +73,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Test
             // TODO uncomment below to test the method and replace null with proper value
             //System.IO.Stream imageFile = null;
             //var response = instance.PreprocessingBinarize(imageFile);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
+            //Assert.IsInstanceOf<byte[]> (response, "response is byte[]");
         }
         
         /// <summary>
@@ -85,7 +85,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Test
             // TODO uncomment below to test the method and replace null with proper value
             //System.IO.Stream imageFile = null;
             //var response = instance.PreprocessingBinarizeAdvanced(imageFile);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
+            //Assert.IsInstanceOf<byte[]> (response, "response is byte[]");
         }
         
         /// <summary>
@@ -109,7 +109,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Test
             // TODO uncomment below to test the method and replace null with proper value
             //System.IO.Stream imageFile = null;
             //var response = instance.PreprocessingUnrotate(imageFile);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
+            //Assert.IsInstanceOf<byte[]> (response, "response is byte[]");
         }
         
         /// <summary>
@@ -121,7 +121,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Test
             // TODO uncomment below to test the method and replace null with proper value
             //System.IO.Stream imageFile = null;
             //var response = instance.PreprocessingUnskew(imageFile);
-            //Assert.IsInstanceOf<Object> (response, "response is Object");
+            //Assert.IsInstanceOf<byte[]> (response, "response is byte[]");
         }
         
     }
