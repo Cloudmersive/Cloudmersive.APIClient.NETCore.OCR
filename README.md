@@ -5,7 +5,7 @@ The powerful Optical Character Recognition (OCR) APIs let you convert scanned im
 This C# SDK is for the [Cloudmersive OCR API](https://www.cloudmersive.com/ocr-api):
 
 - API version: v1
-- SDK version: 1.3.1
+- SDK version: 1.3.2
 - Build package: io.swagger.codegen.languages.CSharpClientCodegen
 
 <a name="frameworks-supported"></a>
@@ -111,14 +111,18 @@ Class | Method | HTTP request | Description
 *PdfOcrApi* | [**PdfOcrPdfToLinesWithLocation**](docs/PdfOcrApi.md#pdfocrpdftolineswithlocation) | **POST** /ocr/pdf/to/lines-with-location | Convert a PDF into text lines with location
 *PdfOcrApi* | [**PdfOcrPdfToWordsWithLocation**](docs/PdfOcrApi.md#pdfocrpdftowordswithlocation) | **POST** /ocr/pdf/to/words-with-location | Convert a PDF into words with location
 *PdfOcrApi* | [**PdfOcrPost**](docs/PdfOcrApi.md#pdfocrpost) | **POST** /ocr/pdf/toText | Converts an uploaded PDF file into text via Optical Character Recognition.
-*PreprocessingApi* | [**PreprocessingBinarize**](docs/PreprocessingApi.md#preprocessingbinarize) | **POST** /ocr/preprocessing/image/binarize | Convert an image of text into a binary (light and dark) view
+*PreprocessingApi* | [**PreprocessingBinarize**](docs/PreprocessingApi.md#preprocessingbinarize) | **POST** /ocr/preprocessing/image/binarize | Convert an image of text into a binarized (light and dark) view
+*PreprocessingApi* | [**PreprocessingBinarizeAdvanced**](docs/PreprocessingApi.md#preprocessingbinarizeadvanced) | **POST** /ocr/preprocessing/image/binarize/advanced | Convert an image of text into a binary (light and dark) view with ML
+*PreprocessingApi* | [**PreprocessingGetPageAngle**](docs/PreprocessingApi.md#preprocessinggetpageangle) | **POST** /ocr/preprocessing/image/get-page-angle | Get the angle of the page / document / receipt
 *PreprocessingApi* | [**PreprocessingUnrotate**](docs/PreprocessingApi.md#preprocessingunrotate) | **POST** /ocr/preprocessing/image/unrotate | Detect and unrotate a document image
 *PreprocessingApi* | [**PreprocessingUnskew**](docs/PreprocessingApi.md#preprocessingunskew) | **POST** /ocr/preprocessing/image/unskew | Detect and unskew a photo of a document
+*ReceiptsApi* | [**ReceiptsPhotoToCSV**](docs/ReceiptsApi.md#receiptsphototocsv) | **POST** /ocr/receipts/photo/to/csv | Convert a photo of a receipt into a CSV file containing structured information from the receipt
 
 
 <a name="documentation-for-models"></a>
 ## Documentation for Models
 
+ - [Model.GetPageAngleResult](docs/GetPageAngleResult.md)
  - [Model.ImageToLinesWithLocationResult](docs/ImageToLinesWithLocationResult.md)
  - [Model.ImageToTextResponse](docs/ImageToTextResponse.md)
  - [Model.ImageToWordsWithLocationResult](docs/ImageToWordsWithLocationResult.md)

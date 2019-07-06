@@ -114,7 +114,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Test
             // TODO uncomment below to test the method and replace null with proper value
             //System.IO.Stream imageFile = null;
             //string language = null;
-            //var response = instance.ImageOcrPhotoWordsWithLocation(imageFile, language);
+            //string preprocessing = null;
+            //var response = instance.ImageOcrPhotoWordsWithLocation(imageFile, language, preprocessing);
             //Assert.IsInstanceOf<PhotoToWordsWithLocationResult> (response, "response is PhotoToWordsWithLocationResult");
         }
         

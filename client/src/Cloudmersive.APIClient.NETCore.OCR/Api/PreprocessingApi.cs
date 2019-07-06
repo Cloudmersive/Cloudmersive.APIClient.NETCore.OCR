@@ -14,6 +14,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using RestSharp;
 using Cloudmersive.APIClient.NETCore.OCR.Client;
+using Cloudmersive.APIClient.NETCore.OCR.Model;
 
 namespace Cloudmersive.APIClient.NETCore.OCR.Api
 {
@@ -24,10 +25,10 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Convert an image of text into a binary (light and dark) view
+        /// Convert an image of text into a binarized (light and dark) view
         /// </summary>
         /// <remarks>
-        /// Perform an advanced adaptive, machine learning-based binarization algorithm on the input image to prepare it for further OCR operations.
+        /// Perform an adaptive binarization algorithm on the input image to prepare it for further OCR operations.
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
@@ -35,15 +36,57 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         Object PreprocessingBinarize (System.IO.Stream imageFile);
 
         /// <summary>
-        /// Convert an image of text into a binary (light and dark) view
+        /// Convert an image of text into a binarized (light and dark) view
         /// </summary>
         /// <remarks>
-        /// Perform an advanced adaptive, machine learning-based binarization algorithm on the input image to prepare it for further OCR operations.
+        /// Perform an adaptive binarization algorithm on the input image to prepare it for further OCR operations.
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
         /// <returns>ApiResponse of Object</returns>
         ApiResponse<Object> PreprocessingBinarizeWithHttpInfo (System.IO.Stream imageFile);
+        /// <summary>
+        /// Convert an image of text into a binary (light and dark) view with ML
+        /// </summary>
+        /// <remarks>
+        /// Perform an advanced adaptive, Deep Learning-based binarization algorithm on the input image to prepare it for further OCR operations.  Provides enhanced accuracy than adaptive binarization.  Image will be upsampled to 300 DPI if it has a DPI below 300.
+        /// </remarks>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
+        /// <returns>Object</returns>
+        Object PreprocessingBinarizeAdvanced (System.IO.Stream imageFile);
+
+        /// <summary>
+        /// Convert an image of text into a binary (light and dark) view with ML
+        /// </summary>
+        /// <remarks>
+        /// Perform an advanced adaptive, Deep Learning-based binarization algorithm on the input image to prepare it for further OCR operations.  Provides enhanced accuracy than adaptive binarization.  Image will be upsampled to 300 DPI if it has a DPI below 300.
+        /// </remarks>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
+        /// <returns>ApiResponse of Object</returns>
+        ApiResponse<Object> PreprocessingBinarizeAdvancedWithHttpInfo (System.IO.Stream imageFile);
+        /// <summary>
+        /// Get the angle of the page / document / receipt
+        /// </summary>
+        /// <remarks>
+        /// Analyzes a photo or image of a document and identifies the rotation angle of the page.
+        /// </remarks>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
+        /// <returns>GetPageAngleResult</returns>
+        GetPageAngleResult PreprocessingGetPageAngle (System.IO.Stream imageFile);
+
+        /// <summary>
+        /// Get the angle of the page / document / receipt
+        /// </summary>
+        /// <remarks>
+        /// Analyzes a photo or image of a document and identifies the rotation angle of the page.
+        /// </remarks>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
+        /// <returns>ApiResponse of GetPageAngleResult</returns>
+        ApiResponse<GetPageAngleResult> PreprocessingGetPageAngleWithHttpInfo (System.IO.Stream imageFile);
         /// <summary>
         /// Detect and unrotate a document image
         /// </summary>
@@ -89,10 +132,10 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// Convert an image of text into a binary (light and dark) view
+        /// Convert an image of text into a binarized (light and dark) view
         /// </summary>
         /// <remarks>
-        /// Perform an advanced adaptive, machine learning-based binarization algorithm on the input image to prepare it for further OCR operations.
+        /// Perform an adaptive binarization algorithm on the input image to prepare it for further OCR operations.
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
@@ -100,15 +143,57 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         System.Threading.Tasks.Task<Object> PreprocessingBinarizeAsync (System.IO.Stream imageFile);
 
         /// <summary>
-        /// Convert an image of text into a binary (light and dark) view
+        /// Convert an image of text into a binarized (light and dark) view
         /// </summary>
         /// <remarks>
-        /// Perform an advanced adaptive, machine learning-based binarization algorithm on the input image to prepare it for further OCR operations.
+        /// Perform an adaptive binarization algorithm on the input image to prepare it for further OCR operations.
         /// </remarks>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
         /// <returns>Task of ApiResponse (Object)</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> PreprocessingBinarizeAsyncWithHttpInfo (System.IO.Stream imageFile);
+        /// <summary>
+        /// Convert an image of text into a binary (light and dark) view with ML
+        /// </summary>
+        /// <remarks>
+        /// Perform an advanced adaptive, Deep Learning-based binarization algorithm on the input image to prepare it for further OCR operations.  Provides enhanced accuracy than adaptive binarization.  Image will be upsampled to 300 DPI if it has a DPI below 300.
+        /// </remarks>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
+        /// <returns>Task of Object</returns>
+        System.Threading.Tasks.Task<Object> PreprocessingBinarizeAdvancedAsync (System.IO.Stream imageFile);
+
+        /// <summary>
+        /// Convert an image of text into a binary (light and dark) view with ML
+        /// </summary>
+        /// <remarks>
+        /// Perform an advanced adaptive, Deep Learning-based binarization algorithm on the input image to prepare it for further OCR operations.  Provides enhanced accuracy than adaptive binarization.  Image will be upsampled to 300 DPI if it has a DPI below 300.
+        /// </remarks>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
+        /// <returns>Task of ApiResponse (Object)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> PreprocessingBinarizeAdvancedAsyncWithHttpInfo (System.IO.Stream imageFile);
+        /// <summary>
+        /// Get the angle of the page / document / receipt
+        /// </summary>
+        /// <remarks>
+        /// Analyzes a photo or image of a document and identifies the rotation angle of the page.
+        /// </remarks>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
+        /// <returns>Task of GetPageAngleResult</returns>
+        System.Threading.Tasks.Task<GetPageAngleResult> PreprocessingGetPageAngleAsync (System.IO.Stream imageFile);
+
+        /// <summary>
+        /// Get the angle of the page / document / receipt
+        /// </summary>
+        /// <remarks>
+        /// Analyzes a photo or image of a document and identifies the rotation angle of the page.
+        /// </remarks>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
+        /// <returns>Task of ApiResponse (GetPageAngleResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GetPageAngleResult>> PreprocessingGetPageAngleAsyncWithHttpInfo (System.IO.Stream imageFile);
         /// <summary>
         /// Detect and unrotate a document image
         /// </summary>
@@ -252,7 +337,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         }
 
         /// <summary>
-        /// Convert an image of text into a binary (light and dark) view Perform an advanced adaptive, machine learning-based binarization algorithm on the input image to prepare it for further OCR operations.
+        /// Convert an image of text into a binarized (light and dark) view Perform an adaptive binarization algorithm on the input image to prepare it for further OCR operations.
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
@@ -264,7 +349,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         }
 
         /// <summary>
-        /// Convert an image of text into a binary (light and dark) view Perform an advanced adaptive, machine learning-based binarization algorithm on the input image to prepare it for further OCR operations.
+        /// Convert an image of text into a binarized (light and dark) view Perform an adaptive binarization algorithm on the input image to prepare it for further OCR operations.
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
@@ -327,7 +412,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         }
 
         /// <summary>
-        /// Convert an image of text into a binary (light and dark) view Perform an advanced adaptive, machine learning-based binarization algorithm on the input image to prepare it for further OCR operations.
+        /// Convert an image of text into a binarized (light and dark) view Perform an adaptive binarization algorithm on the input image to prepare it for further OCR operations.
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
@@ -340,7 +425,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         }
 
         /// <summary>
-        /// Convert an image of text into a binary (light and dark) view Perform an advanced adaptive, machine learning-based binarization algorithm on the input image to prepare it for further OCR operations.
+        /// Convert an image of text into a binarized (light and dark) view Perform an adaptive binarization algorithm on the input image to prepare it for further OCR operations.
         /// </summary>
         /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
@@ -400,6 +485,308 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (Object) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+        }
+
+        /// <summary>
+        /// Convert an image of text into a binary (light and dark) view with ML Perform an advanced adaptive, Deep Learning-based binarization algorithm on the input image to prepare it for further OCR operations.  Provides enhanced accuracy than adaptive binarization.  Image will be upsampled to 300 DPI if it has a DPI below 300.
+        /// </summary>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
+        /// <returns>Object</returns>
+        public Object PreprocessingBinarizeAdvanced (System.IO.Stream imageFile)
+        {
+             ApiResponse<Object> localVarResponse = PreprocessingBinarizeAdvancedWithHttpInfo(imageFile);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Convert an image of text into a binary (light and dark) view with ML Perform an advanced adaptive, Deep Learning-based binarization algorithm on the input image to prepare it for further OCR operations.  Provides enhanced accuracy than adaptive binarization.  Image will be upsampled to 300 DPI if it has a DPI below 300.
+        /// </summary>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
+        /// <returns>ApiResponse of Object</returns>
+        public ApiResponse< Object > PreprocessingBinarizeAdvancedWithHttpInfo (System.IO.Stream imageFile)
+        {
+            // verify the required parameter 'imageFile' is set
+            if (imageFile == null)
+                throw new ApiException(400, "Missing required parameter 'imageFile' when calling PreprocessingApi->PreprocessingBinarizeAdvanced");
+
+            var localVarPath = "/ocr/preprocessing/image/binarize/advanced";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "multipart/form-data"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (imageFile != null) localVarFileParams.Add("imageFile", Configuration.ApiClient.ParameterToFile("imageFile", imageFile));
+
+            // authentication (Apikey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Apikey")))
+            {
+                localVarHeaderParams["Apikey"] = Configuration.GetApiKeyWithPrefix("Apikey");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("PreprocessingBinarizeAdvanced", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (Object) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+        }
+
+        /// <summary>
+        /// Convert an image of text into a binary (light and dark) view with ML Perform an advanced adaptive, Deep Learning-based binarization algorithm on the input image to prepare it for further OCR operations.  Provides enhanced accuracy than adaptive binarization.  Image will be upsampled to 300 DPI if it has a DPI below 300.
+        /// </summary>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
+        /// <returns>Task of Object</returns>
+        public async System.Threading.Tasks.Task<Object> PreprocessingBinarizeAdvancedAsync (System.IO.Stream imageFile)
+        {
+             ApiResponse<Object> localVarResponse = await PreprocessingBinarizeAdvancedAsyncWithHttpInfo(imageFile);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Convert an image of text into a binary (light and dark) view with ML Perform an advanced adaptive, Deep Learning-based binarization algorithm on the input image to prepare it for further OCR operations.  Provides enhanced accuracy than adaptive binarization.  Image will be upsampled to 300 DPI if it has a DPI below 300.
+        /// </summary>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
+        /// <returns>Task of ApiResponse (Object)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> PreprocessingBinarizeAdvancedAsyncWithHttpInfo (System.IO.Stream imageFile)
+        {
+            // verify the required parameter 'imageFile' is set
+            if (imageFile == null)
+                throw new ApiException(400, "Missing required parameter 'imageFile' when calling PreprocessingApi->PreprocessingBinarizeAdvanced");
+
+            var localVarPath = "/ocr/preprocessing/image/binarize/advanced";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "multipart/form-data"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (imageFile != null) localVarFileParams.Add("imageFile", Configuration.ApiClient.ParameterToFile("imageFile", imageFile));
+
+            // authentication (Apikey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Apikey")))
+            {
+                localVarHeaderParams["Apikey"] = Configuration.GetApiKeyWithPrefix("Apikey");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("PreprocessingBinarizeAdvanced", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (Object) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+        }
+
+        /// <summary>
+        /// Get the angle of the page / document / receipt Analyzes a photo or image of a document and identifies the rotation angle of the page.
+        /// </summary>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
+        /// <returns>GetPageAngleResult</returns>
+        public GetPageAngleResult PreprocessingGetPageAngle (System.IO.Stream imageFile)
+        {
+             ApiResponse<GetPageAngleResult> localVarResponse = PreprocessingGetPageAngleWithHttpInfo(imageFile);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get the angle of the page / document / receipt Analyzes a photo or image of a document and identifies the rotation angle of the page.
+        /// </summary>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
+        /// <returns>ApiResponse of GetPageAngleResult</returns>
+        public ApiResponse< GetPageAngleResult > PreprocessingGetPageAngleWithHttpInfo (System.IO.Stream imageFile)
+        {
+            // verify the required parameter 'imageFile' is set
+            if (imageFile == null)
+                throw new ApiException(400, "Missing required parameter 'imageFile' when calling PreprocessingApi->PreprocessingGetPageAngle");
+
+            var localVarPath = "/ocr/preprocessing/image/get-page-angle";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "multipart/form-data"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (imageFile != null) localVarFileParams.Add("imageFile", Configuration.ApiClient.ParameterToFile("imageFile", imageFile));
+
+            // authentication (Apikey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Apikey")))
+            {
+                localVarHeaderParams["Apikey"] = Configuration.GetApiKeyWithPrefix("Apikey");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("PreprocessingGetPageAngle", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<GetPageAngleResult>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (GetPageAngleResult) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetPageAngleResult)));
+        }
+
+        /// <summary>
+        /// Get the angle of the page / document / receipt Analyzes a photo or image of a document and identifies the rotation angle of the page.
+        /// </summary>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
+        /// <returns>Task of GetPageAngleResult</returns>
+        public async System.Threading.Tasks.Task<GetPageAngleResult> PreprocessingGetPageAngleAsync (System.IO.Stream imageFile)
+        {
+             ApiResponse<GetPageAngleResult> localVarResponse = await PreprocessingGetPageAngleAsyncWithHttpInfo(imageFile);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get the angle of the page / document / receipt Analyzes a photo or image of a document and identifies the rotation angle of the page.
+        /// </summary>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
+        /// <returns>Task of ApiResponse (GetPageAngleResult)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<GetPageAngleResult>> PreprocessingGetPageAngleAsyncWithHttpInfo (System.IO.Stream imageFile)
+        {
+            // verify the required parameter 'imageFile' is set
+            if (imageFile == null)
+                throw new ApiException(400, "Missing required parameter 'imageFile' when calling PreprocessingApi->PreprocessingGetPageAngle");
+
+            var localVarPath = "/ocr/preprocessing/image/get-page-angle";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "multipart/form-data"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (imageFile != null) localVarFileParams.Add("imageFile", Configuration.ApiClient.ParameterToFile("imageFile", imageFile));
+
+            // authentication (Apikey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Apikey")))
+            {
+                localVarHeaderParams["Apikey"] = Configuration.GetApiKeyWithPrefix("Apikey");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("PreprocessingGetPageAngle", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<GetPageAngleResult>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (GetPageAngleResult) Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetPageAngleResult)));
         }
 
         /// <summary>

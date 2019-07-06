@@ -19,6 +19,7 @@ using NUnit.Framework;
 
 using Cloudmersive.APIClient.NETCore.OCR.Client;
 using Cloudmersive.APIClient.NETCore.OCR.Api;
+using Cloudmersive.APIClient.NETCore.OCR.Model;
 
 namespace Cloudmersive.APIClient.NETCore.OCR.Test
 {
@@ -73,6 +74,30 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Test
             //System.IO.Stream imageFile = null;
             //var response = instance.PreprocessingBinarize(imageFile);
             //Assert.IsInstanceOf<Object> (response, "response is Object");
+        }
+        
+        /// <summary>
+        /// Test PreprocessingBinarizeAdvanced
+        /// </summary>
+        [Test]
+        public void PreprocessingBinarizeAdvancedTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //System.IO.Stream imageFile = null;
+            //var response = instance.PreprocessingBinarizeAdvanced(imageFile);
+            //Assert.IsInstanceOf<Object> (response, "response is Object");
+        }
+        
+        /// <summary>
+        /// Test PreprocessingGetPageAngle
+        /// </summary>
+        [Test]
+        public void PreprocessingGetPageAngleTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //System.IO.Stream imageFile = null;
+            //var response = instance.PreprocessingGetPageAngle(imageFile);
+            //Assert.IsInstanceOf<GetPageAngleResult> (response, "response is GetPageAngleResult");
         }
         
         /// <summary>
