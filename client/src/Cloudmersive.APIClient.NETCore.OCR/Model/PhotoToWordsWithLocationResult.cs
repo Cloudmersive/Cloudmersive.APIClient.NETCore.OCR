@@ -35,10 +35,12 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// </summary>
         /// <param name="Successful">Successful.</param>
         /// <param name="TextElements">Word elements in the image.</param>
-        public PhotoToWordsWithLocationResult(bool? Successful = default(bool?), List<OcrPhotoTextElement> TextElements = default(List<OcrPhotoTextElement>))
+        /// <param name="DiagnosticImage">Typically null.  To analyze OCR performance, enable diagnostic mode by adding the HTTP header \&quot;DiagnosticMode\&quot; with the value \&quot;true\&quot;.  When this is true, a diagnostic image showing the details of the OCR result will be set in PNG format into DiagnosticImage..</param>
+        public PhotoToWordsWithLocationResult(bool? Successful = default(bool?), List<OcrPhotoTextElement> TextElements = default(List<OcrPhotoTextElement>), byte[] DiagnosticImage = default(byte[]))
         {
             this.Successful = Successful;
             this.TextElements = TextElements;
+            this.DiagnosticImage = DiagnosticImage;
         }
         
         /// <summary>
@@ -55,6 +57,13 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         public List<OcrPhotoTextElement> TextElements { get; set; }
 
         /// <summary>
+        /// Typically null.  To analyze OCR performance, enable diagnostic mode by adding the HTTP header \&quot;DiagnosticMode\&quot; with the value \&quot;true\&quot;.  When this is true, a diagnostic image showing the details of the OCR result will be set in PNG format into DiagnosticImage.
+        /// </summary>
+        /// <value>Typically null.  To analyze OCR performance, enable diagnostic mode by adding the HTTP header \&quot;DiagnosticMode\&quot; with the value \&quot;true\&quot;.  When this is true, a diagnostic image showing the details of the OCR result will be set in PNG format into DiagnosticImage.</value>
+        [DataMember(Name="DiagnosticImage", EmitDefaultValue=false)]
+        public byte[] DiagnosticImage { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -64,6 +73,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
             sb.Append("class PhotoToWordsWithLocationResult {\n");
             sb.Append("  Successful: ").Append(Successful).Append("\n");
             sb.Append("  TextElements: ").Append(TextElements).Append("\n");
+            sb.Append("  DiagnosticImage: ").Append(DiagnosticImage).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -107,6 +117,11 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
                     this.TextElements == input.TextElements ||
                     this.TextElements != null &&
                     this.TextElements.SequenceEqual(input.TextElements)
+                ) && 
+                (
+                    this.DiagnosticImage == input.DiagnosticImage ||
+                    (this.DiagnosticImage != null &&
+                    this.DiagnosticImage.Equals(input.DiagnosticImage))
                 );
         }
 
@@ -123,6 +138,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
                     hashCode = hashCode * 59 + this.Successful.GetHashCode();
                 if (this.TextElements != null)
                     hashCode = hashCode * 59 + this.TextElements.GetHashCode();
+                if (this.DiagnosticImage != null)
+                    hashCode = hashCode * 59 + this.DiagnosticImage.GetHashCode();
                 return hashCode;
             }
         }
