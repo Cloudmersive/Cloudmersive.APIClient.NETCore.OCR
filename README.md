@@ -5,7 +5,7 @@ The powerful Optical Character Recognition (OCR) APIs let you convert scanned im
 This C# SDK is for the [Cloudmersive OCR API](https://www.cloudmersive.com/ocr-api):
 
 - API version: v1
-- SDK version: 1.3.5
+- SDK version: 1.3.6
 - Build package: io.swagger.codegen.languages.CSharpClientCodegen
 
 <a name="frameworks-supported"></a>
@@ -105,6 +105,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *ImageOcrApi* | [**ImageOcrImageLinesWithLocation**](docs/ImageOcrApi.md#imageocrimagelineswithlocation) | **POST** /ocr/image/to/lines-with-location | Convert a scanned image into words with location
 *ImageOcrApi* | [**ImageOcrImageWordsWithLocation**](docs/ImageOcrApi.md#imageocrimagewordswithlocation) | **POST** /ocr/image/to/words-with-location | Convert a scanned image into words with location
+*ImageOcrApi* | [**ImageOcrPhotoRecognizeReceipt**](docs/ImageOcrApi.md#imageocrphotorecognizereceipt) | **POST** /ocr/photo/recognize/receipt | Recognize a photo of a receipt, extract key business information
 *ImageOcrApi* | [**ImageOcrPhotoToText**](docs/ImageOcrApi.md#imageocrphotototext) | **POST** /ocr/photo/toText | Convert a photo of a document into text
 *ImageOcrApi* | [**ImageOcrPhotoWordsWithLocation**](docs/ImageOcrApi.md#imageocrphotowordswithlocation) | **POST** /ocr/photo/to/words-with-location | Convert a photo of a document or receipt into words with location
 *ImageOcrApi* | [**ImageOcrPost**](docs/ImageOcrApi.md#imageocrpost) | **POST** /ocr/image/toText | Convert a scanned image into text
@@ -136,6 +137,7 @@ Class | Method | HTTP request | Description
  - [Model.PdfToTextResponse](docs/PdfToTextResponse.md)
  - [Model.PdfToWordsWithLocationResult](docs/PdfToWordsWithLocationResult.md)
  - [Model.PhotoToWordsWithLocationResult](docs/PhotoToWordsWithLocationResult.md)
+ - [Model.ReceiptRecognitionResult](docs/ReceiptRecognitionResult.md)
 
 
 <a name="documentation-for-authorization"></a>
