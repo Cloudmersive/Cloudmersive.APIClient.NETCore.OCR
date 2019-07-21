@@ -93,6 +93,18 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Test
         }
         
         /// <summary>
+        /// Test ImageOcrPhotoRecognizeBusinessCard
+        /// </summary>
+        [Test]
+        public void ImageOcrPhotoRecognizeBusinessCardTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //System.IO.Stream imageFile = null;
+            //var response = instance.ImageOcrPhotoRecognizeBusinessCard(imageFile);
+            //Assert.IsInstanceOf<BusinessCardRecognitionResult> (response, "response is BusinessCardRecognitionResult");
+        }
+        
+        /// <summary>
         /// Test ImageOcrPhotoRecognizeReceipt
         /// </summary>
         [Test]
