@@ -5,7 +5,7 @@ The powerful Optical Character Recognition (OCR) APIs let you convert scanned im
 This C# SDK is for the [Cloudmersive OCR API](https://www.cloudmersive.com/ocr-api):
 
 - API version: v1
-- SDK version: 1.3.7
+- SDK version: 1.3.8
 - Build package: io.swagger.codegen.languages.CSharpClientCodegen
 
 <a name="frameworks-supported"></a>
@@ -106,6 +106,7 @@ Class | Method | HTTP request | Description
 *ImageOcrApi* | [**ImageOcrImageLinesWithLocation**](docs/ImageOcrApi.md#imageocrimagelineswithlocation) | **POST** /ocr/image/to/lines-with-location | Convert a scanned image into words with location
 *ImageOcrApi* | [**ImageOcrImageWordsWithLocation**](docs/ImageOcrApi.md#imageocrimagewordswithlocation) | **POST** /ocr/image/to/words-with-location | Convert a scanned image into words with location
 *ImageOcrApi* | [**ImageOcrPhotoRecognizeBusinessCard**](docs/ImageOcrApi.md#imageocrphotorecognizebusinesscard) | **POST** /ocr/photo/recognize/business-card | Recognize a photo of a business card, extract key business information
+*ImageOcrApi* | [**ImageOcrPhotoRecognizeForm**](docs/ImageOcrApi.md#imageocrphotorecognizeform) | **POST** /ocr/photo/recognize/form | Recognize a photo of a form, extract key fields and business information
 *ImageOcrApi* | [**ImageOcrPhotoRecognizeReceipt**](docs/ImageOcrApi.md#imageocrphotorecognizereceipt) | **POST** /ocr/photo/recognize/receipt | Recognize a photo of a receipt, extract key business information
 *ImageOcrApi* | [**ImageOcrPhotoToText**](docs/ImageOcrApi.md#imageocrphotototext) | **POST** /ocr/photo/toText | Convert a photo of a document into text
 *ImageOcrApi* | [**ImageOcrPhotoWordsWithLocation**](docs/ImageOcrApi.md#imageocrphotowordswithlocation) | **POST** /ocr/photo/to/words-with-location | Convert a photo of a document or receipt into words with location
@@ -125,6 +126,10 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [Model.BusinessCardRecognitionResult](docs/BusinessCardRecognitionResult.md)
+ - [Model.FieldResult](docs/FieldResult.md)
+ - [Model.FormDefinitionTemplate](docs/FormDefinitionTemplate.md)
+ - [Model.FormFieldDefinition](docs/FormFieldDefinition.md)
+ - [Model.FormRecognitionResult](docs/FormRecognitionResult.md)
  - [Model.GetPageAngleResult](docs/GetPageAngleResult.md)
  - [Model.ImageToLinesWithLocationResult](docs/ImageToLinesWithLocationResult.md)
  - [Model.ImageToTextResponse](docs/ImageToTextResponse.md)
@@ -139,6 +144,7 @@ Class | Method | HTTP request | Description
  - [Model.PdfToTextResponse](docs/PdfToTextResponse.md)
  - [Model.PdfToWordsWithLocationResult](docs/PdfToWordsWithLocationResult.md)
  - [Model.PhotoToWordsWithLocationResult](docs/PhotoToWordsWithLocationResult.md)
+ - [Model.ReceiptLineItem](docs/ReceiptLineItem.md)
  - [Model.ReceiptRecognitionResult](docs/ReceiptRecognitionResult.md)
 
 

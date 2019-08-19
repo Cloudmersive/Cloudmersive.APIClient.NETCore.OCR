@@ -91,6 +91,14 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Test
             // TODO unit test for the property 'BusinessName'
         }
         /// <summary>
+        /// Test the property 'BusinessWebsite'
+        /// </summary>
+        [Test]
+        public void BusinessWebsiteTest()
+        {
+            // TODO unit test for the property 'BusinessWebsite'
+        }
+        /// <summary>
         /// Test the property 'AddressString'
         /// </summary>
         [Test]
@@ -105,6 +113,14 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Test
         public void PhoneNumberTest()
         {
             // TODO unit test for the property 'PhoneNumber'
+        }
+        /// <summary>
+        /// Test the property 'ReceiptItems'
+        /// </summary>
+        [Test]
+        public void ReceiptItemsTest()
+        {
+            // TODO unit test for the property 'ReceiptItems'
         }
         /// <summary>
         /// Test the property 'ReceiptTotal'

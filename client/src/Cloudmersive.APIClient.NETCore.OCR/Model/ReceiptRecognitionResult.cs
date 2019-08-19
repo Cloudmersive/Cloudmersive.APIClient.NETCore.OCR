@@ -36,16 +36,20 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <param name="Successful">Successful.</param>
         /// <param name="Timestamp">Timestamp.</param>
         /// <param name="BusinessName">BusinessName.</param>
+        /// <param name="BusinessWebsite">BusinessWebsite.</param>
         /// <param name="AddressString">AddressString.</param>
         /// <param name="PhoneNumber">PhoneNumber.</param>
+        /// <param name="ReceiptItems">ReceiptItems.</param>
         /// <param name="ReceiptTotal">ReceiptTotal.</param>
-        public ReceiptRecognitionResult(bool? Successful = default(bool?), DateTime? Timestamp = default(DateTime?), string BusinessName = default(string), string AddressString = default(string), string PhoneNumber = default(string), double? ReceiptTotal = default(double?))
+        public ReceiptRecognitionResult(bool? Successful = default(bool?), DateTime? Timestamp = default(DateTime?), string BusinessName = default(string), string BusinessWebsite = default(string), string AddressString = default(string), string PhoneNumber = default(string), List<ReceiptLineItem> ReceiptItems = default(List<ReceiptLineItem>), double? ReceiptTotal = default(double?))
         {
             this.Successful = Successful;
             this.Timestamp = Timestamp;
             this.BusinessName = BusinessName;
+            this.BusinessWebsite = BusinessWebsite;
             this.AddressString = AddressString;
             this.PhoneNumber = PhoneNumber;
+            this.ReceiptItems = ReceiptItems;
             this.ReceiptTotal = ReceiptTotal;
         }
         
@@ -68,6 +72,12 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         public string BusinessName { get; set; }
 
         /// <summary>
+        /// Gets or Sets BusinessWebsite
+        /// </summary>
+        [DataMember(Name="BusinessWebsite", EmitDefaultValue=false)]
+        public string BusinessWebsite { get; set; }
+
+        /// <summary>
         /// Gets or Sets AddressString
         /// </summary>
         [DataMember(Name="AddressString", EmitDefaultValue=false)]
@@ -78,6 +88,12 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// </summary>
         [DataMember(Name="PhoneNumber", EmitDefaultValue=false)]
         public string PhoneNumber { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ReceiptItems
+        /// </summary>
+        [DataMember(Name="ReceiptItems", EmitDefaultValue=false)]
+        public List<ReceiptLineItem> ReceiptItems { get; set; }
 
         /// <summary>
         /// Gets or Sets ReceiptTotal
@@ -96,8 +112,10 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
             sb.Append("  Successful: ").Append(Successful).Append("\n");
             sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
             sb.Append("  BusinessName: ").Append(BusinessName).Append("\n");
+            sb.Append("  BusinessWebsite: ").Append(BusinessWebsite).Append("\n");
             sb.Append("  AddressString: ").Append(AddressString).Append("\n");
             sb.Append("  PhoneNumber: ").Append(PhoneNumber).Append("\n");
+            sb.Append("  ReceiptItems: ").Append(ReceiptItems).Append("\n");
             sb.Append("  ReceiptTotal: ").Append(ReceiptTotal).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -149,6 +167,11 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
                     this.BusinessName.Equals(input.BusinessName))
                 ) && 
                 (
+                    this.BusinessWebsite == input.BusinessWebsite ||
+                    (this.BusinessWebsite != null &&
+                    this.BusinessWebsite.Equals(input.BusinessWebsite))
+                ) && 
+                (
                     this.AddressString == input.AddressString ||
                     (this.AddressString != null &&
                     this.AddressString.Equals(input.AddressString))
@@ -157,6 +180,11 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
                     this.PhoneNumber == input.PhoneNumber ||
                     (this.PhoneNumber != null &&
                     this.PhoneNumber.Equals(input.PhoneNumber))
+                ) && 
+                (
+                    this.ReceiptItems == input.ReceiptItems ||
+                    this.ReceiptItems != null &&
+                    this.ReceiptItems.SequenceEqual(input.ReceiptItems)
                 ) && 
                 (
                     this.ReceiptTotal == input.ReceiptTotal ||
@@ -180,10 +208,14 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
                     hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
                 if (this.BusinessName != null)
                     hashCode = hashCode * 59 + this.BusinessName.GetHashCode();
+                if (this.BusinessWebsite != null)
+                    hashCode = hashCode * 59 + this.BusinessWebsite.GetHashCode();
                 if (this.AddressString != null)
                     hashCode = hashCode * 59 + this.AddressString.GetHashCode();
                 if (this.PhoneNumber != null)
                     hashCode = hashCode * 59 + this.PhoneNumber.GetHashCode();
+                if (this.ReceiptItems != null)
+                    hashCode = hashCode * 59 + this.ReceiptItems.GetHashCode();
                 if (this.ReceiptTotal != null)
                     hashCode = hashCode * 59 + this.ReceiptTotal.GetHashCode();
                 return hashCode;

@@ -105,6 +105,21 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Test
         }
         
         /// <summary>
+        /// Test ImageOcrPhotoRecognizeForm
+        /// </summary>
+        [Test]
+        public void ImageOcrPhotoRecognizeFormTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //System.IO.Stream imageFile = null;
+            //string formTemplateDefinition = null;
+            //string recognitionMode = null;
+            //string language = null;
+            //var response = instance.ImageOcrPhotoRecognizeForm(imageFile, formTemplateDefinition, recognitionMode, language);
+            //Assert.IsInstanceOf<FormRecognitionResult> (response, "response is FormRecognitionResult");
+        }
+        
+        /// <summary>
         /// Test ImageOcrPhotoRecognizeReceipt
         /// </summary>
         [Test]
@@ -112,8 +127,10 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //System.IO.Stream imageFile = null;
+            //string formTemplateDefinition = null;
+            //string recognitionMode = null;
             //string language = null;
-            //var response = instance.ImageOcrPhotoRecognizeReceipt(imageFile, language);
+            //var response = instance.ImageOcrPhotoRecognizeReceipt(imageFile, formTemplateDefinition, recognitionMode, language);
             //Assert.IsInstanceOf<ReceiptRecognitionResult> (response, "response is ReceiptRecognitionResult");
         }
         
