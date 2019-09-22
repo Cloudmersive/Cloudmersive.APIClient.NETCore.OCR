@@ -33,7 +33,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageToLinesWithLocationResult" /> class.
         /// </summary>
-        /// <param name="Successful">Successful.</param>
+        /// <param name="Successful">True if successful, false otherwise.</param>
         /// <param name="Lines">Words in the image.</param>
         public ImageToLinesWithLocationResult(bool? Successful = default(bool?), List<OcrLineElement> Lines = default(List<OcrLineElement>))
         {
@@ -42,8 +42,9 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         }
         
         /// <summary>
-        /// Gets or Sets Successful
+        /// True if successful, false otherwise
         /// </summary>
+        /// <value>True if successful, false otherwise</value>
         [DataMember(Name="Successful", EmitDefaultValue=false)]
         public bool? Successful { get; set; }
 

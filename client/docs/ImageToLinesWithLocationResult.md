@@ -3,7 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Successful** | **bool?** |  | [optional] 
+**Successful** | **bool?** | True if successful, false otherwise | [optional] 
 **Lines** | [**List&lt;OcrLineElement&gt;**](OcrLineElement.md) | Words in the image | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

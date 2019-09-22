@@ -33,25 +33,36 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="FormRecognitionResult" /> class.
         /// </summary>
-        /// <param name="Successful">Successful.</param>
-        /// <param name="FieldValueExtractionResult">FieldValueExtractionResult.</param>
-        public FormRecognitionResult(bool? Successful = default(bool?), List<FieldResult> FieldValueExtractionResult = default(List<FieldResult>))
+        /// <param name="Successful">True if the operation was successful, false otherwise.</param>
+        /// <param name="FieldValueExtractionResult">Result of form field OCR data extraction.</param>
+        /// <param name="TableValueExtractionResults">Result of form table OCR data extraction.</param>
+        public FormRecognitionResult(bool? Successful = default(bool?), List<FieldResult> FieldValueExtractionResult = default(List<FieldResult>), List<TableResult> TableValueExtractionResults = default(List<TableResult>))
         {
             this.Successful = Successful;
             this.FieldValueExtractionResult = FieldValueExtractionResult;
+            this.TableValueExtractionResults = TableValueExtractionResults;
         }
         
         /// <summary>
-        /// Gets or Sets Successful
+        /// True if the operation was successful, false otherwise
         /// </summary>
+        /// <value>True if the operation was successful, false otherwise</value>
         [DataMember(Name="Successful", EmitDefaultValue=false)]
         public bool? Successful { get; set; }
 
         /// <summary>
-        /// Gets or Sets FieldValueExtractionResult
+        /// Result of form field OCR data extraction
         /// </summary>
+        /// <value>Result of form field OCR data extraction</value>
         [DataMember(Name="FieldValueExtractionResult", EmitDefaultValue=false)]
         public List<FieldResult> FieldValueExtractionResult { get; set; }
+
+        /// <summary>
+        /// Result of form table OCR data extraction
+        /// </summary>
+        /// <value>Result of form table OCR data extraction</value>
+        [DataMember(Name="TableValueExtractionResults", EmitDefaultValue=false)]
+        public List<TableResult> TableValueExtractionResults { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -63,6 +74,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
             sb.Append("class FormRecognitionResult {\n");
             sb.Append("  Successful: ").Append(Successful).Append("\n");
             sb.Append("  FieldValueExtractionResult: ").Append(FieldValueExtractionResult).Append("\n");
+            sb.Append("  TableValueExtractionResults: ").Append(TableValueExtractionResults).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -106,6 +118,11 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
                     this.FieldValueExtractionResult == input.FieldValueExtractionResult ||
                     this.FieldValueExtractionResult != null &&
                     this.FieldValueExtractionResult.SequenceEqual(input.FieldValueExtractionResult)
+                ) && 
+                (
+                    this.TableValueExtractionResults == input.TableValueExtractionResults ||
+                    this.TableValueExtractionResults != null &&
+                    this.TableValueExtractionResults.SequenceEqual(input.TableValueExtractionResults)
                 );
         }
 
@@ -122,6 +139,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
                     hashCode = hashCode * 59 + this.Successful.GetHashCode();
                 if (this.FieldValueExtractionResult != null)
                     hashCode = hashCode * 59 + this.FieldValueExtractionResult.GetHashCode();
+                if (this.TableValueExtractionResults != null)
+                    hashCode = hashCode * 59 + this.TableValueExtractionResults.GetHashCode();
                 return hashCode;
             }
         }

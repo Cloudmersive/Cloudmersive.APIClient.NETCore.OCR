@@ -33,19 +33,19 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="FormFieldDefinition" /> class.
         /// </summary>
-        /// <param name="FieldID">FieldID.</param>
-        /// <param name="LeftAnchor">LeftAnchor.</param>
-        /// <param name="TopAnchor">TopAnchor.</param>
-        /// <param name="AnchorMode">AnchorMode.</param>
-        /// <param name="DataType">DataType.</param>
-        /// <param name="TargetDigitCount">TargetDigitCount.</param>
-        /// <param name="MinimumCharacterCount">MinimumCharacterCount.</param>
-        /// <param name="AllowNumericDigits">AllowNumericDigits.</param>
-        /// <param name="VerticalAlignmentType">VerticalAlignmentType.</param>
-        /// <param name="HorizontalAlignmentType">HorizontalAlignmentType.</param>
-        /// <param name="TargetFieldWidthRelative">TargetFieldWidthRelative.</param>
-        /// <param name="TargetFieldHeightRelative">TargetFieldHeightRelative.</param>
-        /// <param name="Ignore">Ignore.</param>
+        /// <param name="FieldID">The identifier of the field; use this to identify which field is being referenced.</param>
+        /// <param name="LeftAnchor">Optional - the left-hand anchor of the field.</param>
+        /// <param name="TopAnchor">Optional - the top anchor of the field.</param>
+        /// <param name="AnchorMode">Optional - the matching mode for the anchor.  Possible values are Complete (requires the entire anchor to match) and Partial (allows only part of the anchor to match).  Default is Partial..</param>
+        /// <param name="DataType">The data type of the field; possible values are INTEGER (Integer value), STRING (Arbitrary string value, spaces are permitted), DATE (Date in a structured format), DECIMAL (Decimal number), ALPHANUMERIC (Continuous alphanumeric string with no spaces), STRINGNOWHITESPACE (A string that contains no whitespace characters), SERIALNUMBER (A serial-number style string that contains letters and numbers, and certain symbols; must contain at least one number), ALPHAONLY (Alphabet characters only, no numbers or symbols or whitespace).</param>
+        /// <param name="TargetDigitCount">Optional - the target number of digits in the field; useful for fixed-length fields.</param>
+        /// <param name="MinimumCharacterCount">Optional - the target number of digits in the field; useful for fixed-length fields.</param>
+        /// <param name="AllowNumericDigits">Optional - set to false to block values that contain numeric digits, set to true to allow numeric digits.</param>
+        /// <param name="VerticalAlignmentType">Vertical alignment of target value area relative to the field anchor; Possible values are VCenter, Top, Bottom.</param>
+        /// <param name="HorizontalAlignmentType">Horizontal alignment of target value area relative to the field anchor; Possible values are Left, Right.</param>
+        /// <param name="TargetFieldWidthRelative">Optional - scale factor for target field width - relative to width of field title; a value of 1.0 indicates the target value area has the same width as the field value as occurring in the image; a value of 2.0 would indicate that the target value area has 2 times the width of the field value as occurring in the image..</param>
+        /// <param name="TargetFieldHeightRelative">Optional - scale factor for target field height - relative to height of field title.</param>
+        /// <param name="Ignore">Optional - Ignore any result items that contain a partial or complete match with these text strings.</param>
         public FormFieldDefinition(string FieldID = default(string), string LeftAnchor = default(string), string TopAnchor = default(string), string AnchorMode = default(string), string DataType = default(string), int? TargetDigitCount = default(int?), int? MinimumCharacterCount = default(int?), bool? AllowNumericDigits = default(bool?), string VerticalAlignmentType = default(string), string HorizontalAlignmentType = default(string), double? TargetFieldWidthRelative = default(double?), double? TargetFieldHeightRelative = default(double?), List<string> Ignore = default(List<string>))
         {
             this.FieldID = FieldID;
@@ -64,80 +64,93 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         }
         
         /// <summary>
-        /// Gets or Sets FieldID
+        /// The identifier of the field; use this to identify which field is being referenced
         /// </summary>
+        /// <value>The identifier of the field; use this to identify which field is being referenced</value>
         [DataMember(Name="FieldID", EmitDefaultValue=false)]
         public string FieldID { get; set; }
 
         /// <summary>
-        /// Gets or Sets LeftAnchor
+        /// Optional - the left-hand anchor of the field
         /// </summary>
+        /// <value>Optional - the left-hand anchor of the field</value>
         [DataMember(Name="LeftAnchor", EmitDefaultValue=false)]
         public string LeftAnchor { get; set; }
 
         /// <summary>
-        /// Gets or Sets TopAnchor
+        /// Optional - the top anchor of the field
         /// </summary>
+        /// <value>Optional - the top anchor of the field</value>
         [DataMember(Name="TopAnchor", EmitDefaultValue=false)]
         public string TopAnchor { get; set; }
 
         /// <summary>
-        /// Gets or Sets AnchorMode
+        /// Optional - the matching mode for the anchor.  Possible values are Complete (requires the entire anchor to match) and Partial (allows only part of the anchor to match).  Default is Partial.
         /// </summary>
+        /// <value>Optional - the matching mode for the anchor.  Possible values are Complete (requires the entire anchor to match) and Partial (allows only part of the anchor to match).  Default is Partial.</value>
         [DataMember(Name="AnchorMode", EmitDefaultValue=false)]
         public string AnchorMode { get; set; }
 
         /// <summary>
-        /// Gets or Sets DataType
+        /// The data type of the field; possible values are INTEGER (Integer value), STRING (Arbitrary string value, spaces are permitted), DATE (Date in a structured format), DECIMAL (Decimal number), ALPHANUMERIC (Continuous alphanumeric string with no spaces), STRINGNOWHITESPACE (A string that contains no whitespace characters), SERIALNUMBER (A serial-number style string that contains letters and numbers, and certain symbols; must contain at least one number), ALPHAONLY (Alphabet characters only, no numbers or symbols or whitespace)
         /// </summary>
+        /// <value>The data type of the field; possible values are INTEGER (Integer value), STRING (Arbitrary string value, spaces are permitted), DATE (Date in a structured format), DECIMAL (Decimal number), ALPHANUMERIC (Continuous alphanumeric string with no spaces), STRINGNOWHITESPACE (A string that contains no whitespace characters), SERIALNUMBER (A serial-number style string that contains letters and numbers, and certain symbols; must contain at least one number), ALPHAONLY (Alphabet characters only, no numbers or symbols or whitespace)</value>
         [DataMember(Name="DataType", EmitDefaultValue=false)]
         public string DataType { get; set; }
 
         /// <summary>
-        /// Gets or Sets TargetDigitCount
+        /// Optional - the target number of digits in the field; useful for fixed-length fields
         /// </summary>
+        /// <value>Optional - the target number of digits in the field; useful for fixed-length fields</value>
         [DataMember(Name="TargetDigitCount", EmitDefaultValue=false)]
         public int? TargetDigitCount { get; set; }
 
         /// <summary>
-        /// Gets or Sets MinimumCharacterCount
+        /// Optional - the target number of digits in the field; useful for fixed-length fields
         /// </summary>
+        /// <value>Optional - the target number of digits in the field; useful for fixed-length fields</value>
         [DataMember(Name="MinimumCharacterCount", EmitDefaultValue=false)]
         public int? MinimumCharacterCount { get; set; }
 
         /// <summary>
-        /// Gets or Sets AllowNumericDigits
+        /// Optional - set to false to block values that contain numeric digits, set to true to allow numeric digits
         /// </summary>
+        /// <value>Optional - set to false to block values that contain numeric digits, set to true to allow numeric digits</value>
         [DataMember(Name="AllowNumericDigits", EmitDefaultValue=false)]
         public bool? AllowNumericDigits { get; set; }
 
         /// <summary>
-        /// Gets or Sets VerticalAlignmentType
+        /// Vertical alignment of target value area relative to the field anchor; Possible values are VCenter, Top, Bottom
         /// </summary>
+        /// <value>Vertical alignment of target value area relative to the field anchor; Possible values are VCenter, Top, Bottom</value>
         [DataMember(Name="VerticalAlignmentType", EmitDefaultValue=false)]
         public string VerticalAlignmentType { get; set; }
 
         /// <summary>
-        /// Gets or Sets HorizontalAlignmentType
+        /// Horizontal alignment of target value area relative to the field anchor; Possible values are Left, Right
         /// </summary>
+        /// <value>Horizontal alignment of target value area relative to the field anchor; Possible values are Left, Right</value>
         [DataMember(Name="HorizontalAlignmentType", EmitDefaultValue=false)]
         public string HorizontalAlignmentType { get; set; }
 
         /// <summary>
-        /// Gets or Sets TargetFieldWidthRelative
+        /// Optional - scale factor for target field width - relative to width of field title; a value of 1.0 indicates the target value area has the same width as the field value as occurring in the image; a value of 2.0 would indicate that the target value area has 2 times the width of the field value as occurring in the image.
         /// </summary>
+        /// <value>Optional - scale factor for target field width - relative to width of field title; a value of 1.0 indicates the target value area has the same width as the field value as occurring in the image; a value of 2.0 would indicate that the target value area has 2 times the width of the field value as occurring in the image.</value>
         [DataMember(Name="TargetFieldWidth_Relative", EmitDefaultValue=false)]
         public double? TargetFieldWidthRelative { get; set; }
 
         /// <summary>
-        /// Gets or Sets TargetFieldHeightRelative
+        /// Optional - scale factor for target field height - relative to height of field title
         /// </summary>
+        /// <value>Optional - scale factor for target field height - relative to height of field title</value>
         [DataMember(Name="TargetFieldHeight_Relative", EmitDefaultValue=false)]
         public double? TargetFieldHeightRelative { get; set; }
 
         /// <summary>
-        /// Gets or Sets Ignore
+        /// Optional - Ignore any result items that contain a partial or complete match with these text strings
         /// </summary>
+        /// <value>Optional - Ignore any result items that contain a partial or complete match with these text strings</value>
         [DataMember(Name="Ignore", EmitDefaultValue=false)]
         public List<string> Ignore { get; set; }
 

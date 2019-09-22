@@ -33,7 +33,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PhotoToWordsWithLocationResult" /> class.
         /// </summary>
-        /// <param name="Successful">Successful.</param>
+        /// <param name="Successful">True if successful, false otherwise.</param>
         /// <param name="TextElements">Word elements in the image.</param>
         /// <param name="DiagnosticImage">Typically null.  To analyze OCR performance, enable diagnostic mode by adding the HTTP header \&quot;DiagnosticMode\&quot; with the value \&quot;true\&quot;.  When this is true, a diagnostic image showing the details of the OCR result will be set in PNG format into DiagnosticImage..</param>
         public PhotoToWordsWithLocationResult(bool? Successful = default(bool?), List<OcrPhotoTextElement> TextElements = default(List<OcrPhotoTextElement>), byte[] DiagnosticImage = default(byte[]))
@@ -44,8 +44,9 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         }
         
         /// <summary>
-        /// Gets or Sets Successful
+        /// True if successful, false otherwise
         /// </summary>
+        /// <value>True if successful, false otherwise</value>
         [DataMember(Name="Successful", EmitDefaultValue=false)]
         public bool? Successful { get; set; }
 

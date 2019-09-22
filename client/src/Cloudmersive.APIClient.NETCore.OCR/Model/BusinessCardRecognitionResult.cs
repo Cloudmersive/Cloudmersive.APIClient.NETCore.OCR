@@ -33,14 +33,14 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BusinessCardRecognitionResult" /> class.
         /// </summary>
-        /// <param name="Successful">Successful.</param>
-        /// <param name="PersonName">PersonName.</param>
-        /// <param name="PersonTitle">PersonTitle.</param>
-        /// <param name="BusinessName">BusinessName.</param>
-        /// <param name="AddressString">AddressString.</param>
-        /// <param name="PhoneNumber">PhoneNumber.</param>
-        /// <param name="EmailAddress">EmailAddress.</param>
-        /// <param name="Timestamp">Timestamp.</param>
+        /// <param name="Successful">True if the operation was successful, false otherwise.</param>
+        /// <param name="PersonName">The name of the person printed on the business card (if included on the business card).</param>
+        /// <param name="PersonTitle">The title of the person printed on the business card (if included on the business card).</param>
+        /// <param name="BusinessName">The name of the business printed on the business card (if included on the business card).</param>
+        /// <param name="AddressString">The address printed on the business card (if included on the business card).</param>
+        /// <param name="PhoneNumber">The phone number printed on the business card (if included on the business card).</param>
+        /// <param name="EmailAddress">The email address printed on the business card (if included on the business card).</param>
+        /// <param name="Timestamp">The date and time printed on the business card (if included on the business card).</param>
         public BusinessCardRecognitionResult(bool? Successful = default(bool?), string PersonName = default(string), string PersonTitle = default(string), string BusinessName = default(string), string AddressString = default(string), string PhoneNumber = default(string), string EmailAddress = default(string), DateTime? Timestamp = default(DateTime?))
         {
             this.Successful = Successful;
@@ -54,50 +54,58 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         }
         
         /// <summary>
-        /// Gets or Sets Successful
+        /// True if the operation was successful, false otherwise
         /// </summary>
+        /// <value>True if the operation was successful, false otherwise</value>
         [DataMember(Name="Successful", EmitDefaultValue=false)]
         public bool? Successful { get; set; }
 
         /// <summary>
-        /// Gets or Sets PersonName
+        /// The name of the person printed on the business card (if included on the business card)
         /// </summary>
+        /// <value>The name of the person printed on the business card (if included on the business card)</value>
         [DataMember(Name="PersonName", EmitDefaultValue=false)]
         public string PersonName { get; set; }
 
         /// <summary>
-        /// Gets or Sets PersonTitle
+        /// The title of the person printed on the business card (if included on the business card)
         /// </summary>
+        /// <value>The title of the person printed on the business card (if included on the business card)</value>
         [DataMember(Name="PersonTitle", EmitDefaultValue=false)]
         public string PersonTitle { get; set; }
 
         /// <summary>
-        /// Gets or Sets BusinessName
+        /// The name of the business printed on the business card (if included on the business card)
         /// </summary>
+        /// <value>The name of the business printed on the business card (if included on the business card)</value>
         [DataMember(Name="BusinessName", EmitDefaultValue=false)]
         public string BusinessName { get; set; }
 
         /// <summary>
-        /// Gets or Sets AddressString
+        /// The address printed on the business card (if included on the business card)
         /// </summary>
+        /// <value>The address printed on the business card (if included on the business card)</value>
         [DataMember(Name="AddressString", EmitDefaultValue=false)]
         public string AddressString { get; set; }
 
         /// <summary>
-        /// Gets or Sets PhoneNumber
+        /// The phone number printed on the business card (if included on the business card)
         /// </summary>
+        /// <value>The phone number printed on the business card (if included on the business card)</value>
         [DataMember(Name="PhoneNumber", EmitDefaultValue=false)]
         public string PhoneNumber { get; set; }
 
         /// <summary>
-        /// Gets or Sets EmailAddress
+        /// The email address printed on the business card (if included on the business card)
         /// </summary>
+        /// <value>The email address printed on the business card (if included on the business card)</value>
         [DataMember(Name="EmailAddress", EmitDefaultValue=false)]
         public string EmailAddress { get; set; }
 
         /// <summary>
-        /// Gets or Sets Timestamp
+        /// The date and time printed on the business card (if included on the business card)
         /// </summary>
+        /// <value>The date and time printed on the business card (if included on the business card)</value>
         [DataMember(Name="Timestamp", EmitDefaultValue=false)]
         public DateTime? Timestamp { get; set; }
 

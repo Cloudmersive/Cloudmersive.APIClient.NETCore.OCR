@@ -25,35 +25,35 @@ using SwaggerDateConverter = Cloudmersive.APIClient.NETCore.OCR.Client.SwaggerDa
 namespace Cloudmersive.APIClient.NETCore.OCR.Model
 {
     /// <summary>
-    /// Receipt line item, comprised of a product or item and a price (if available)
+    /// The recognition result of one cell in one row in a table of a form
     /// </summary>
     [DataContract]
-    public partial class ReceiptLineItem :  IEquatable<ReceiptLineItem>, IValidatableObject
+    public partial class TableCellResult :  IEquatable<TableCellResult>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ReceiptLineItem" /> class.
+        /// Initializes a new instance of the <see cref="TableCellResult" /> class.
         /// </summary>
-        /// <param name="ItemDescription">Description of the item.</param>
-        /// <param name="ItemPrice">Price of the item if available.</param>
-        public ReceiptLineItem(string ItemDescription = default(string), double? ItemPrice = default(double?))
+        /// <param name="ColumnID">The ID of the column.</param>
+        /// <param name="CellValues">Result cell value(s) extracted.</param>
+        public TableCellResult(string ColumnID = default(string), List<OcrPhotoTextElement> CellValues = default(List<OcrPhotoTextElement>))
         {
-            this.ItemDescription = ItemDescription;
-            this.ItemPrice = ItemPrice;
+            this.ColumnID = ColumnID;
+            this.CellValues = CellValues;
         }
         
         /// <summary>
-        /// Description of the item
+        /// The ID of the column
         /// </summary>
-        /// <value>Description of the item</value>
-        [DataMember(Name="ItemDescription", EmitDefaultValue=false)]
-        public string ItemDescription { get; set; }
+        /// <value>The ID of the column</value>
+        [DataMember(Name="ColumnID", EmitDefaultValue=false)]
+        public string ColumnID { get; set; }
 
         /// <summary>
-        /// Price of the item if available
+        /// Result cell value(s) extracted
         /// </summary>
-        /// <value>Price of the item if available</value>
-        [DataMember(Name="ItemPrice", EmitDefaultValue=false)]
-        public double? ItemPrice { get; set; }
+        /// <value>Result cell value(s) extracted</value>
+        [DataMember(Name="CellValues", EmitDefaultValue=false)]
+        public List<OcrPhotoTextElement> CellValues { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -62,9 +62,9 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ReceiptLineItem {\n");
-            sb.Append("  ItemDescription: ").Append(ItemDescription).Append("\n");
-            sb.Append("  ItemPrice: ").Append(ItemPrice).Append("\n");
+            sb.Append("class TableCellResult {\n");
+            sb.Append("  ColumnID: ").Append(ColumnID).Append("\n");
+            sb.Append("  CellValues: ").Append(CellValues).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -85,29 +85,29 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as ReceiptLineItem);
+            return this.Equals(input as TableCellResult);
         }
 
         /// <summary>
-        /// Returns true if ReceiptLineItem instances are equal
+        /// Returns true if TableCellResult instances are equal
         /// </summary>
-        /// <param name="input">Instance of ReceiptLineItem to be compared</param>
+        /// <param name="input">Instance of TableCellResult to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ReceiptLineItem input)
+        public bool Equals(TableCellResult input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.ItemDescription == input.ItemDescription ||
-                    (this.ItemDescription != null &&
-                    this.ItemDescription.Equals(input.ItemDescription))
+                    this.ColumnID == input.ColumnID ||
+                    (this.ColumnID != null &&
+                    this.ColumnID.Equals(input.ColumnID))
                 ) && 
                 (
-                    this.ItemPrice == input.ItemPrice ||
-                    (this.ItemPrice != null &&
-                    this.ItemPrice.Equals(input.ItemPrice))
+                    this.CellValues == input.CellValues ||
+                    this.CellValues != null &&
+                    this.CellValues.SequenceEqual(input.CellValues)
                 );
         }
 
@@ -120,10 +120,10 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.ItemDescription != null)
-                    hashCode = hashCode * 59 + this.ItemDescription.GetHashCode();
-                if (this.ItemPrice != null)
-                    hashCode = hashCode * 59 + this.ItemPrice.GetHashCode();
+                if (this.ColumnID != null)
+                    hashCode = hashCode * 59 + this.ColumnID.GetHashCode();
+                if (this.CellValues != null)
+                    hashCode = hashCode * 59 + this.CellValues.GetHashCode();
                 return hashCode;
             }
         }

@@ -1,10 +1,10 @@
-# Cloudmersive.APIClient.NETCore.OCR.Model.ReceiptLineItem
+# Cloudmersive.APIClient.NETCore.OCR.Model.TableCellResult
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ItemDescription** | **string** | Description of the item | [optional] 
-**ItemPrice** | **double?** | Price of the item if available | [optional] 
+**ColumnID** | **string** | The ID of the column | [optional] 
+**CellValues** | [**List&lt;OcrPhotoTextElement&gt;**](OcrPhotoTextElement.md) | Result cell value(s) extracted | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

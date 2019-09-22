@@ -33,17 +33,27 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="FormDefinitionTemplate" /> class.
         /// </summary>
-        /// <param name="FieldDefinitions">FieldDefinitions.</param>
-        public FormDefinitionTemplate(List<FormFieldDefinition> FieldDefinitions = default(List<FormFieldDefinition>))
+        /// <param name="FieldDefinitions">Field definitions in the template; a field is comprised of a key/value pair.</param>
+        /// <param name="TableDefinitions">Table definitions in the template; a table is comprised of columns and rows and exists in a 2-dimensional layout; a common example of a table would be an invoice.</param>
+        public FormDefinitionTemplate(List<FormFieldDefinition> FieldDefinitions = default(List<FormFieldDefinition>), List<FormTableDefinition> TableDefinitions = default(List<FormTableDefinition>))
         {
             this.FieldDefinitions = FieldDefinitions;
+            this.TableDefinitions = TableDefinitions;
         }
         
         /// <summary>
-        /// Gets or Sets FieldDefinitions
+        /// Field definitions in the template; a field is comprised of a key/value pair
         /// </summary>
+        /// <value>Field definitions in the template; a field is comprised of a key/value pair</value>
         [DataMember(Name="FieldDefinitions", EmitDefaultValue=false)]
         public List<FormFieldDefinition> FieldDefinitions { get; set; }
+
+        /// <summary>
+        /// Table definitions in the template; a table is comprised of columns and rows and exists in a 2-dimensional layout; a common example of a table would be an invoice
+        /// </summary>
+        /// <value>Table definitions in the template; a table is comprised of columns and rows and exists in a 2-dimensional layout; a common example of a table would be an invoice</value>
+        [DataMember(Name="TableDefinitions", EmitDefaultValue=false)]
+        public List<FormTableDefinition> TableDefinitions { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -54,6 +64,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
             var sb = new StringBuilder();
             sb.Append("class FormDefinitionTemplate {\n");
             sb.Append("  FieldDefinitions: ").Append(FieldDefinitions).Append("\n");
+            sb.Append("  TableDefinitions: ").Append(TableDefinitions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -92,6 +103,11 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
                     this.FieldDefinitions == input.FieldDefinitions ||
                     this.FieldDefinitions != null &&
                     this.FieldDefinitions.SequenceEqual(input.FieldDefinitions)
+                ) && 
+                (
+                    this.TableDefinitions == input.TableDefinitions ||
+                    this.TableDefinitions != null &&
+                    this.TableDefinitions.SequenceEqual(input.TableDefinitions)
                 );
         }
 
@@ -106,6 +122,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
                 int hashCode = 41;
                 if (this.FieldDefinitions != null)
                     hashCode = hashCode * 59 + this.FieldDefinitions.GetHashCode();
+                if (this.TableDefinitions != null)
+                    hashCode = hashCode * 59 + this.TableDefinitions.GetHashCode();
                 return hashCode;
             }
         }

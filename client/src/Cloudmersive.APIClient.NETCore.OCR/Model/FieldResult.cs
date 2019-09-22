@@ -33,8 +33,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="FieldResult" /> class.
         /// </summary>
-        /// <param name="TargetField">TargetField.</param>
-        /// <param name="FieldValues">FieldValues.</param>
+        /// <param name="TargetField">Target field to extract from the form.</param>
+        /// <param name="FieldValues">Result field value(s) extracted.</param>
         public FieldResult(FormFieldDefinition TargetField = default(FormFieldDefinition), List<OcrPhotoTextElement> FieldValues = default(List<OcrPhotoTextElement>))
         {
             this.TargetField = TargetField;
@@ -42,14 +42,16 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         }
         
         /// <summary>
-        /// Gets or Sets TargetField
+        /// Target field to extract from the form
         /// </summary>
+        /// <value>Target field to extract from the form</value>
         [DataMember(Name="TargetField", EmitDefaultValue=false)]
         public FormFieldDefinition TargetField { get; set; }
 
         /// <summary>
-        /// Gets or Sets FieldValues
+        /// Result field value(s) extracted
         /// </summary>
+        /// <value>Result field value(s) extracted</value>
         [DataMember(Name="FieldValues", EmitDefaultValue=false)]
         public List<OcrPhotoTextElement> FieldValues { get; set; }
 
