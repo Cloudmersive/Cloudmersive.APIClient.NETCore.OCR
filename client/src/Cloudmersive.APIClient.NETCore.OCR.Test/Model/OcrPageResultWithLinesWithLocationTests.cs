@@ -67,20 +67,20 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Test
 
 
         /// <summary>
-        /// Test the property 'Successful'
-        /// </summary>
-        [Test]
-        public void SuccessfulTest()
-        {
-            // TODO unit test for the property 'Successful'
-        }
-        /// <summary>
         /// Test the property 'PageNumber'
         /// </summary>
         [Test]
         public void PageNumberTest()
         {
             // TODO unit test for the property 'PageNumber'
+        }
+        /// <summary>
+        /// Test the property 'Successful'
+        /// </summary>
+        [Test]
+        public void SuccessfulTest()
+        {
+            // TODO unit test for the property 'Successful'
         }
         /// <summary>
         /// Test the property 'Lines'

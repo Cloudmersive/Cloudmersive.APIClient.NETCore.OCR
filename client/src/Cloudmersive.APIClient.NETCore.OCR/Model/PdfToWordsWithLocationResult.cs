@@ -33,8 +33,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PdfToWordsWithLocationResult" /> class.
         /// </summary>
-        /// <param name="Successful">Successful.</param>
-        /// <param name="OcrPages">OcrPages.</param>
+        /// <param name="Successful">True if successful, false otherwise.</param>
+        /// <param name="OcrPages">OCR page results.</param>
         public PdfToWordsWithLocationResult(bool? Successful = default(bool?), List<OcrPageResultWithWordsWithLocation> OcrPages = default(List<OcrPageResultWithWordsWithLocation>))
         {
             this.Successful = Successful;
@@ -42,14 +42,16 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         }
         
         /// <summary>
-        /// Gets or Sets Successful
+        /// True if successful, false otherwise
         /// </summary>
+        /// <value>True if successful, false otherwise</value>
         [DataMember(Name="Successful", EmitDefaultValue=false)]
         public bool? Successful { get; set; }
 
         /// <summary>
-        /// Gets or Sets OcrPages
+        /// OCR page results
         /// </summary>
+        /// <value>OCR page results</value>
         [DataMember(Name="OcrPages", EmitDefaultValue=false)]
         public List<OcrPageResultWithWordsWithLocation> OcrPages { get; set; }
 

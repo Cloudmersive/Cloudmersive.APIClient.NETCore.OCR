@@ -5,7 +5,7 @@ The powerful Optical Character Recognition (OCR) APIs let you convert scanned im
 This C# SDK is for the [Cloudmersive OCR API](https://www.cloudmersive.com/ocr-api):
 
 - API version: v1
-- SDK version: 1.3.9
+- SDK version: 1.4.0
 - Build package: io.swagger.codegen.languages.CSharpClientCodegen
 
 <a name="frameworks-supported"></a>
@@ -146,6 +146,7 @@ Class | Method | HTTP request | Description
  - [Model.PdfToTextResponse](docs/PdfToTextResponse.md)
  - [Model.PdfToWordsWithLocationResult](docs/PdfToWordsWithLocationResult.md)
  - [Model.PhotoToWordsWithLocationResult](docs/PhotoToWordsWithLocationResult.md)
+ - [Model.Point](docs/Point.md)
  - [Model.ReceiptLineItem](docs/ReceiptLineItem.md)
  - [Model.ReceiptRecognitionResult](docs/ReceiptRecognitionResult.md)
  - [Model.TableCellResult](docs/TableCellResult.md)

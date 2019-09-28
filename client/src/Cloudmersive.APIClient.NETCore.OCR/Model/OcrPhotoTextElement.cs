@@ -38,14 +38,16 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <param name="YTop">Y location of the top edge of the word in pixels.</param>
         /// <param name="Width">Width of the word in pixels.</param>
         /// <param name="Height">Height of the word in pixels.</param>
+        /// <param name="BoundingPoints">Points that form the bounding polygon around the text.</param>
         /// <param name="ConfidenceLevel">Confidence level of the machine learning result; possible values are 0.0 (lowest accuracy) - 1.0 (highest accuracy).</param>
-        public OcrPhotoTextElement(string Text = default(string), int? XLeft = default(int?), int? YTop = default(int?), int? Width = default(int?), int? Height = default(int?), double? ConfidenceLevel = default(double?))
+        public OcrPhotoTextElement(string Text = default(string), int? XLeft = default(int?), int? YTop = default(int?), int? Width = default(int?), int? Height = default(int?), List<Point> BoundingPoints = default(List<Point>), double? ConfidenceLevel = default(double?))
         {
             this.Text = Text;
             this.XLeft = XLeft;
             this.YTop = YTop;
             this.Width = Width;
             this.Height = Height;
+            this.BoundingPoints = BoundingPoints;
             this.ConfidenceLevel = ConfidenceLevel;
         }
         
@@ -85,6 +87,13 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         public int? Height { get; set; }
 
         /// <summary>
+        /// Points that form the bounding polygon around the text
+        /// </summary>
+        /// <value>Points that form the bounding polygon around the text</value>
+        [DataMember(Name="BoundingPoints", EmitDefaultValue=false)]
+        public List<Point> BoundingPoints { get; set; }
+
+        /// <summary>
         /// Confidence level of the machine learning result; possible values are 0.0 (lowest accuracy) - 1.0 (highest accuracy)
         /// </summary>
         /// <value>Confidence level of the machine learning result; possible values are 0.0 (lowest accuracy) - 1.0 (highest accuracy)</value>
@@ -104,6 +113,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
             sb.Append("  YTop: ").Append(YTop).Append("\n");
             sb.Append("  Width: ").Append(Width).Append("\n");
             sb.Append("  Height: ").Append(Height).Append("\n");
+            sb.Append("  BoundingPoints: ").Append(BoundingPoints).Append("\n");
             sb.Append("  ConfidenceLevel: ").Append(ConfidenceLevel).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -165,6 +175,11 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
                     this.Height.Equals(input.Height))
                 ) && 
                 (
+                    this.BoundingPoints == input.BoundingPoints ||
+                    this.BoundingPoints != null &&
+                    this.BoundingPoints.SequenceEqual(input.BoundingPoints)
+                ) && 
+                (
                     this.ConfidenceLevel == input.ConfidenceLevel ||
                     (this.ConfidenceLevel != null &&
                     this.ConfidenceLevel.Equals(input.ConfidenceLevel))
@@ -190,6 +205,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
                     hashCode = hashCode * 59 + this.Width.GetHashCode();
                 if (this.Height != null)
                     hashCode = hashCode * 59 + this.Height.GetHashCode();
+                if (this.BoundingPoints != null)
+                    hashCode = hashCode * 59 + this.BoundingPoints.GetHashCode();
                 if (this.ConfidenceLevel != null)
                     hashCode = hashCode * 59 + this.ConfidenceLevel.GetHashCode();
                 return hashCode;

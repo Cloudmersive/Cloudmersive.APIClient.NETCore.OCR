@@ -107,6 +107,14 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Test
             // TODO unit test for the property 'Height'
         }
         /// <summary>
+        /// Test the property 'BoundingPoints'
+        /// </summary>
+        [Test]
+        public void BoundingPointsTest()
+        {
+            // TODO unit test for the property 'BoundingPoints'
+        }
+        /// <summary>
         /// Test the property 'ConfidenceLevel'
         /// </summary>
         [Test]

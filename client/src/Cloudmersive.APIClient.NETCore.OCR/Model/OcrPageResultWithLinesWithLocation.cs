@@ -33,28 +33,29 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OcrPageResultWithLinesWithLocation" /> class.
         /// </summary>
-        /// <param name="Successful">Successful.</param>
         /// <param name="PageNumber">Page number of the page that was OCR-ed, starting with 1 for the first page in the PDF file.</param>
+        /// <param name="Successful">True if successful, false otherwise.</param>
         /// <param name="Lines">Word elements in the image.</param>
-        public OcrPageResultWithLinesWithLocation(bool? Successful = default(bool?), int? PageNumber = default(int?), List<OcrLineElement> Lines = default(List<OcrLineElement>))
+        public OcrPageResultWithLinesWithLocation(int? PageNumber = default(int?), bool? Successful = default(bool?), List<OcrLineElement> Lines = default(List<OcrLineElement>))
         {
-            this.Successful = Successful;
             this.PageNumber = PageNumber;
+            this.Successful = Successful;
             this.Lines = Lines;
         }
         
-        /// <summary>
-        /// Gets or Sets Successful
-        /// </summary>
-        [DataMember(Name="Successful", EmitDefaultValue=false)]
-        public bool? Successful { get; set; }
-
         /// <summary>
         /// Page number of the page that was OCR-ed, starting with 1 for the first page in the PDF file
         /// </summary>
         /// <value>Page number of the page that was OCR-ed, starting with 1 for the first page in the PDF file</value>
         [DataMember(Name="PageNumber", EmitDefaultValue=false)]
         public int? PageNumber { get; set; }
+
+        /// <summary>
+        /// True if successful, false otherwise
+        /// </summary>
+        /// <value>True if successful, false otherwise</value>
+        [DataMember(Name="Successful", EmitDefaultValue=false)]
+        public bool? Successful { get; set; }
 
         /// <summary>
         /// Word elements in the image
@@ -71,8 +72,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         {
             var sb = new StringBuilder();
             sb.Append("class OcrPageResultWithLinesWithLocation {\n");
-            sb.Append("  Successful: ").Append(Successful).Append("\n");
             sb.Append("  PageNumber: ").Append(PageNumber).Append("\n");
+            sb.Append("  Successful: ").Append(Successful).Append("\n");
             sb.Append("  Lines: ").Append(Lines).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -109,14 +110,14 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
 
             return 
                 (
-                    this.Successful == input.Successful ||
-                    (this.Successful != null &&
-                    this.Successful.Equals(input.Successful))
-                ) && 
-                (
                     this.PageNumber == input.PageNumber ||
                     (this.PageNumber != null &&
                     this.PageNumber.Equals(input.PageNumber))
+                ) && 
+                (
+                    this.Successful == input.Successful ||
+                    (this.Successful != null &&
+                    this.Successful.Equals(input.Successful))
                 ) && 
                 (
                     this.Lines == input.Lines ||
@@ -134,10 +135,10 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Successful != null)
-                    hashCode = hashCode * 59 + this.Successful.GetHashCode();
                 if (this.PageNumber != null)
                     hashCode = hashCode * 59 + this.PageNumber.GetHashCode();
+                if (this.Successful != null)
+                    hashCode = hashCode * 59 + this.Successful.GetHashCode();
                 if (this.Lines != null)
                     hashCode = hashCode * 59 + this.Lines.GetHashCode();
                 return hashCode;
