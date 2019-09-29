@@ -109,6 +109,27 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         /// <returns>ApiResponse of byte[]</returns>
         ApiResponse<byte[]> PreprocessingUnrotateWithHttpInfo (System.IO.Stream imageFile);
         /// <summary>
+        /// Detect and unrotate a document image (advanced)
+        /// </summary>
+        /// <remarks>
+        /// Detect and unrotate an image of a document (e.g. that was scanned at an angle) using deep learning.  Great for document scanning applications; once unskewed, this image is perfect for converting to PDF using the Convert API or optical character recognition using the OCR API.
+        /// </remarks>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
+        /// <returns>byte[]</returns>
+        byte[] PreprocessingUnrotateAdvanced (System.IO.Stream imageFile);
+
+        /// <summary>
+        /// Detect and unrotate a document image (advanced)
+        /// </summary>
+        /// <remarks>
+        /// Detect and unrotate an image of a document (e.g. that was scanned at an angle) using deep learning.  Great for document scanning applications; once unskewed, this image is perfect for converting to PDF using the Convert API or optical character recognition using the OCR API.
+        /// </remarks>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
+        /// <returns>ApiResponse of byte[]</returns>
+        ApiResponse<byte[]> PreprocessingUnrotateAdvancedWithHttpInfo (System.IO.Stream imageFile);
+        /// <summary>
         /// Detect and unskew a photo of a document
         /// </summary>
         /// <remarks>
@@ -215,6 +236,27 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
         /// <returns>Task of ApiResponse (byte[])</returns>
         System.Threading.Tasks.Task<ApiResponse<byte[]>> PreprocessingUnrotateAsyncWithHttpInfo (System.IO.Stream imageFile);
+        /// <summary>
+        /// Detect and unrotate a document image (advanced)
+        /// </summary>
+        /// <remarks>
+        /// Detect and unrotate an image of a document (e.g. that was scanned at an angle) using deep learning.  Great for document scanning applications; once unskewed, this image is perfect for converting to PDF using the Convert API or optical character recognition using the OCR API.
+        /// </remarks>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
+        /// <returns>Task of byte[]</returns>
+        System.Threading.Tasks.Task<byte[]> PreprocessingUnrotateAdvancedAsync (System.IO.Stream imageFile);
+
+        /// <summary>
+        /// Detect and unrotate a document image (advanced)
+        /// </summary>
+        /// <remarks>
+        /// Detect and unrotate an image of a document (e.g. that was scanned at an angle) using deep learning.  Great for document scanning applications; once unskewed, this image is perfect for converting to PDF using the Convert API or optical character recognition using the OCR API.
+        /// </remarks>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
+        /// <returns>Task of ApiResponse (byte[])</returns>
+        System.Threading.Tasks.Task<ApiResponse<byte[]>> PreprocessingUnrotateAdvancedAsyncWithHttpInfo (System.IO.Stream imageFile);
         /// <summary>
         /// Detect and unskew a photo of a document
         /// </summary>
@@ -932,6 +974,157 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             if (ExceptionFactory != null)
             {
                 Exception exception = ExceptionFactory("PreprocessingUnrotate", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<byte[]>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (byte[]) Configuration.ApiClient.Deserialize(localVarResponse, typeof(byte[])));
+        }
+
+        /// <summary>
+        /// Detect and unrotate a document image (advanced) Detect and unrotate an image of a document (e.g. that was scanned at an angle) using deep learning.  Great for document scanning applications; once unskewed, this image is perfect for converting to PDF using the Convert API or optical character recognition using the OCR API.
+        /// </summary>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
+        /// <returns>byte[]</returns>
+        public byte[] PreprocessingUnrotateAdvanced (System.IO.Stream imageFile)
+        {
+             ApiResponse<byte[]> localVarResponse = PreprocessingUnrotateAdvancedWithHttpInfo(imageFile);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Detect and unrotate a document image (advanced) Detect and unrotate an image of a document (e.g. that was scanned at an angle) using deep learning.  Great for document scanning applications; once unskewed, this image is perfect for converting to PDF using the Convert API or optical character recognition using the OCR API.
+        /// </summary>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
+        /// <returns>ApiResponse of byte[]</returns>
+        public ApiResponse< byte[] > PreprocessingUnrotateAdvancedWithHttpInfo (System.IO.Stream imageFile)
+        {
+            // verify the required parameter 'imageFile' is set
+            if (imageFile == null)
+                throw new ApiException(400, "Missing required parameter 'imageFile' when calling PreprocessingApi->PreprocessingUnrotateAdvanced");
+
+            var localVarPath = "/ocr/preprocessing/image/unrotate/advanced";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "multipart/form-data"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (imageFile != null) localVarFileParams.Add("imageFile", Configuration.ApiClient.ParameterToFile("imageFile", imageFile));
+
+            // authentication (Apikey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Apikey")))
+            {
+                localVarHeaderParams["Apikey"] = Configuration.GetApiKeyWithPrefix("Apikey");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("PreprocessingUnrotateAdvanced", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<byte[]>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (byte[]) Configuration.ApiClient.Deserialize(localVarResponse, typeof(byte[])));
+        }
+
+        /// <summary>
+        /// Detect and unrotate a document image (advanced) Detect and unrotate an image of a document (e.g. that was scanned at an angle) using deep learning.  Great for document scanning applications; once unskewed, this image is perfect for converting to PDF using the Convert API or optical character recognition using the OCR API.
+        /// </summary>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
+        /// <returns>Task of byte[]</returns>
+        public async System.Threading.Tasks.Task<byte[]> PreprocessingUnrotateAdvancedAsync (System.IO.Stream imageFile)
+        {
+             ApiResponse<byte[]> localVarResponse = await PreprocessingUnrotateAdvancedAsyncWithHttpInfo(imageFile);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Detect and unrotate a document image (advanced) Detect and unrotate an image of a document (e.g. that was scanned at an angle) using deep learning.  Great for document scanning applications; once unskewed, this image is perfect for converting to PDF using the Convert API or optical character recognition using the OCR API.
+        /// </summary>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
+        /// <returns>Task of ApiResponse (byte[])</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<byte[]>> PreprocessingUnrotateAdvancedAsyncWithHttpInfo (System.IO.Stream imageFile)
+        {
+            // verify the required parameter 'imageFile' is set
+            if (imageFile == null)
+                throw new ApiException(400, "Missing required parameter 'imageFile' when calling PreprocessingApi->PreprocessingUnrotateAdvanced");
+
+            var localVarPath = "/ocr/preprocessing/image/unrotate/advanced";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "multipart/form-data"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (imageFile != null) localVarFileParams.Add("imageFile", Configuration.ApiClient.ParameterToFile("imageFile", imageFile));
+
+            // authentication (Apikey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Apikey")))
+            {
+                localVarHeaderParams["Apikey"] = Configuration.GetApiKeyWithPrefix("Apikey");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("PreprocessingUnrotateAdvanced", localVarResponse);
                 if (exception != null) throw exception;
             }
 

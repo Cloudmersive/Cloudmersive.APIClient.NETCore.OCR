@@ -113,6 +113,18 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Test
         }
         
         /// <summary>
+        /// Test PreprocessingUnrotateAdvanced
+        /// </summary>
+        [Test]
+        public void PreprocessingUnrotateAdvancedTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //System.IO.Stream imageFile = null;
+            //var response = instance.PreprocessingUnrotateAdvanced(imageFile);
+            //Assert.IsInstanceOf<byte[]> (response, "response is byte[]");
+        }
+        
+        /// <summary>
         /// Test PreprocessingUnskew
         /// </summary>
         [Test]

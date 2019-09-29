@@ -5,7 +5,7 @@ The powerful Optical Character Recognition (OCR) APIs let you convert scanned im
 This C# SDK is for the [Cloudmersive OCR API](https://www.cloudmersive.com/ocr-api):
 
 - API version: v1
-- SDK version: 1.4.0
+- SDK version: 1.4.1
 - Build package: io.swagger.codegen.languages.CSharpClientCodegen
 
 <a name="frameworks-supported"></a>
@@ -118,6 +118,7 @@ Class | Method | HTTP request | Description
 *PreprocessingApi* | [**PreprocessingBinarizeAdvanced**](docs/PreprocessingApi.md#preprocessingbinarizeadvanced) | **POST** /ocr/preprocessing/image/binarize/advanced | Convert an image of text into a binary (light and dark) view with ML
 *PreprocessingApi* | [**PreprocessingGetPageAngle**](docs/PreprocessingApi.md#preprocessinggetpageangle) | **POST** /ocr/preprocessing/image/get-page-angle | Get the angle of the page / document / receipt
 *PreprocessingApi* | [**PreprocessingUnrotate**](docs/PreprocessingApi.md#preprocessingunrotate) | **POST** /ocr/preprocessing/image/unrotate | Detect and unrotate a document image
+*PreprocessingApi* | [**PreprocessingUnrotateAdvanced**](docs/PreprocessingApi.md#preprocessingunrotateadvanced) | **POST** /ocr/preprocessing/image/unrotate/advanced | Detect and unrotate a document image (advanced)
 *PreprocessingApi* | [**PreprocessingUnskew**](docs/PreprocessingApi.md#preprocessingunskew) | **POST** /ocr/preprocessing/image/unskew | Detect and unskew a photo of a document
 *ReceiptsApi* | [**ReceiptsPhotoToCSV**](docs/ReceiptsApi.md#receiptsphototocsv) | **POST** /ocr/receipts/photo/to/csv | Convert a photo of a receipt into a CSV file containing structured information from the receipt
 

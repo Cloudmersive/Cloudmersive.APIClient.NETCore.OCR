@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**PreprocessingBinarizeAdvanced**](PreprocessingApi.md#preprocessingbinarizeadvanced) | **POST** /ocr/preprocessing/image/binarize/advanced | Convert an image of text into a binary (light and dark) view with ML
 [**PreprocessingGetPageAngle**](PreprocessingApi.md#preprocessinggetpageangle) | **POST** /ocr/preprocessing/image/get-page-angle | Get the angle of the page / document / receipt
 [**PreprocessingUnrotate**](PreprocessingApi.md#preprocessingunrotate) | **POST** /ocr/preprocessing/image/unrotate | Detect and unrotate a document image
+[**PreprocessingUnrotateAdvanced**](PreprocessingApi.md#preprocessingunrotateadvanced) | **POST** /ocr/preprocessing/image/unrotate/advanced | Detect and unrotate a document image (advanced)
 [**PreprocessingUnskew**](PreprocessingApi.md#preprocessingunskew) | **POST** /ocr/preprocessing/image/unskew | Detect and unskew a photo of a document
 
 
@@ -248,6 +249,72 @@ namespace Example
             catch (Exception e)
             {
                 Debug.Print("Exception when calling PreprocessingApi.PreprocessingUnrotate: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **imageFile** | **System.IO.Stream**| Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported. | 
+
+### Return type
+
+**byte[]**
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="preprocessingunrotateadvanced"></a>
+# **PreprocessingUnrotateAdvanced**
+> byte[] PreprocessingUnrotateAdvanced (System.IO.Stream imageFile)
+
+Detect and unrotate a document image (advanced)
+
+Detect and unrotate an image of a document (e.g. that was scanned at an angle) using deep learning.  Great for document scanning applications; once unskewed, this image is perfect for converting to PDF using the Convert API or optical character recognition using the OCR API.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using Cloudmersive.APIClient.NETCore.OCR.Api;
+using Cloudmersive.APIClient.NETCore.OCR.Client;
+using Cloudmersive.APIClient.NETCore.OCR.Model;
+
+namespace Example
+{
+    public class PreprocessingUnrotateAdvancedExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: Apikey
+            Configuration.Default.AddApiKey("Apikey", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Apikey", "Bearer");
+
+            var apiInstance = new PreprocessingApi();
+            var imageFile = new System.IO.Stream(); // System.IO.Stream | Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.
+
+            try
+            {
+                // Detect and unrotate a document image (advanced)
+                byte[] result = apiInstance.PreprocessingUnrotateAdvanced(imageFile);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling PreprocessingApi.PreprocessingUnrotateAdvanced: " + e.Message );
             }
         }
     }
