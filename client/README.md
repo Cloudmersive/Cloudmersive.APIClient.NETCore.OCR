@@ -5,7 +5,7 @@ The powerful Optical Character Recognition (OCR) APIs let you convert scanned im
 This C# SDK is for the [Cloudmersive OCR API](https://www.cloudmersive.com/ocr-api):
 
 - API version: v1
-- SDK version: 1.4.2
+- SDK version: 1.4.3
 - Build package: io.swagger.codegen.languages.CSharpClientCodegen
 
 <a name="frameworks-supported"></a>
@@ -107,6 +107,7 @@ Class | Method | HTTP request | Description
 *ImageOcrApi* | [**ImageOcrImageWordsWithLocation**](docs/ImageOcrApi.md#imageocrimagewordswithlocation) | **POST** /ocr/image/to/words-with-location | Convert a scanned image into words with location
 *ImageOcrApi* | [**ImageOcrPhotoRecognizeBusinessCard**](docs/ImageOcrApi.md#imageocrphotorecognizebusinesscard) | **POST** /ocr/photo/recognize/business-card | Recognize a photo of a business card, extract key business information
 *ImageOcrApi* | [**ImageOcrPhotoRecognizeForm**](docs/ImageOcrApi.md#imageocrphotorecognizeform) | **POST** /ocr/photo/recognize/form | Recognize a photo of a form, extract key fields and business information
+*ImageOcrApi* | [**ImageOcrPhotoRecognizeFormAdvanced**](docs/ImageOcrApi.md#imageocrphotorecognizeformadvanced) | **POST** /ocr/photo/recognize/form/advanced | Recognize a photo of a form, extract key fields using stored templates
 *ImageOcrApi* | [**ImageOcrPhotoRecognizeReceipt**](docs/ImageOcrApi.md#imageocrphotorecognizereceipt) | **POST** /ocr/photo/recognize/receipt | Recognize a photo of a receipt, extract key business information
 *ImageOcrApi* | [**ImageOcrPhotoToText**](docs/ImageOcrApi.md#imageocrphotototext) | **POST** /ocr/photo/toText | Convert a photo of a document into text
 *ImageOcrApi* | [**ImageOcrPhotoWordsWithLocation**](docs/ImageOcrApi.md#imageocrphotowordswithlocation) | **POST** /ocr/photo/to/words-with-location | Convert a photo of a document or receipt into words with location

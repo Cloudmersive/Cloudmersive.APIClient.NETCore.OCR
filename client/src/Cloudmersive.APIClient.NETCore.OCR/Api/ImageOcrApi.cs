@@ -125,6 +125,35 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         /// <returns>ApiResponse of FormRecognitionResult</returns>
         ApiResponse<FormRecognitionResult> ImageOcrPhotoRecognizeFormWithHttpInfo (System.IO.Stream imageFile, string formTemplateDefinition = null, string recognitionMode = null, string preprocessing = null, string language = null);
         /// <summary>
+        /// Recognize a photo of a form, extract key fields using stored templates
+        /// </summary>
+        /// <remarks>
+        /// Analyzes a photograph of a form as input, and outputs key business fields and information.  Customzie data to be extracted by defining fields for the form.  Uses template definitions stored in Cloudmersive Configuration; to configure stored templates in a configuration bucket, log into Cloudmersive Management Portal and navigate to Settings &amp;gt; API Configuration &amp;gt; Create Bucket
+        /// </remarks>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
+        /// <param name="bucketID">Bucket ID of the Configuration Bucket storing the form templates (optional)</param>
+        /// <param name="bucketSecretKey">Bucket Secret Key of the Configuration Bucket storing the form templates (optional)</param>
+        /// <param name="recognitionMode">Optional, enable advanced recognition mode by specifying &#39;Advanced&#39;, enable handwriting recognition by specifying &#39;EnableHandwriting&#39;.  Default is disabled. (optional)</param>
+        /// <param name="preprocessing">Optional, preprocessing mode, default is &#39;Auto&#39;.  Possible values are None (no preprocessing of the image), and Auto (automatic image enhancement of the image - including automatic unrotation of the image - before OCR is applied; this is recommended).  Set this to &#39;None&#39; if you do not want to use automatic image unrotation and enhancement. (optional)</param>
+        /// <returns>FormRecognitionResult</returns>
+        FormRecognitionResult ImageOcrPhotoRecognizeFormAdvanced (System.IO.Stream imageFile, string bucketID = null, string bucketSecretKey = null, string recognitionMode = null, string preprocessing = null);
+
+        /// <summary>
+        /// Recognize a photo of a form, extract key fields using stored templates
+        /// </summary>
+        /// <remarks>
+        /// Analyzes a photograph of a form as input, and outputs key business fields and information.  Customzie data to be extracted by defining fields for the form.  Uses template definitions stored in Cloudmersive Configuration; to configure stored templates in a configuration bucket, log into Cloudmersive Management Portal and navigate to Settings &amp;gt; API Configuration &amp;gt; Create Bucket
+        /// </remarks>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
+        /// <param name="bucketID">Bucket ID of the Configuration Bucket storing the form templates (optional)</param>
+        /// <param name="bucketSecretKey">Bucket Secret Key of the Configuration Bucket storing the form templates (optional)</param>
+        /// <param name="recognitionMode">Optional, enable advanced recognition mode by specifying &#39;Advanced&#39;, enable handwriting recognition by specifying &#39;EnableHandwriting&#39;.  Default is disabled. (optional)</param>
+        /// <param name="preprocessing">Optional, preprocessing mode, default is &#39;Auto&#39;.  Possible values are None (no preprocessing of the image), and Auto (automatic image enhancement of the image - including automatic unrotation of the image - before OCR is applied; this is recommended).  Set this to &#39;None&#39; if you do not want to use automatic image unrotation and enhancement. (optional)</param>
+        /// <returns>ApiResponse of FormRecognitionResult</returns>
+        ApiResponse<FormRecognitionResult> ImageOcrPhotoRecognizeFormAdvancedWithHttpInfo (System.IO.Stream imageFile, string bucketID = null, string bucketSecretKey = null, string recognitionMode = null, string preprocessing = null);
+        /// <summary>
         /// Recognize a photo of a receipt, extract key business information
         /// </summary>
         /// <remarks>
@@ -328,6 +357,35 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         /// <param name="language">Optional, language of the input document, default is English (ENG).  Possible values are ENG (English), ARA (Arabic), ZHO (Chinese - Simplified), ZHO-HANT (Chinese - Traditional), ASM (Assamese), AFR (Afrikaans), AMH (Amharic), AZE (Azerbaijani), AZE-CYRL (Azerbaijani - Cyrillic), BEL (Belarusian), BEN (Bengali), BOD (Tibetan), BOS (Bosnian), BUL (Bulgarian), CAT (Catalan; Valencian), CEB (Cebuano), CES (Czech), CHR (Cherokee), CYM (Welsh), DAN (Danish), DEU (German), DZO (Dzongkha), ELL (Greek), ENM (Archaic/Middle English), EPO (Esperanto), EST (Estonian), EUS (Basque), FAS (Persian), FIN (Finnish), FRA (French), FRK (Frankish), FRM (Middle-French), GLE (Irish), GLG (Galician), GRC (Ancient Greek), HAT (Hatian), HEB (Hebrew), HIN (Hindi), HRV (Croatian), HUN (Hungarian), IKU (Inuktitut), IND (Indonesian), ISL (Icelandic), ITA (Italian), ITA-OLD (Old - Italian), JAV (Javanese), JPN (Japanese), KAN (Kannada), KAT (Georgian), KAT-OLD (Old-Georgian), KAZ (Kazakh), KHM (Central Khmer), KIR (Kirghiz), KOR (Korean), KUR (Kurdish), LAO (Lao), LAT (Latin), LAV (Latvian), LIT (Lithuanian), MAL (Malayalam), MAR (Marathi), MKD (Macedonian), MLT (Maltese), MSA (Malay), MYA (Burmese), NEP (Nepali), NLD (Dutch), NOR (Norwegian), ORI (Oriya), PAN (Panjabi), POL (Polish), POR (Portuguese), PUS (Pushto), RON (Romanian), RUS (Russian), SAN (Sanskrit), SIN (Sinhala), SLK (Slovak), SLV (Slovenian), SPA (Spanish), SPA-OLD (Old Spanish), SQI (Albanian), SRP (Serbian), SRP-LAT (Latin Serbian), SWA (Swahili), SWE (Swedish), SYR (Syriac), TAM (Tamil), TEL (Telugu), TGK (Tajik), TGL (Tagalog), THA (Thai), TIR (Tigrinya), TUR (Turkish), UIG (Uighur), UKR (Ukrainian), URD (Urdu), UZB (Uzbek), UZB-CYR (Cyrillic Uzbek), VIE (Vietnamese), YID (Yiddish) (optional)</param>
         /// <returns>Task of ApiResponse (FormRecognitionResult)</returns>
         System.Threading.Tasks.Task<ApiResponse<FormRecognitionResult>> ImageOcrPhotoRecognizeFormAsyncWithHttpInfo (System.IO.Stream imageFile, string formTemplateDefinition = null, string recognitionMode = null, string preprocessing = null, string language = null);
+        /// <summary>
+        /// Recognize a photo of a form, extract key fields using stored templates
+        /// </summary>
+        /// <remarks>
+        /// Analyzes a photograph of a form as input, and outputs key business fields and information.  Customzie data to be extracted by defining fields for the form.  Uses template definitions stored in Cloudmersive Configuration; to configure stored templates in a configuration bucket, log into Cloudmersive Management Portal and navigate to Settings &amp;gt; API Configuration &amp;gt; Create Bucket
+        /// </remarks>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
+        /// <param name="bucketID">Bucket ID of the Configuration Bucket storing the form templates (optional)</param>
+        /// <param name="bucketSecretKey">Bucket Secret Key of the Configuration Bucket storing the form templates (optional)</param>
+        /// <param name="recognitionMode">Optional, enable advanced recognition mode by specifying &#39;Advanced&#39;, enable handwriting recognition by specifying &#39;EnableHandwriting&#39;.  Default is disabled. (optional)</param>
+        /// <param name="preprocessing">Optional, preprocessing mode, default is &#39;Auto&#39;.  Possible values are None (no preprocessing of the image), and Auto (automatic image enhancement of the image - including automatic unrotation of the image - before OCR is applied; this is recommended).  Set this to &#39;None&#39; if you do not want to use automatic image unrotation and enhancement. (optional)</param>
+        /// <returns>Task of FormRecognitionResult</returns>
+        System.Threading.Tasks.Task<FormRecognitionResult> ImageOcrPhotoRecognizeFormAdvancedAsync (System.IO.Stream imageFile, string bucketID = null, string bucketSecretKey = null, string recognitionMode = null, string preprocessing = null);
+
+        /// <summary>
+        /// Recognize a photo of a form, extract key fields using stored templates
+        /// </summary>
+        /// <remarks>
+        /// Analyzes a photograph of a form as input, and outputs key business fields and information.  Customzie data to be extracted by defining fields for the form.  Uses template definitions stored in Cloudmersive Configuration; to configure stored templates in a configuration bucket, log into Cloudmersive Management Portal and navigate to Settings &amp;gt; API Configuration &amp;gt; Create Bucket
+        /// </remarks>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
+        /// <param name="bucketID">Bucket ID of the Configuration Bucket storing the form templates (optional)</param>
+        /// <param name="bucketSecretKey">Bucket Secret Key of the Configuration Bucket storing the form templates (optional)</param>
+        /// <param name="recognitionMode">Optional, enable advanced recognition mode by specifying &#39;Advanced&#39;, enable handwriting recognition by specifying &#39;EnableHandwriting&#39;.  Default is disabled. (optional)</param>
+        /// <param name="preprocessing">Optional, preprocessing mode, default is &#39;Auto&#39;.  Possible values are None (no preprocessing of the image), and Auto (automatic image enhancement of the image - including automatic unrotation of the image - before OCR is applied; this is recommended).  Set this to &#39;None&#39; if you do not want to use automatic image unrotation and enhancement. (optional)</param>
+        /// <returns>Task of ApiResponse (FormRecognitionResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<FormRecognitionResult>> ImageOcrPhotoRecognizeFormAdvancedAsyncWithHttpInfo (System.IO.Stream imageFile, string bucketID = null, string bucketSecretKey = null, string recognitionMode = null, string preprocessing = null);
         /// <summary>
         /// Recognize a photo of a receipt, extract key business information
         /// </summary>
@@ -1174,6 +1232,181 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             if (ExceptionFactory != null)
             {
                 Exception exception = ExceptionFactory("ImageOcrPhotoRecognizeForm", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<FormRecognitionResult>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (FormRecognitionResult) Configuration.ApiClient.Deserialize(localVarResponse, typeof(FormRecognitionResult)));
+        }
+
+        /// <summary>
+        /// Recognize a photo of a form, extract key fields using stored templates Analyzes a photograph of a form as input, and outputs key business fields and information.  Customzie data to be extracted by defining fields for the form.  Uses template definitions stored in Cloudmersive Configuration; to configure stored templates in a configuration bucket, log into Cloudmersive Management Portal and navigate to Settings &amp;gt; API Configuration &amp;gt; Create Bucket
+        /// </summary>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
+        /// <param name="bucketID">Bucket ID of the Configuration Bucket storing the form templates (optional)</param>
+        /// <param name="bucketSecretKey">Bucket Secret Key of the Configuration Bucket storing the form templates (optional)</param>
+        /// <param name="recognitionMode">Optional, enable advanced recognition mode by specifying &#39;Advanced&#39;, enable handwriting recognition by specifying &#39;EnableHandwriting&#39;.  Default is disabled. (optional)</param>
+        /// <param name="preprocessing">Optional, preprocessing mode, default is &#39;Auto&#39;.  Possible values are None (no preprocessing of the image), and Auto (automatic image enhancement of the image - including automatic unrotation of the image - before OCR is applied; this is recommended).  Set this to &#39;None&#39; if you do not want to use automatic image unrotation and enhancement. (optional)</param>
+        /// <returns>FormRecognitionResult</returns>
+        public FormRecognitionResult ImageOcrPhotoRecognizeFormAdvanced (System.IO.Stream imageFile, string bucketID = null, string bucketSecretKey = null, string recognitionMode = null, string preprocessing = null)
+        {
+             ApiResponse<FormRecognitionResult> localVarResponse = ImageOcrPhotoRecognizeFormAdvancedWithHttpInfo(imageFile, bucketID, bucketSecretKey, recognitionMode, preprocessing);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Recognize a photo of a form, extract key fields using stored templates Analyzes a photograph of a form as input, and outputs key business fields and information.  Customzie data to be extracted by defining fields for the form.  Uses template definitions stored in Cloudmersive Configuration; to configure stored templates in a configuration bucket, log into Cloudmersive Management Portal and navigate to Settings &amp;gt; API Configuration &amp;gt; Create Bucket
+        /// </summary>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
+        /// <param name="bucketID">Bucket ID of the Configuration Bucket storing the form templates (optional)</param>
+        /// <param name="bucketSecretKey">Bucket Secret Key of the Configuration Bucket storing the form templates (optional)</param>
+        /// <param name="recognitionMode">Optional, enable advanced recognition mode by specifying &#39;Advanced&#39;, enable handwriting recognition by specifying &#39;EnableHandwriting&#39;.  Default is disabled. (optional)</param>
+        /// <param name="preprocessing">Optional, preprocessing mode, default is &#39;Auto&#39;.  Possible values are None (no preprocessing of the image), and Auto (automatic image enhancement of the image - including automatic unrotation of the image - before OCR is applied; this is recommended).  Set this to &#39;None&#39; if you do not want to use automatic image unrotation and enhancement. (optional)</param>
+        /// <returns>ApiResponse of FormRecognitionResult</returns>
+        public ApiResponse< FormRecognitionResult > ImageOcrPhotoRecognizeFormAdvancedWithHttpInfo (System.IO.Stream imageFile, string bucketID = null, string bucketSecretKey = null, string recognitionMode = null, string preprocessing = null)
+        {
+            // verify the required parameter 'imageFile' is set
+            if (imageFile == null)
+                throw new ApiException(400, "Missing required parameter 'imageFile' when calling ImageOcrApi->ImageOcrPhotoRecognizeFormAdvanced");
+
+            var localVarPath = "/ocr/photo/recognize/form/advanced";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "multipart/form-data"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (bucketID != null) localVarHeaderParams.Add("bucketID", Configuration.ApiClient.ParameterToString(bucketID)); // header parameter
+            if (bucketSecretKey != null) localVarHeaderParams.Add("bucketSecretKey", Configuration.ApiClient.ParameterToString(bucketSecretKey)); // header parameter
+            if (recognitionMode != null) localVarHeaderParams.Add("recognitionMode", Configuration.ApiClient.ParameterToString(recognitionMode)); // header parameter
+            if (preprocessing != null) localVarHeaderParams.Add("preprocessing", Configuration.ApiClient.ParameterToString(preprocessing)); // header parameter
+            if (imageFile != null) localVarFileParams.Add("imageFile", Configuration.ApiClient.ParameterToFile("imageFile", imageFile));
+
+            // authentication (Apikey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Apikey")))
+            {
+                localVarHeaderParams["Apikey"] = Configuration.GetApiKeyWithPrefix("Apikey");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ImageOcrPhotoRecognizeFormAdvanced", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<FormRecognitionResult>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (FormRecognitionResult) Configuration.ApiClient.Deserialize(localVarResponse, typeof(FormRecognitionResult)));
+        }
+
+        /// <summary>
+        /// Recognize a photo of a form, extract key fields using stored templates Analyzes a photograph of a form as input, and outputs key business fields and information.  Customzie data to be extracted by defining fields for the form.  Uses template definitions stored in Cloudmersive Configuration; to configure stored templates in a configuration bucket, log into Cloudmersive Management Portal and navigate to Settings &amp;gt; API Configuration &amp;gt; Create Bucket
+        /// </summary>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
+        /// <param name="bucketID">Bucket ID of the Configuration Bucket storing the form templates (optional)</param>
+        /// <param name="bucketSecretKey">Bucket Secret Key of the Configuration Bucket storing the form templates (optional)</param>
+        /// <param name="recognitionMode">Optional, enable advanced recognition mode by specifying &#39;Advanced&#39;, enable handwriting recognition by specifying &#39;EnableHandwriting&#39;.  Default is disabled. (optional)</param>
+        /// <param name="preprocessing">Optional, preprocessing mode, default is &#39;Auto&#39;.  Possible values are None (no preprocessing of the image), and Auto (automatic image enhancement of the image - including automatic unrotation of the image - before OCR is applied; this is recommended).  Set this to &#39;None&#39; if you do not want to use automatic image unrotation and enhancement. (optional)</param>
+        /// <returns>Task of FormRecognitionResult</returns>
+        public async System.Threading.Tasks.Task<FormRecognitionResult> ImageOcrPhotoRecognizeFormAdvancedAsync (System.IO.Stream imageFile, string bucketID = null, string bucketSecretKey = null, string recognitionMode = null, string preprocessing = null)
+        {
+             ApiResponse<FormRecognitionResult> localVarResponse = await ImageOcrPhotoRecognizeFormAdvancedAsyncWithHttpInfo(imageFile, bucketID, bucketSecretKey, recognitionMode, preprocessing);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Recognize a photo of a form, extract key fields using stored templates Analyzes a photograph of a form as input, and outputs key business fields and information.  Customzie data to be extracted by defining fields for the form.  Uses template definitions stored in Cloudmersive Configuration; to configure stored templates in a configuration bucket, log into Cloudmersive Management Portal and navigate to Settings &amp;gt; API Configuration &amp;gt; Create Bucket
+        /// </summary>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="imageFile">Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.</param>
+        /// <param name="bucketID">Bucket ID of the Configuration Bucket storing the form templates (optional)</param>
+        /// <param name="bucketSecretKey">Bucket Secret Key of the Configuration Bucket storing the form templates (optional)</param>
+        /// <param name="recognitionMode">Optional, enable advanced recognition mode by specifying &#39;Advanced&#39;, enable handwriting recognition by specifying &#39;EnableHandwriting&#39;.  Default is disabled. (optional)</param>
+        /// <param name="preprocessing">Optional, preprocessing mode, default is &#39;Auto&#39;.  Possible values are None (no preprocessing of the image), and Auto (automatic image enhancement of the image - including automatic unrotation of the image - before OCR is applied; this is recommended).  Set this to &#39;None&#39; if you do not want to use automatic image unrotation and enhancement. (optional)</param>
+        /// <returns>Task of ApiResponse (FormRecognitionResult)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<FormRecognitionResult>> ImageOcrPhotoRecognizeFormAdvancedAsyncWithHttpInfo (System.IO.Stream imageFile, string bucketID = null, string bucketSecretKey = null, string recognitionMode = null, string preprocessing = null)
+        {
+            // verify the required parameter 'imageFile' is set
+            if (imageFile == null)
+                throw new ApiException(400, "Missing required parameter 'imageFile' when calling ImageOcrApi->ImageOcrPhotoRecognizeFormAdvanced");
+
+            var localVarPath = "/ocr/photo/recognize/form/advanced";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "multipart/form-data"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (bucketID != null) localVarHeaderParams.Add("bucketID", Configuration.ApiClient.ParameterToString(bucketID)); // header parameter
+            if (bucketSecretKey != null) localVarHeaderParams.Add("bucketSecretKey", Configuration.ApiClient.ParameterToString(bucketSecretKey)); // header parameter
+            if (recognitionMode != null) localVarHeaderParams.Add("recognitionMode", Configuration.ApiClient.ParameterToString(recognitionMode)); // header parameter
+            if (preprocessing != null) localVarHeaderParams.Add("preprocessing", Configuration.ApiClient.ParameterToString(preprocessing)); // header parameter
+            if (imageFile != null) localVarFileParams.Add("imageFile", Configuration.ApiClient.ParameterToFile("imageFile", imageFile));
+
+            // authentication (Apikey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("Apikey")))
+            {
+                localVarHeaderParams["Apikey"] = Configuration.GetApiKeyWithPrefix("Apikey");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ImageOcrPhotoRecognizeFormAdvanced", localVarResponse);
                 if (exception != null) throw exception;
             }
 

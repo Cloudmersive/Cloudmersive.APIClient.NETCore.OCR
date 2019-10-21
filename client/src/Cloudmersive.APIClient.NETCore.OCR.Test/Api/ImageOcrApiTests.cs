@@ -121,6 +121,22 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Test
         }
         
         /// <summary>
+        /// Test ImageOcrPhotoRecognizeFormAdvanced
+        /// </summary>
+        [Test]
+        public void ImageOcrPhotoRecognizeFormAdvancedTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //System.IO.Stream imageFile = null;
+            //string bucketID = null;
+            //string bucketSecretKey = null;
+            //string recognitionMode = null;
+            //string preprocessing = null;
+            //var response = instance.ImageOcrPhotoRecognizeFormAdvanced(imageFile, bucketID, bucketSecretKey, recognitionMode, preprocessing);
+            //Assert.IsInstanceOf<FormRecognitionResult> (response, "response is FormRecognitionResult");
+        }
+        
+        /// <summary>
         /// Test ImageOcrPhotoRecognizeReceipt
         /// </summary>
         [Test]

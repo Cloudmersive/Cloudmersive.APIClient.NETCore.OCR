@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**ImageOcrImageWordsWithLocation**](ImageOcrApi.md#imageocrimagewordswithlocation) | **POST** /ocr/image/to/words-with-location | Convert a scanned image into words with location
 [**ImageOcrPhotoRecognizeBusinessCard**](ImageOcrApi.md#imageocrphotorecognizebusinesscard) | **POST** /ocr/photo/recognize/business-card | Recognize a photo of a business card, extract key business information
 [**ImageOcrPhotoRecognizeForm**](ImageOcrApi.md#imageocrphotorecognizeform) | **POST** /ocr/photo/recognize/form | Recognize a photo of a form, extract key fields and business information
+[**ImageOcrPhotoRecognizeFormAdvanced**](ImageOcrApi.md#imageocrphotorecognizeformadvanced) | **POST** /ocr/photo/recognize/form/advanced | Recognize a photo of a form, extract key fields using stored templates
 [**ImageOcrPhotoRecognizeReceipt**](ImageOcrApi.md#imageocrphotorecognizereceipt) | **POST** /ocr/photo/recognize/receipt | Recognize a photo of a receipt, extract key business information
 [**ImageOcrPhotoToText**](ImageOcrApi.md#imageocrphotototext) | **POST** /ocr/photo/toText | Convert a photo of a document into text
 [**ImageOcrPhotoWordsWithLocation**](ImageOcrApi.md#imageocrphotowordswithlocation) | **POST** /ocr/photo/to/words-with-location | Convert a photo of a document or receipt into words with location
@@ -278,6 +279,80 @@ Name | Type | Description  | Notes
  **recognitionMode** | **string**| Optional, enable advanced recognition mode by specifying &#39;Advanced&#39;, enable handwriting recognition by specifying &#39;EnableHandwriting&#39;.  Default is disabled. | [optional] 
  **preprocessing** | **string**| Optional, preprocessing mode, default is &#39;Auto&#39;.  Possible values are None (no preprocessing of the image), and Auto (automatic image enhancement of the image - including automatic unrotation of the image - before OCR is applied; this is recommended).  Set this to &#39;None&#39; if you do not want to use automatic image unrotation and enhancement. | [optional] 
  **language** | **string**| Optional, language of the input document, default is English (ENG).  Possible values are ENG (English), ARA (Arabic), ZHO (Chinese - Simplified), ZHO-HANT (Chinese - Traditional), ASM (Assamese), AFR (Afrikaans), AMH (Amharic), AZE (Azerbaijani), AZE-CYRL (Azerbaijani - Cyrillic), BEL (Belarusian), BEN (Bengali), BOD (Tibetan), BOS (Bosnian), BUL (Bulgarian), CAT (Catalan; Valencian), CEB (Cebuano), CES (Czech), CHR (Cherokee), CYM (Welsh), DAN (Danish), DEU (German), DZO (Dzongkha), ELL (Greek), ENM (Archaic/Middle English), EPO (Esperanto), EST (Estonian), EUS (Basque), FAS (Persian), FIN (Finnish), FRA (French), FRK (Frankish), FRM (Middle-French), GLE (Irish), GLG (Galician), GRC (Ancient Greek), HAT (Hatian), HEB (Hebrew), HIN (Hindi), HRV (Croatian), HUN (Hungarian), IKU (Inuktitut), IND (Indonesian), ISL (Icelandic), ITA (Italian), ITA-OLD (Old - Italian), JAV (Javanese), JPN (Japanese), KAN (Kannada), KAT (Georgian), KAT-OLD (Old-Georgian), KAZ (Kazakh), KHM (Central Khmer), KIR (Kirghiz), KOR (Korean), KUR (Kurdish), LAO (Lao), LAT (Latin), LAV (Latvian), LIT (Lithuanian), MAL (Malayalam), MAR (Marathi), MKD (Macedonian), MLT (Maltese), MSA (Malay), MYA (Burmese), NEP (Nepali), NLD (Dutch), NOR (Norwegian), ORI (Oriya), PAN (Panjabi), POL (Polish), POR (Portuguese), PUS (Pushto), RON (Romanian), RUS (Russian), SAN (Sanskrit), SIN (Sinhala), SLK (Slovak), SLV (Slovenian), SPA (Spanish), SPA-OLD (Old Spanish), SQI (Albanian), SRP (Serbian), SRP-LAT (Latin Serbian), SWA (Swahili), SWE (Swedish), SYR (Syriac), TAM (Tamil), TEL (Telugu), TGK (Tajik), TGL (Tagalog), THA (Thai), TIR (Tigrinya), TUR (Turkish), UIG (Uighur), UKR (Ukrainian), URD (Urdu), UZB (Uzbek), UZB-CYR (Cyrillic Uzbek), VIE (Vietnamese), YID (Yiddish) | [optional] 
+
+### Return type
+
+[**FormRecognitionResult**](FormRecognitionResult.md)
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="imageocrphotorecognizeformadvanced"></a>
+# **ImageOcrPhotoRecognizeFormAdvanced**
+> FormRecognitionResult ImageOcrPhotoRecognizeFormAdvanced (System.IO.Stream imageFile, string bucketID = null, string bucketSecretKey = null, string recognitionMode = null, string preprocessing = null)
+
+Recognize a photo of a form, extract key fields using stored templates
+
+Analyzes a photograph of a form as input, and outputs key business fields and information.  Customzie data to be extracted by defining fields for the form.  Uses template definitions stored in Cloudmersive Configuration; to configure stored templates in a configuration bucket, log into Cloudmersive Management Portal and navigate to Settings &gt; API Configuration &gt; Create Bucket
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using Cloudmersive.APIClient.NETCore.OCR.Api;
+using Cloudmersive.APIClient.NETCore.OCR.Client;
+using Cloudmersive.APIClient.NETCore.OCR.Model;
+
+namespace Example
+{
+    public class ImageOcrPhotoRecognizeFormAdvancedExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: Apikey
+            Configuration.Default.AddApiKey("Apikey", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Apikey", "Bearer");
+
+            var apiInstance = new ImageOcrApi();
+            var imageFile = new System.IO.Stream(); // System.IO.Stream | Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.
+            var bucketID = bucketID_example;  // string | Bucket ID of the Configuration Bucket storing the form templates (optional) 
+            var bucketSecretKey = bucketSecretKey_example;  // string | Bucket Secret Key of the Configuration Bucket storing the form templates (optional) 
+            var recognitionMode = recognitionMode_example;  // string | Optional, enable advanced recognition mode by specifying 'Advanced', enable handwriting recognition by specifying 'EnableHandwriting'.  Default is disabled. (optional) 
+            var preprocessing = preprocessing_example;  // string | Optional, preprocessing mode, default is 'Auto'.  Possible values are None (no preprocessing of the image), and Auto (automatic image enhancement of the image - including automatic unrotation of the image - before OCR is applied; this is recommended).  Set this to 'None' if you do not want to use automatic image unrotation and enhancement. (optional) 
+
+            try
+            {
+                // Recognize a photo of a form, extract key fields using stored templates
+                FormRecognitionResult result = apiInstance.ImageOcrPhotoRecognizeFormAdvanced(imageFile, bucketID, bucketSecretKey, recognitionMode, preprocessing);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ImageOcrApi.ImageOcrPhotoRecognizeFormAdvanced: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **imageFile** | **System.IO.Stream**| Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported. | 
+ **bucketID** | **string**| Bucket ID of the Configuration Bucket storing the form templates | [optional] 
+ **bucketSecretKey** | **string**| Bucket Secret Key of the Configuration Bucket storing the form templates | [optional] 
+ **recognitionMode** | **string**| Optional, enable advanced recognition mode by specifying &#39;Advanced&#39;, enable handwriting recognition by specifying &#39;EnableHandwriting&#39;.  Default is disabled. | [optional] 
+ **preprocessing** | **string**| Optional, preprocessing mode, default is &#39;Auto&#39;.  Possible values are None (no preprocessing of the image), and Auto (automatic image enhancement of the image - including automatic unrotation of the image - before OCR is applied; this is recommended).  Set this to &#39;None&#39; if you do not want to use automatic image unrotation and enhancement. | [optional] 
 
 ### Return type
 
