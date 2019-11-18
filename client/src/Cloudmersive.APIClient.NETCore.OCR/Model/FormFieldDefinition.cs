@@ -36,7 +36,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <param name="FieldID">The identifier of the field; use this to identify which field is being referenced.</param>
         /// <param name="LeftAnchor">Optional - the left-hand anchor of the field.</param>
         /// <param name="TopAnchor">Optional - the top anchor of the field.</param>
-        /// <param name="AnchorMode">Optional - the matching mode for the anchor.  Possible values are Complete (requires the entire anchor to match) and Partial (allows only part of the anchor to match).  Default is Partial..</param>
+        /// <param name="AnchorMode">Optional - the matching mode for the anchor.  Possible values are Complete (requires the entire anchor to match) and Partial (allows only part of the anchor to match) and Horizontal (anchor must be laid out horizontally).  Default is Partial..</param>
         /// <param name="DataType">The data type of the field; possible values are INTEGER (Integer value), STRING (Arbitrary string value, spaces are permitted), DATE (Date in a structured format), DECIMAL (Decimal number), ALPHANUMERIC (Continuous alphanumeric string with no spaces), STRINGNOWHITESPACE (A string that contains no whitespace characters), SERIALNUMBER (A serial-number style string that contains letters and numbers, and certain symbols; must contain at least one number), ALPHAONLY (Alphabet characters only, no numbers or symbols or whitespace).</param>
         /// <param name="TargetDigitCount">Optional - the target number of digits in the field; useful for fixed-length fields.</param>
         /// <param name="MinimumCharacterCount">Optional - the target number of digits in the field; useful for fixed-length fields.</param>
@@ -45,8 +45,10 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <param name="HorizontalAlignmentType">Horizontal alignment of target value area relative to the field anchor; Possible values are Left, Right.</param>
         /// <param name="TargetFieldWidthRelative">Optional - scale factor for target field width - relative to width of field title; a value of 1.0 indicates the target value area has the same width as the field value as occurring in the image; a value of 2.0 would indicate that the target value area has 2 times the width of the field value as occurring in the image..</param>
         /// <param name="TargetFieldHeightRelative">Optional - scale factor for target field height - relative to height of field title.</param>
+        /// <param name="TargetFieldHorizontalAdjustment">Optional - horizontal adjestment in relative width of the field.</param>
+        /// <param name="TargetFieldVerticalAdjustment">Optional - vertical adjestment in relative height of the field.</param>
         /// <param name="Ignore">Optional - Ignore any result items that contain a partial or complete match with these text strings.</param>
-        public FormFieldDefinition(string FieldID = default(string), string LeftAnchor = default(string), string TopAnchor = default(string), string AnchorMode = default(string), string DataType = default(string), int? TargetDigitCount = default(int?), int? MinimumCharacterCount = default(int?), bool? AllowNumericDigits = default(bool?), string VerticalAlignmentType = default(string), string HorizontalAlignmentType = default(string), double? TargetFieldWidthRelative = default(double?), double? TargetFieldHeightRelative = default(double?), List<string> Ignore = default(List<string>))
+        public FormFieldDefinition(string FieldID = default(string), string LeftAnchor = default(string), string TopAnchor = default(string), string AnchorMode = default(string), string DataType = default(string), int? TargetDigitCount = default(int?), int? MinimumCharacterCount = default(int?), bool? AllowNumericDigits = default(bool?), string VerticalAlignmentType = default(string), string HorizontalAlignmentType = default(string), double? TargetFieldWidthRelative = default(double?), double? TargetFieldHeightRelative = default(double?), double? TargetFieldHorizontalAdjustment = default(double?), double? TargetFieldVerticalAdjustment = default(double?), List<string> Ignore = default(List<string>))
         {
             this.FieldID = FieldID;
             this.LeftAnchor = LeftAnchor;
@@ -60,6 +62,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
             this.HorizontalAlignmentType = HorizontalAlignmentType;
             this.TargetFieldWidthRelative = TargetFieldWidthRelative;
             this.TargetFieldHeightRelative = TargetFieldHeightRelative;
+            this.TargetFieldHorizontalAdjustment = TargetFieldHorizontalAdjustment;
+            this.TargetFieldVerticalAdjustment = TargetFieldVerticalAdjustment;
             this.Ignore = Ignore;
         }
         
@@ -85,9 +89,9 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         public string TopAnchor { get; set; }
 
         /// <summary>
-        /// Optional - the matching mode for the anchor.  Possible values are Complete (requires the entire anchor to match) and Partial (allows only part of the anchor to match).  Default is Partial.
+        /// Optional - the matching mode for the anchor.  Possible values are Complete (requires the entire anchor to match) and Partial (allows only part of the anchor to match) and Horizontal (anchor must be laid out horizontally).  Default is Partial.
         /// </summary>
-        /// <value>Optional - the matching mode for the anchor.  Possible values are Complete (requires the entire anchor to match) and Partial (allows only part of the anchor to match).  Default is Partial.</value>
+        /// <value>Optional - the matching mode for the anchor.  Possible values are Complete (requires the entire anchor to match) and Partial (allows only part of the anchor to match) and Horizontal (anchor must be laid out horizontally).  Default is Partial.</value>
         [DataMember(Name="AnchorMode", EmitDefaultValue=false)]
         public string AnchorMode { get; set; }
 
@@ -148,6 +152,20 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         public double? TargetFieldHeightRelative { get; set; }
 
         /// <summary>
+        /// Optional - horizontal adjestment in relative width of the field
+        /// </summary>
+        /// <value>Optional - horizontal adjestment in relative width of the field</value>
+        [DataMember(Name="TargetFieldHorizontalAdjustment", EmitDefaultValue=false)]
+        public double? TargetFieldHorizontalAdjustment { get; set; }
+
+        /// <summary>
+        /// Optional - vertical adjestment in relative height of the field
+        /// </summary>
+        /// <value>Optional - vertical adjestment in relative height of the field</value>
+        [DataMember(Name="TargetFieldVerticalAdjustment", EmitDefaultValue=false)]
+        public double? TargetFieldVerticalAdjustment { get; set; }
+
+        /// <summary>
         /// Optional - Ignore any result items that contain a partial or complete match with these text strings
         /// </summary>
         /// <value>Optional - Ignore any result items that contain a partial or complete match with these text strings</value>
@@ -174,6 +192,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
             sb.Append("  HorizontalAlignmentType: ").Append(HorizontalAlignmentType).Append("\n");
             sb.Append("  TargetFieldWidthRelative: ").Append(TargetFieldWidthRelative).Append("\n");
             sb.Append("  TargetFieldHeightRelative: ").Append(TargetFieldHeightRelative).Append("\n");
+            sb.Append("  TargetFieldHorizontalAdjustment: ").Append(TargetFieldHorizontalAdjustment).Append("\n");
+            sb.Append("  TargetFieldVerticalAdjustment: ").Append(TargetFieldVerticalAdjustment).Append("\n");
             sb.Append("  Ignore: ").Append(Ignore).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -270,6 +290,16 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
                     this.TargetFieldHeightRelative.Equals(input.TargetFieldHeightRelative))
                 ) && 
                 (
+                    this.TargetFieldHorizontalAdjustment == input.TargetFieldHorizontalAdjustment ||
+                    (this.TargetFieldHorizontalAdjustment != null &&
+                    this.TargetFieldHorizontalAdjustment.Equals(input.TargetFieldHorizontalAdjustment))
+                ) && 
+                (
+                    this.TargetFieldVerticalAdjustment == input.TargetFieldVerticalAdjustment ||
+                    (this.TargetFieldVerticalAdjustment != null &&
+                    this.TargetFieldVerticalAdjustment.Equals(input.TargetFieldVerticalAdjustment))
+                ) && 
+                (
                     this.Ignore == input.Ignore ||
                     this.Ignore != null &&
                     this.Ignore.SequenceEqual(input.Ignore)
@@ -309,6 +339,10 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
                     hashCode = hashCode * 59 + this.TargetFieldWidthRelative.GetHashCode();
                 if (this.TargetFieldHeightRelative != null)
                     hashCode = hashCode * 59 + this.TargetFieldHeightRelative.GetHashCode();
+                if (this.TargetFieldHorizontalAdjustment != null)
+                    hashCode = hashCode * 59 + this.TargetFieldHorizontalAdjustment.GetHashCode();
+                if (this.TargetFieldVerticalAdjustment != null)
+                    hashCode = hashCode * 59 + this.TargetFieldVerticalAdjustment.GetHashCode();
                 if (this.Ignore != null)
                     hashCode = hashCode * 59 + this.Ignore.GetHashCode();
                 return hashCode;

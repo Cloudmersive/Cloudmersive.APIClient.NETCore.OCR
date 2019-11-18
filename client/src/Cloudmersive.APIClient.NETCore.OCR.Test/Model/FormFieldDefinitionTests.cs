@@ -163,6 +163,22 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Test
             // TODO unit test for the property 'TargetFieldHeightRelative'
         }
         /// <summary>
+        /// Test the property 'TargetFieldHorizontalAdjustment'
+        /// </summary>
+        [Test]
+        public void TargetFieldHorizontalAdjustmentTest()
+        {
+            // TODO unit test for the property 'TargetFieldHorizontalAdjustment'
+        }
+        /// <summary>
+        /// Test the property 'TargetFieldVerticalAdjustment'
+        /// </summary>
+        [Test]
+        public void TargetFieldVerticalAdjustmentTest()
+        {
+            // TODO unit test for the property 'TargetFieldVerticalAdjustment'
+        }
+        /// <summary>
         /// Test the property 'Ignore'
         /// </summary>
         [Test]

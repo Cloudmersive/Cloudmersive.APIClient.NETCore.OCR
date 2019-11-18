@@ -36,11 +36,13 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <param name="Successful">True if the operation was successful, false otherwise.</param>
         /// <param name="FieldValueExtractionResult">Result of form field OCR data extraction.</param>
         /// <param name="TableValueExtractionResults">Result of form table OCR data extraction.</param>
-        public FormRecognitionResult(bool? Successful = default(bool?), List<FieldResult> FieldValueExtractionResult = default(List<FieldResult>), List<TableResult> TableValueExtractionResults = default(List<TableResult>))
+        /// <param name="Diagnostics">Diagnostic images - default is null, enable diagnostics&#x3D;true to populate this parameter with one image per field.</param>
+        public FormRecognitionResult(bool? Successful = default(bool?), List<FieldResult> FieldValueExtractionResult = default(List<FieldResult>), List<TableResult> TableValueExtractionResults = default(List<TableResult>), List<string> Diagnostics = default(List<string>))
         {
             this.Successful = Successful;
             this.FieldValueExtractionResult = FieldValueExtractionResult;
             this.TableValueExtractionResults = TableValueExtractionResults;
+            this.Diagnostics = Diagnostics;
         }
         
         /// <summary>
@@ -65,6 +67,13 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         public List<TableResult> TableValueExtractionResults { get; set; }
 
         /// <summary>
+        /// Diagnostic images - default is null, enable diagnostics&#x3D;true to populate this parameter with one image per field
+        /// </summary>
+        /// <value>Diagnostic images - default is null, enable diagnostics&#x3D;true to populate this parameter with one image per field</value>
+        [DataMember(Name="Diagnostics", EmitDefaultValue=false)]
+        public List<string> Diagnostics { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -75,6 +84,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
             sb.Append("  Successful: ").Append(Successful).Append("\n");
             sb.Append("  FieldValueExtractionResult: ").Append(FieldValueExtractionResult).Append("\n");
             sb.Append("  TableValueExtractionResults: ").Append(TableValueExtractionResults).Append("\n");
+            sb.Append("  Diagnostics: ").Append(Diagnostics).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -123,6 +133,11 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
                     this.TableValueExtractionResults == input.TableValueExtractionResults ||
                     this.TableValueExtractionResults != null &&
                     this.TableValueExtractionResults.SequenceEqual(input.TableValueExtractionResults)
+                ) && 
+                (
+                    this.Diagnostics == input.Diagnostics ||
+                    this.Diagnostics != null &&
+                    this.Diagnostics.SequenceEqual(input.Diagnostics)
                 );
         }
 
@@ -141,6 +156,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
                     hashCode = hashCode * 59 + this.FieldValueExtractionResult.GetHashCode();
                 if (this.TableValueExtractionResults != null)
                     hashCode = hashCode * 59 + this.TableValueExtractionResults.GetHashCode();
+                if (this.Diagnostics != null)
+                    hashCode = hashCode * 59 + this.Diagnostics.GetHashCode();
                 return hashCode;
             }
         }

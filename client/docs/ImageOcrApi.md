@@ -223,7 +223,7 @@ Name | Type | Description  | Notes
 
 <a name="imageocrphotorecognizeform"></a>
 # **ImageOcrPhotoRecognizeForm**
-> FormRecognitionResult ImageOcrPhotoRecognizeForm (System.IO.Stream imageFile, string formTemplateDefinition = null, string recognitionMode = null, string preprocessing = null, string language = null)
+> FormRecognitionResult ImageOcrPhotoRecognizeForm (System.IO.Stream imageFile, string formTemplateDefinition = null, string recognitionMode = null, string preprocessing = null, string diagnostics = null, string language = null)
 
 Recognize a photo of a form, extract key fields and business information
 
@@ -253,12 +253,13 @@ namespace Example
             var formTemplateDefinition = formTemplateDefinition_example;  // string | Form field definitions (optional) 
             var recognitionMode = recognitionMode_example;  // string | Optional, enable advanced recognition mode by specifying 'Advanced', enable handwriting recognition by specifying 'EnableHandwriting'.  Default is disabled. (optional) 
             var preprocessing = preprocessing_example;  // string | Optional, preprocessing mode, default is 'Auto'.  Possible values are None (no preprocessing of the image), and Auto (automatic image enhancement of the image - including automatic unrotation of the image - before OCR is applied; this is recommended).  Set this to 'None' if you do not want to use automatic image unrotation and enhancement. (optional) 
+            var diagnostics = diagnostics_example;  // string | Optional, diagnostics mode, default is 'false'.  Possible values are 'true' (will set DiagnosticImage to a diagnostic PNG image in the result), and 'false' (no diagnostics are enabled; this is recommended for best performance). (optional) 
             var language = language_example;  // string | Optional, language of the input document, default is English (ENG).  Possible values are ENG (English), ARA (Arabic), ZHO (Chinese - Simplified), ZHO-HANT (Chinese - Traditional), ASM (Assamese), AFR (Afrikaans), AMH (Amharic), AZE (Azerbaijani), AZE-CYRL (Azerbaijani - Cyrillic), BEL (Belarusian), BEN (Bengali), BOD (Tibetan), BOS (Bosnian), BUL (Bulgarian), CAT (Catalan; Valencian), CEB (Cebuano), CES (Czech), CHR (Cherokee), CYM (Welsh), DAN (Danish), DEU (German), DZO (Dzongkha), ELL (Greek), ENM (Archaic/Middle English), EPO (Esperanto), EST (Estonian), EUS (Basque), FAS (Persian), FIN (Finnish), FRA (French), FRK (Frankish), FRM (Middle-French), GLE (Irish), GLG (Galician), GRC (Ancient Greek), HAT (Hatian), HEB (Hebrew), HIN (Hindi), HRV (Croatian), HUN (Hungarian), IKU (Inuktitut), IND (Indonesian), ISL (Icelandic), ITA (Italian), ITA-OLD (Old - Italian), JAV (Javanese), JPN (Japanese), KAN (Kannada), KAT (Georgian), KAT-OLD (Old-Georgian), KAZ (Kazakh), KHM (Central Khmer), KIR (Kirghiz), KOR (Korean), KUR (Kurdish), LAO (Lao), LAT (Latin), LAV (Latvian), LIT (Lithuanian), MAL (Malayalam), MAR (Marathi), MKD (Macedonian), MLT (Maltese), MSA (Malay), MYA (Burmese), NEP (Nepali), NLD (Dutch), NOR (Norwegian), ORI (Oriya), PAN (Panjabi), POL (Polish), POR (Portuguese), PUS (Pushto), RON (Romanian), RUS (Russian), SAN (Sanskrit), SIN (Sinhala), SLK (Slovak), SLV (Slovenian), SPA (Spanish), SPA-OLD (Old Spanish), SQI (Albanian), SRP (Serbian), SRP-LAT (Latin Serbian), SWA (Swahili), SWE (Swedish), SYR (Syriac), TAM (Tamil), TEL (Telugu), TGK (Tajik), TGL (Tagalog), THA (Thai), TIR (Tigrinya), TUR (Turkish), UIG (Uighur), UKR (Ukrainian), URD (Urdu), UZB (Uzbek), UZB-CYR (Cyrillic Uzbek), VIE (Vietnamese), YID (Yiddish) (optional) 
 
             try
             {
                 // Recognize a photo of a form, extract key fields and business information
-                FormRecognitionResult result = apiInstance.ImageOcrPhotoRecognizeForm(imageFile, formTemplateDefinition, recognitionMode, preprocessing, language);
+                FormRecognitionResult result = apiInstance.ImageOcrPhotoRecognizeForm(imageFile, formTemplateDefinition, recognitionMode, preprocessing, diagnostics, language);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -278,6 +279,7 @@ Name | Type | Description  | Notes
  **formTemplateDefinition** | **string**| Form field definitions | [optional] 
  **recognitionMode** | **string**| Optional, enable advanced recognition mode by specifying &#39;Advanced&#39;, enable handwriting recognition by specifying &#39;EnableHandwriting&#39;.  Default is disabled. | [optional] 
  **preprocessing** | **string**| Optional, preprocessing mode, default is &#39;Auto&#39;.  Possible values are None (no preprocessing of the image), and Auto (automatic image enhancement of the image - including automatic unrotation of the image - before OCR is applied; this is recommended).  Set this to &#39;None&#39; if you do not want to use automatic image unrotation and enhancement. | [optional] 
+ **diagnostics** | **string**| Optional, diagnostics mode, default is &#39;false&#39;.  Possible values are &#39;true&#39; (will set DiagnosticImage to a diagnostic PNG image in the result), and &#39;false&#39; (no diagnostics are enabled; this is recommended for best performance). | [optional] 
  **language** | **string**| Optional, language of the input document, default is English (ENG).  Possible values are ENG (English), ARA (Arabic), ZHO (Chinese - Simplified), ZHO-HANT (Chinese - Traditional), ASM (Assamese), AFR (Afrikaans), AMH (Amharic), AZE (Azerbaijani), AZE-CYRL (Azerbaijani - Cyrillic), BEL (Belarusian), BEN (Bengali), BOD (Tibetan), BOS (Bosnian), BUL (Bulgarian), CAT (Catalan; Valencian), CEB (Cebuano), CES (Czech), CHR (Cherokee), CYM (Welsh), DAN (Danish), DEU (German), DZO (Dzongkha), ELL (Greek), ENM (Archaic/Middle English), EPO (Esperanto), EST (Estonian), EUS (Basque), FAS (Persian), FIN (Finnish), FRA (French), FRK (Frankish), FRM (Middle-French), GLE (Irish), GLG (Galician), GRC (Ancient Greek), HAT (Hatian), HEB (Hebrew), HIN (Hindi), HRV (Croatian), HUN (Hungarian), IKU (Inuktitut), IND (Indonesian), ISL (Icelandic), ITA (Italian), ITA-OLD (Old - Italian), JAV (Javanese), JPN (Japanese), KAN (Kannada), KAT (Georgian), KAT-OLD (Old-Georgian), KAZ (Kazakh), KHM (Central Khmer), KIR (Kirghiz), KOR (Korean), KUR (Kurdish), LAO (Lao), LAT (Latin), LAV (Latvian), LIT (Lithuanian), MAL (Malayalam), MAR (Marathi), MKD (Macedonian), MLT (Maltese), MSA (Malay), MYA (Burmese), NEP (Nepali), NLD (Dutch), NOR (Norwegian), ORI (Oriya), PAN (Panjabi), POL (Polish), POR (Portuguese), PUS (Pushto), RON (Romanian), RUS (Russian), SAN (Sanskrit), SIN (Sinhala), SLK (Slovak), SLV (Slovenian), SPA (Spanish), SPA-OLD (Old Spanish), SQI (Albanian), SRP (Serbian), SRP-LAT (Latin Serbian), SWA (Swahili), SWE (Swedish), SYR (Syriac), TAM (Tamil), TEL (Telugu), TGK (Tajik), TGL (Tagalog), THA (Thai), TIR (Tigrinya), TUR (Turkish), UIG (Uighur), UKR (Ukrainian), URD (Urdu), UZB (Uzbek), UZB-CYR (Cyrillic Uzbek), VIE (Vietnamese), YID (Yiddish) | [optional] 
 
 ### Return type
@@ -297,7 +299,7 @@ Name | Type | Description  | Notes
 
 <a name="imageocrphotorecognizeformadvanced"></a>
 # **ImageOcrPhotoRecognizeFormAdvanced**
-> FormRecognitionResult ImageOcrPhotoRecognizeFormAdvanced (System.IO.Stream imageFile, string bucketID = null, string bucketSecretKey = null, string recognitionMode = null, string preprocessing = null)
+> FormRecognitionResult ImageOcrPhotoRecognizeFormAdvanced (System.IO.Stream imageFile, string bucketID = null, string bucketSecretKey = null, string recognitionMode = null, string preprocessing = null, string diagnostics = null)
 
 Recognize a photo of a form, extract key fields using stored templates
 
@@ -328,11 +330,12 @@ namespace Example
             var bucketSecretKey = bucketSecretKey_example;  // string | Bucket Secret Key of the Configuration Bucket storing the form templates (optional) 
             var recognitionMode = recognitionMode_example;  // string | Optional, enable advanced recognition mode by specifying 'Advanced', enable handwriting recognition by specifying 'EnableHandwriting'.  Default is disabled. (optional) 
             var preprocessing = preprocessing_example;  // string | Optional, preprocessing mode, default is 'Auto'.  Possible values are None (no preprocessing of the image), and Auto (automatic image enhancement of the image - including automatic unrotation of the image - before OCR is applied; this is recommended).  Set this to 'None' if you do not want to use automatic image unrotation and enhancement. (optional) 
+            var diagnostics = diagnostics_example;  // string | Optional, diagnostics mode, default is 'false'.  Possible values are 'true' (will set DiagnosticImage to a diagnostic PNG image in the result), and 'false' (no diagnostics are enabled; this is recommended for best performance). (optional) 
 
             try
             {
                 // Recognize a photo of a form, extract key fields using stored templates
-                FormRecognitionResult result = apiInstance.ImageOcrPhotoRecognizeFormAdvanced(imageFile, bucketID, bucketSecretKey, recognitionMode, preprocessing);
+                FormRecognitionResult result = apiInstance.ImageOcrPhotoRecognizeFormAdvanced(imageFile, bucketID, bucketSecretKey, recognitionMode, preprocessing, diagnostics);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -353,6 +356,7 @@ Name | Type | Description  | Notes
  **bucketSecretKey** | **string**| Bucket Secret Key of the Configuration Bucket storing the form templates | [optional] 
  **recognitionMode** | **string**| Optional, enable advanced recognition mode by specifying &#39;Advanced&#39;, enable handwriting recognition by specifying &#39;EnableHandwriting&#39;.  Default is disabled. | [optional] 
  **preprocessing** | **string**| Optional, preprocessing mode, default is &#39;Auto&#39;.  Possible values are None (no preprocessing of the image), and Auto (automatic image enhancement of the image - including automatic unrotation of the image - before OCR is applied; this is recommended).  Set this to &#39;None&#39; if you do not want to use automatic image unrotation and enhancement. | [optional] 
+ **diagnostics** | **string**| Optional, diagnostics mode, default is &#39;false&#39;.  Possible values are &#39;true&#39; (will set DiagnosticImage to a diagnostic PNG image in the result), and &#39;false&#39; (no diagnostics are enabled; this is recommended for best performance). | [optional] 
 
 ### Return type
 

@@ -90,6 +90,14 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Test
         {
             // TODO unit test for the property 'TableValueExtractionResults'
         }
+        /// <summary>
+        /// Test the property 'Diagnostics'
+        /// </summary>
+        [Test]
+        public void DiagnosticsTest()
+        {
+            // TODO unit test for the property 'Diagnostics'
+        }
 
     }
 

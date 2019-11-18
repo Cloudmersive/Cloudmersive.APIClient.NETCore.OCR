@@ -115,8 +115,9 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Test
             //string formTemplateDefinition = null;
             //string recognitionMode = null;
             //string preprocessing = null;
+            //string diagnostics = null;
             //string language = null;
-            //var response = instance.ImageOcrPhotoRecognizeForm(imageFile, formTemplateDefinition, recognitionMode, preprocessing, language);
+            //var response = instance.ImageOcrPhotoRecognizeForm(imageFile, formTemplateDefinition, recognitionMode, preprocessing, diagnostics, language);
             //Assert.IsInstanceOf<FormRecognitionResult> (response, "response is FormRecognitionResult");
         }
         
@@ -132,7 +133,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Test
             //string bucketSecretKey = null;
             //string recognitionMode = null;
             //string preprocessing = null;
-            //var response = instance.ImageOcrPhotoRecognizeFormAdvanced(imageFile, bucketID, bucketSecretKey, recognitionMode, preprocessing);
+            //string diagnostics = null;
+            //var response = instance.ImageOcrPhotoRecognizeFormAdvanced(imageFile, bucketID, bucketSecretKey, recognitionMode, preprocessing, diagnostics);
             //Assert.IsInstanceOf<FormRecognitionResult> (response, "response is FormRecognitionResult");
         }
         
