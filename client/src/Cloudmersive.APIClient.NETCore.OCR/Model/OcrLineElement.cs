@@ -33,12 +33,12 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OcrLineElement" /> class.
         /// </summary>
-        /// <param name="LineText">Text of the line.</param>
-        /// <param name="Words">Word objects in the line.</param>
-        public OcrLineElement(string LineText = default(string), List<OcrWordElement> Words = default(List<OcrWordElement>))
+        /// <param name="lineText">Text of the line.</param>
+        /// <param name="words">Word objects in the line.</param>
+        public OcrLineElement(string lineText = default(string), List<OcrWordElement> words = default(List<OcrWordElement>))
         {
-            this.LineText = LineText;
-            this.Words = Words;
+            this.LineText = lineText;
+            this.Words = words;
         }
         
         /// <summary>
@@ -73,7 +73,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

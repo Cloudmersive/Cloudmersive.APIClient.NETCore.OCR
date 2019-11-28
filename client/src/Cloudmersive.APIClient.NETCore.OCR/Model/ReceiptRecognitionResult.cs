@@ -33,26 +33,26 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ReceiptRecognitionResult" /> class.
         /// </summary>
-        /// <param name="Successful">True if the operation was successful, false otherwise.</param>
-        /// <param name="Timestamp">The date and time printed on the receipt (if included on the receipt).</param>
-        /// <param name="BusinessName">The name of the business printed on the receipt (if included on the receipt).</param>
-        /// <param name="BusinessWebsite">The website URL of the business printed on the receipt (if included on the receipt).</param>
-        /// <param name="AddressString">The address of the business printed on the receipt (if included on the receipt).</param>
-        /// <param name="PhoneNumber">The phone number printed on the receipt (if included on the receipt).</param>
-        /// <param name="ReceiptItems">The individual line items comprising the order; does not include total (see ReceiptTotal).</param>
-        /// <param name="ReceiptSubTotal">Optional; if available, the monetary value of the receipt subtotal - typically not including specialized line items such as Tax. If this value is not available, it will be 0..</param>
-        /// <param name="ReceiptTotal">The total monetary value of the receipt (if included on the receipt).</param>
-        public ReceiptRecognitionResult(bool? Successful = default(bool?), DateTime? Timestamp = default(DateTime?), string BusinessName = default(string), string BusinessWebsite = default(string), string AddressString = default(string), string PhoneNumber = default(string), List<ReceiptLineItem> ReceiptItems = default(List<ReceiptLineItem>), double? ReceiptSubTotal = default(double?), double? ReceiptTotal = default(double?))
+        /// <param name="successful">True if the operation was successful, false otherwise.</param>
+        /// <param name="timestamp">The date and time printed on the receipt (if included on the receipt).</param>
+        /// <param name="businessName">The name of the business printed on the receipt (if included on the receipt).</param>
+        /// <param name="businessWebsite">The website URL of the business printed on the receipt (if included on the receipt).</param>
+        /// <param name="addressString">The address of the business printed on the receipt (if included on the receipt).</param>
+        /// <param name="phoneNumber">The phone number printed on the receipt (if included on the receipt).</param>
+        /// <param name="receiptItems">The individual line items comprising the order; does not include total (see ReceiptTotal).</param>
+        /// <param name="receiptSubTotal">Optional; if available, the monetary value of the receipt subtotal - typically not including specialized line items such as Tax. If this value is not available, it will be 0..</param>
+        /// <param name="receiptTotal">The total monetary value of the receipt (if included on the receipt).</param>
+        public ReceiptRecognitionResult(bool? successful = default(bool?), DateTime? timestamp = default(DateTime?), string businessName = default(string), string businessWebsite = default(string), string addressString = default(string), string phoneNumber = default(string), List<ReceiptLineItem> receiptItems = default(List<ReceiptLineItem>), double? receiptSubTotal = default(double?), double? receiptTotal = default(double?))
         {
-            this.Successful = Successful;
-            this.Timestamp = Timestamp;
-            this.BusinessName = BusinessName;
-            this.BusinessWebsite = BusinessWebsite;
-            this.AddressString = AddressString;
-            this.PhoneNumber = PhoneNumber;
-            this.ReceiptItems = ReceiptItems;
-            this.ReceiptSubTotal = ReceiptSubTotal;
-            this.ReceiptTotal = ReceiptTotal;
+            this.Successful = successful;
+            this.Timestamp = timestamp;
+            this.BusinessName = businessName;
+            this.BusinessWebsite = businessWebsite;
+            this.AddressString = addressString;
+            this.PhoneNumber = phoneNumber;
+            this.ReceiptItems = receiptItems;
+            this.ReceiptSubTotal = receiptSubTotal;
+            this.ReceiptTotal = receiptTotal;
         }
         
         /// <summary>
@@ -143,7 +143,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

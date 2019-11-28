@@ -33,16 +33,16 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="FormRecognitionResult" /> class.
         /// </summary>
-        /// <param name="Successful">True if the operation was successful, false otherwise.</param>
-        /// <param name="FieldValueExtractionResult">Result of form field OCR data extraction.</param>
-        /// <param name="TableValueExtractionResults">Result of form table OCR data extraction.</param>
-        /// <param name="Diagnostics">Diagnostic images - default is null, enable diagnostics&#x3D;true to populate this parameter with one image per field.</param>
-        public FormRecognitionResult(bool? Successful = default(bool?), List<FieldResult> FieldValueExtractionResult = default(List<FieldResult>), List<TableResult> TableValueExtractionResults = default(List<TableResult>), List<string> Diagnostics = default(List<string>))
+        /// <param name="successful">True if the operation was successful, false otherwise.</param>
+        /// <param name="fieldValueExtractionResult">Result of form field OCR data extraction.</param>
+        /// <param name="tableValueExtractionResults">Result of form table OCR data extraction.</param>
+        /// <param name="diagnostics">Diagnostic images - default is null, enable diagnostics&#x3D;true to populate this parameter with one image per field.</param>
+        public FormRecognitionResult(bool? successful = default(bool?), List<FieldResult> fieldValueExtractionResult = default(List<FieldResult>), List<TableResult> tableValueExtractionResults = default(List<TableResult>), List<string> diagnostics = default(List<string>))
         {
-            this.Successful = Successful;
-            this.FieldValueExtractionResult = FieldValueExtractionResult;
-            this.TableValueExtractionResults = TableValueExtractionResults;
-            this.Diagnostics = Diagnostics;
+            this.Successful = successful;
+            this.FieldValueExtractionResult = fieldValueExtractionResult;
+            this.TableValueExtractionResults = tableValueExtractionResults;
+            this.Diagnostics = diagnostics;
         }
         
         /// <summary>
@@ -93,7 +93,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

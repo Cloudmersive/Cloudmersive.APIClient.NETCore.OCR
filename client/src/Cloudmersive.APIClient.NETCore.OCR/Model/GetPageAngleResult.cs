@@ -33,12 +33,12 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="GetPageAngleResult" /> class.
         /// </summary>
-        /// <param name="Successful">True if the operation was successful, false otherwise.</param>
-        /// <param name="Angle">Angle of the page in radians; 0 represents perfectly horizontal.</param>
-        public GetPageAngleResult(bool? Successful = default(bool?), double? Angle = default(double?))
+        /// <param name="successful">True if the operation was successful, false otherwise.</param>
+        /// <param name="angle">Angle of the page in radians; 0 represents perfectly horizontal.</param>
+        public GetPageAngleResult(bool? successful = default(bool?), double? angle = default(double?))
         {
-            this.Successful = Successful;
-            this.Angle = Angle;
+            this.Successful = successful;
+            this.Angle = angle;
         }
         
         /// <summary>
@@ -73,7 +73,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

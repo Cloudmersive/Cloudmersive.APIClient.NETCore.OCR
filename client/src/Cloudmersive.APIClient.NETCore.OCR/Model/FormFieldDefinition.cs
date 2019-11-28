@@ -33,38 +33,40 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="FormFieldDefinition" /> class.
         /// </summary>
-        /// <param name="FieldID">The identifier of the field; use this to identify which field is being referenced.</param>
-        /// <param name="LeftAnchor">Optional - the left-hand anchor of the field.</param>
-        /// <param name="TopAnchor">Optional - the top anchor of the field.</param>
-        /// <param name="AnchorMode">Optional - the matching mode for the anchor.  Possible values are Complete (requires the entire anchor to match) and Partial (allows only part of the anchor to match) and Horizontal (anchor must be laid out horizontally).  Default is Partial..</param>
-        /// <param name="DataType">The data type of the field; possible values are INTEGER (Integer value), STRING (Arbitrary string value, spaces are permitted), DATE (Date in a structured format), DECIMAL (Decimal number), ALPHANUMERIC (Continuous alphanumeric string with no spaces), STRINGNOWHITESPACE (A string that contains no whitespace characters), SERIALNUMBER (A serial-number style string that contains letters and numbers, and certain symbols; must contain at least one number), ALPHAONLY (Alphabet characters only, no numbers or symbols or whitespace).</param>
-        /// <param name="TargetDigitCount">Optional - the target number of digits in the field; useful for fixed-length fields.</param>
-        /// <param name="MinimumCharacterCount">Optional - the target number of digits in the field; useful for fixed-length fields.</param>
-        /// <param name="AllowNumericDigits">Optional - set to false to block values that contain numeric digits, set to true to allow numeric digits.</param>
-        /// <param name="VerticalAlignmentType">Vertical alignment of target value area relative to the field anchor; Possible values are VCenter, Top, Bottom.</param>
-        /// <param name="HorizontalAlignmentType">Horizontal alignment of target value area relative to the field anchor; Possible values are Left, Right.</param>
-        /// <param name="TargetFieldWidthRelative">Optional - scale factor for target field width - relative to width of field title; a value of 1.0 indicates the target value area has the same width as the field value as occurring in the image; a value of 2.0 would indicate that the target value area has 2 times the width of the field value as occurring in the image..</param>
-        /// <param name="TargetFieldHeightRelative">Optional - scale factor for target field height - relative to height of field title.</param>
-        /// <param name="TargetFieldHorizontalAdjustment">Optional - horizontal adjestment in relative width of the field.</param>
-        /// <param name="TargetFieldVerticalAdjustment">Optional - vertical adjestment in relative height of the field.</param>
-        /// <param name="Ignore">Optional - Ignore any result items that contain a partial or complete match with these text strings.</param>
-        public FormFieldDefinition(string FieldID = default(string), string LeftAnchor = default(string), string TopAnchor = default(string), string AnchorMode = default(string), string DataType = default(string), int? TargetDigitCount = default(int?), int? MinimumCharacterCount = default(int?), bool? AllowNumericDigits = default(bool?), string VerticalAlignmentType = default(string), string HorizontalAlignmentType = default(string), double? TargetFieldWidthRelative = default(double?), double? TargetFieldHeightRelative = default(double?), double? TargetFieldHorizontalAdjustment = default(double?), double? TargetFieldVerticalAdjustment = default(double?), List<string> Ignore = default(List<string>))
+        /// <param name="fieldID">The identifier of the field; use this to identify which field is being referenced.</param>
+        /// <param name="leftAnchor">Optional - the left-hand anchor of the field.</param>
+        /// <param name="topAnchor">Optional - the top anchor of the field.</param>
+        /// <param name="bottomAnchor">Optional - the bottom anchor of the field.</param>
+        /// <param name="anchorMode">Optional - the matching mode for the anchor.  Possible values are Complete (requires the entire anchor to match) and Partial (allows only part of the anchor to match) and Horizontal (anchor must be laid out horizontally).  Default is Partial..</param>
+        /// <param name="dataType">The data type of the field; possible values are INTEGER (Integer value), STRING (Arbitrary string value, spaces are permitted), DATE (Date in a structured format), DECIMAL (Decimal number), ALPHANUMERIC (Continuous alphanumeric string with no spaces), STRINGNOWHITESPACE (A string that contains no whitespace characters), SERIALNUMBER (A serial-number style string that contains letters and numbers, and certain symbols; must contain at least one number), ALPHAONLY (Alphabet characters only, no numbers or symbols or whitespace).</param>
+        /// <param name="targetDigitCount">Optional - the target number of digits in the field; useful for fixed-length fields.</param>
+        /// <param name="minimumCharacterCount">Optional - the target number of digits in the field; useful for fixed-length fields.</param>
+        /// <param name="allowNumericDigits">Optional - set to false to block values that contain numeric digits, set to true to allow numeric digits.</param>
+        /// <param name="verticalAlignmentType">Vertical alignment of target value area relative to the field anchor; Possible values are VCenter, Top, Bottom.</param>
+        /// <param name="horizontalAlignmentType">Horizontal alignment of target value area relative to the field anchor; Possible values are Left, Right.</param>
+        /// <param name="targetFieldWidthRelative">Optional - scale factor for target field width - relative to width of field title; a value of 1.0 indicates the target value area has the same width as the field value as occurring in the image; a value of 2.0 would indicate that the target value area has 2 times the width of the field value as occurring in the image..</param>
+        /// <param name="targetFieldHeightRelative">Optional - scale factor for target field height - relative to height of field title.</param>
+        /// <param name="targetFieldHorizontalAdjustment">Optional - horizontal adjestment in relative width of the field.</param>
+        /// <param name="targetFieldVerticalAdjustment">Optional - vertical adjestment in relative height of the field.</param>
+        /// <param name="ignore">Optional - Ignore any result items that contain a partial or complete match with these text strings.</param>
+        public FormFieldDefinition(string fieldID = default(string), string leftAnchor = default(string), string topAnchor = default(string), string bottomAnchor = default(string), string anchorMode = default(string), string dataType = default(string), int? targetDigitCount = default(int?), int? minimumCharacterCount = default(int?), bool? allowNumericDigits = default(bool?), string verticalAlignmentType = default(string), string horizontalAlignmentType = default(string), double? targetFieldWidthRelative = default(double?), double? targetFieldHeightRelative = default(double?), double? targetFieldHorizontalAdjustment = default(double?), double? targetFieldVerticalAdjustment = default(double?), List<string> ignore = default(List<string>))
         {
-            this.FieldID = FieldID;
-            this.LeftAnchor = LeftAnchor;
-            this.TopAnchor = TopAnchor;
-            this.AnchorMode = AnchorMode;
-            this.DataType = DataType;
-            this.TargetDigitCount = TargetDigitCount;
-            this.MinimumCharacterCount = MinimumCharacterCount;
-            this.AllowNumericDigits = AllowNumericDigits;
-            this.VerticalAlignmentType = VerticalAlignmentType;
-            this.HorizontalAlignmentType = HorizontalAlignmentType;
-            this.TargetFieldWidthRelative = TargetFieldWidthRelative;
-            this.TargetFieldHeightRelative = TargetFieldHeightRelative;
-            this.TargetFieldHorizontalAdjustment = TargetFieldHorizontalAdjustment;
-            this.TargetFieldVerticalAdjustment = TargetFieldVerticalAdjustment;
-            this.Ignore = Ignore;
+            this.FieldID = fieldID;
+            this.LeftAnchor = leftAnchor;
+            this.TopAnchor = topAnchor;
+            this.BottomAnchor = bottomAnchor;
+            this.AnchorMode = anchorMode;
+            this.DataType = dataType;
+            this.TargetDigitCount = targetDigitCount;
+            this.MinimumCharacterCount = minimumCharacterCount;
+            this.AllowNumericDigits = allowNumericDigits;
+            this.VerticalAlignmentType = verticalAlignmentType;
+            this.HorizontalAlignmentType = horizontalAlignmentType;
+            this.TargetFieldWidthRelative = targetFieldWidthRelative;
+            this.TargetFieldHeightRelative = targetFieldHeightRelative;
+            this.TargetFieldHorizontalAdjustment = targetFieldHorizontalAdjustment;
+            this.TargetFieldVerticalAdjustment = targetFieldVerticalAdjustment;
+            this.Ignore = ignore;
         }
         
         /// <summary>
@@ -87,6 +89,13 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <value>Optional - the top anchor of the field</value>
         [DataMember(Name="TopAnchor", EmitDefaultValue=false)]
         public string TopAnchor { get; set; }
+
+        /// <summary>
+        /// Optional - the bottom anchor of the field
+        /// </summary>
+        /// <value>Optional - the bottom anchor of the field</value>
+        [DataMember(Name="BottomAnchor", EmitDefaultValue=false)]
+        public string BottomAnchor { get; set; }
 
         /// <summary>
         /// Optional - the matching mode for the anchor.  Possible values are Complete (requires the entire anchor to match) and Partial (allows only part of the anchor to match) and Horizontal (anchor must be laid out horizontally).  Default is Partial.
@@ -183,6 +192,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
             sb.Append("  FieldID: ").Append(FieldID).Append("\n");
             sb.Append("  LeftAnchor: ").Append(LeftAnchor).Append("\n");
             sb.Append("  TopAnchor: ").Append(TopAnchor).Append("\n");
+            sb.Append("  BottomAnchor: ").Append(BottomAnchor).Append("\n");
             sb.Append("  AnchorMode: ").Append(AnchorMode).Append("\n");
             sb.Append("  DataType: ").Append(DataType).Append("\n");
             sb.Append("  TargetDigitCount: ").Append(TargetDigitCount).Append("\n");
@@ -203,7 +213,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -243,6 +253,11 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
                     this.TopAnchor == input.TopAnchor ||
                     (this.TopAnchor != null &&
                     this.TopAnchor.Equals(input.TopAnchor))
+                ) && 
+                (
+                    this.BottomAnchor == input.BottomAnchor ||
+                    (this.BottomAnchor != null &&
+                    this.BottomAnchor.Equals(input.BottomAnchor))
                 ) && 
                 (
                     this.AnchorMode == input.AnchorMode ||
@@ -321,6 +336,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
                     hashCode = hashCode * 59 + this.LeftAnchor.GetHashCode();
                 if (this.TopAnchor != null)
                     hashCode = hashCode * 59 + this.TopAnchor.GetHashCode();
+                if (this.BottomAnchor != null)
+                    hashCode = hashCode * 59 + this.BottomAnchor.GetHashCode();
                 if (this.AnchorMode != null)
                     hashCode = hashCode * 59 + this.AnchorMode.GetHashCode();
                 if (this.DataType != null)

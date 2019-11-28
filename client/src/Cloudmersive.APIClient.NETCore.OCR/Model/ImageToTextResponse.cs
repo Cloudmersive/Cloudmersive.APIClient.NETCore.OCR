@@ -33,12 +33,12 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageToTextResponse" /> class.
         /// </summary>
-        /// <param name="MeanConfidenceLevel">Confidence level rating of the OCR operation; ratings above 80% are strong..</param>
-        /// <param name="TextResult">Converted text string from the image input..</param>
-        public ImageToTextResponse(float? MeanConfidenceLevel = default(float?), string TextResult = default(string))
+        /// <param name="meanConfidenceLevel">Confidence level rating of the OCR operation; ratings above 80% are strong..</param>
+        /// <param name="textResult">Converted text string from the image input..</param>
+        public ImageToTextResponse(float? meanConfidenceLevel = default(float?), string textResult = default(string))
         {
-            this.MeanConfidenceLevel = MeanConfidenceLevel;
-            this.TextResult = TextResult;
+            this.MeanConfidenceLevel = meanConfidenceLevel;
+            this.TextResult = textResult;
         }
         
         /// <summary>
@@ -73,7 +73,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

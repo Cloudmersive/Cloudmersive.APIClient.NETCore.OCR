@@ -33,12 +33,12 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TableResult" /> class.
         /// </summary>
-        /// <param name="TableDefinition">The input table definition for reference.</param>
-        /// <param name="TableRowsResult">Rows of data in the table.</param>
-        public TableResult(FormTableDefinition TableDefinition = default(FormTableDefinition), List<TableRowResult> TableRowsResult = default(List<TableRowResult>))
+        /// <param name="tableDefinition">The input table definition for reference.</param>
+        /// <param name="tableRowsResult">Rows of data in the table.</param>
+        public TableResult(FormTableDefinition tableDefinition = default(FormTableDefinition), List<TableRowResult> tableRowsResult = default(List<TableRowResult>))
         {
-            this.TableDefinition = TableDefinition;
-            this.TableRowsResult = TableRowsResult;
+            this.TableDefinition = tableDefinition;
+            this.TableRowsResult = tableRowsResult;
         }
         
         /// <summary>
@@ -73,7 +73,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

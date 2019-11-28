@@ -33,22 +33,22 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OcrPhotoTextElement" /> class.
         /// </summary>
-        /// <param name="Text">Text of the word.</param>
-        /// <param name="XLeft">X location of the left edge of the word in pixels.</param>
-        /// <param name="YTop">Y location of the top edge of the word in pixels.</param>
-        /// <param name="Width">Width of the word in pixels.</param>
-        /// <param name="Height">Height of the word in pixels.</param>
-        /// <param name="BoundingPoints">Points that form the bounding polygon around the text.</param>
-        /// <param name="ConfidenceLevel">Confidence level of the machine learning result; possible values are 0.0 (lowest accuracy) - 1.0 (highest accuracy).</param>
-        public OcrPhotoTextElement(string Text = default(string), int? XLeft = default(int?), int? YTop = default(int?), int? Width = default(int?), int? Height = default(int?), List<Point> BoundingPoints = default(List<Point>), double? ConfidenceLevel = default(double?))
+        /// <param name="text">Text of the word.</param>
+        /// <param name="xLeft">X location of the left edge of the word in pixels.</param>
+        /// <param name="yTop">Y location of the top edge of the word in pixels.</param>
+        /// <param name="width">Width of the word in pixels.</param>
+        /// <param name="height">Height of the word in pixels.</param>
+        /// <param name="boundingPoints">Points that form the bounding polygon around the text.</param>
+        /// <param name="confidenceLevel">Confidence level of the machine learning result; possible values are 0.0 (lowest accuracy) - 1.0 (highest accuracy).</param>
+        public OcrPhotoTextElement(string text = default(string), int? xLeft = default(int?), int? yTop = default(int?), int? width = default(int?), int? height = default(int?), List<Point> boundingPoints = default(List<Point>), double? confidenceLevel = default(double?))
         {
-            this.Text = Text;
-            this.XLeft = XLeft;
-            this.YTop = YTop;
-            this.Width = Width;
-            this.Height = Height;
-            this.BoundingPoints = BoundingPoints;
-            this.ConfidenceLevel = ConfidenceLevel;
+            this.Text = text;
+            this.XLeft = xLeft;
+            this.YTop = yTop;
+            this.Width = width;
+            this.Height = height;
+            this.BoundingPoints = boundingPoints;
+            this.ConfidenceLevel = confidenceLevel;
         }
         
         /// <summary>
@@ -123,7 +123,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

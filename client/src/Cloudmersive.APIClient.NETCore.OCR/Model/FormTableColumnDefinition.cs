@@ -33,20 +33,20 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="FormTableColumnDefinition" /> class.
         /// </summary>
-        /// <param name="ColumnID">The identifier of the field; use this to identify which field is being referenced.</param>
-        /// <param name="TopAnchor">Optional - the top anchor of the column heading.</param>
-        /// <param name="AnchorMode">Optional - the matching mode for the anchor.  Possible values are Complete (requires the entire anchor to match) and Partial (allows only part of the anchor to match).  Default is Partial..</param>
-        /// <param name="DataType">The data type of the field; possible values are INTEGER (Integer value), STRING (Arbitrary string value, spaces are permitted), DATE (Date in a structured format), DECIMAL (Decimal number), ALPHANUMERIC (Continuous alphanumeric string with no spaces), STRINGNOWHITESPACE (A string that contains no whitespace characters), SERIALNUMBER (A serial-number style string that contains letters and numbers, and certain symbols; must contain at least one number), ALPHAONLY (Alphabet characters only, no numbers or symbols or whitespace).</param>
-        /// <param name="MinimumCharacterCount">Optional - the target number of digits in the field; useful for fixed-length fields.</param>
-        /// <param name="AllowNumericDigits">Optional - set to false to block values that contain numeric digits, set to true to allow numeric digits.</param>
-        public FormTableColumnDefinition(string ColumnID = default(string), string TopAnchor = default(string), string AnchorMode = default(string), string DataType = default(string), int? MinimumCharacterCount = default(int?), bool? AllowNumericDigits = default(bool?))
+        /// <param name="columnID">The identifier of the field; use this to identify which field is being referenced.</param>
+        /// <param name="topAnchor">Optional - the top anchor of the column heading.</param>
+        /// <param name="anchorMode">Optional - the matching mode for the anchor.  Possible values are Complete (requires the entire anchor to match) and Partial (allows only part of the anchor to match).  Default is Partial..</param>
+        /// <param name="dataType">The data type of the field; possible values are INTEGER (Integer value), STRING (Arbitrary string value, spaces are permitted), DATE (Date in a structured format), DECIMAL (Decimal number), ALPHANUMERIC (Continuous alphanumeric string with no spaces), STRINGNOWHITESPACE (A string that contains no whitespace characters), SERIALNUMBER (A serial-number style string that contains letters and numbers, and certain symbols; must contain at least one number), ALPHAONLY (Alphabet characters only, no numbers or symbols or whitespace).</param>
+        /// <param name="minimumCharacterCount">Optional - the target number of digits in the field; useful for fixed-length fields.</param>
+        /// <param name="allowNumericDigits">Optional - set to false to block values that contain numeric digits, set to true to allow numeric digits.</param>
+        public FormTableColumnDefinition(string columnID = default(string), string topAnchor = default(string), string anchorMode = default(string), string dataType = default(string), int? minimumCharacterCount = default(int?), bool? allowNumericDigits = default(bool?))
         {
-            this.ColumnID = ColumnID;
-            this.TopAnchor = TopAnchor;
-            this.AnchorMode = AnchorMode;
-            this.DataType = DataType;
-            this.MinimumCharacterCount = MinimumCharacterCount;
-            this.AllowNumericDigits = AllowNumericDigits;
+            this.ColumnID = columnID;
+            this.TopAnchor = topAnchor;
+            this.AnchorMode = anchorMode;
+            this.DataType = dataType;
+            this.MinimumCharacterCount = minimumCharacterCount;
+            this.AllowNumericDigits = allowNumericDigits;
         }
         
         /// <summary>
@@ -113,7 +113,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

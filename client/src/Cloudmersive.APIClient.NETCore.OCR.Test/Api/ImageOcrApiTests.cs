@@ -112,7 +112,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //System.IO.Stream imageFile = null;
-            //string formTemplateDefinition = null;
+            //Object formTemplateDefinition = null;
             //string recognitionMode = null;
             //string preprocessing = null;
             //string diagnostics = null;

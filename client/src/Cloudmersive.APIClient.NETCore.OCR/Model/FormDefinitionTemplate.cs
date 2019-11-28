@@ -33,12 +33,12 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="FormDefinitionTemplate" /> class.
         /// </summary>
-        /// <param name="FieldDefinitions">Field definitions in the template; a field is comprised of a key/value pair.</param>
-        /// <param name="TableDefinitions">Table definitions in the template; a table is comprised of columns and rows and exists in a 2-dimensional layout; a common example of a table would be an invoice.</param>
-        public FormDefinitionTemplate(List<FormFieldDefinition> FieldDefinitions = default(List<FormFieldDefinition>), List<FormTableDefinition> TableDefinitions = default(List<FormTableDefinition>))
+        /// <param name="fieldDefinitions">Field definitions in the template; a field is comprised of a key/value pair.</param>
+        /// <param name="tableDefinitions">Table definitions in the template; a table is comprised of columns and rows and exists in a 2-dimensional layout; a common example of a table would be an invoice.</param>
+        public FormDefinitionTemplate(List<FormFieldDefinition> fieldDefinitions = default(List<FormFieldDefinition>), List<FormTableDefinition> tableDefinitions = default(List<FormTableDefinition>))
         {
-            this.FieldDefinitions = FieldDefinitions;
-            this.TableDefinitions = TableDefinitions;
+            this.FieldDefinitions = fieldDefinitions;
+            this.TableDefinitions = tableDefinitions;
         }
         
         /// <summary>
@@ -73,7 +73,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

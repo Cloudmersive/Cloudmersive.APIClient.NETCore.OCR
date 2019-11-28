@@ -33,12 +33,12 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Point" /> class.
         /// </summary>
-        /// <param name="X">X location in 2D in the image, where 0 represents the left edge of the image.</param>
-        /// <param name="Y">Y location in 2D in the image, where 0 represents the top edge of the image.</param>
-        public Point(int? X = default(int?), int? Y = default(int?))
+        /// <param name="x">X location in 2D in the image, where 0 represents the left edge of the image.</param>
+        /// <param name="y">Y location in 2D in the image, where 0 represents the top edge of the image.</param>
+        public Point(int? x = default(int?), int? y = default(int?))
         {
-            this.X = X;
-            this.Y = Y;
+            this.X = x;
+            this.Y = y;
         }
         
         /// <summary>
@@ -73,7 +73,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

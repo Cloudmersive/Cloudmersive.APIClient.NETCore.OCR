@@ -33,12 +33,12 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageToWordsWithLocationResult" /> class.
         /// </summary>
-        /// <param name="Successful">True if successful, false otherwise.</param>
-        /// <param name="Words">Word elements in the image.</param>
-        public ImageToWordsWithLocationResult(bool? Successful = default(bool?), List<OcrWordElement> Words = default(List<OcrWordElement>))
+        /// <param name="successful">True if successful, false otherwise.</param>
+        /// <param name="words">Word elements in the image.</param>
+        public ImageToWordsWithLocationResult(bool? successful = default(bool?), List<OcrWordElement> words = default(List<OcrWordElement>))
         {
-            this.Successful = Successful;
-            this.Words = Words;
+            this.Successful = successful;
+            this.Words = words;
         }
         
         /// <summary>
@@ -73,7 +73,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

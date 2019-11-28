@@ -33,12 +33,12 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ReceiptLineItem" /> class.
         /// </summary>
-        /// <param name="ItemDescription">Description of the item.</param>
-        /// <param name="ItemPrice">Price of the item if available.</param>
-        public ReceiptLineItem(string ItemDescription = default(string), double? ItemPrice = default(double?))
+        /// <param name="itemDescription">Description of the item.</param>
+        /// <param name="itemPrice">Price of the item if available.</param>
+        public ReceiptLineItem(string itemDescription = default(string), double? itemPrice = default(double?))
         {
-            this.ItemDescription = ItemDescription;
-            this.ItemPrice = ItemPrice;
+            this.ItemDescription = itemDescription;
+            this.ItemPrice = itemPrice;
         }
         
         /// <summary>
@@ -73,7 +73,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

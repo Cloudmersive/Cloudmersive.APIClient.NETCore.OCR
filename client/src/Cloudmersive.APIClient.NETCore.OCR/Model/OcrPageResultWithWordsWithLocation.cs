@@ -33,14 +33,14 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OcrPageResultWithWordsWithLocation" /> class.
         /// </summary>
-        /// <param name="PageNumber">Page number of the page that was OCR-ed, starting with 1 for the first page in the PDF file.</param>
-        /// <param name="Successful">True if successful, false otherwise.</param>
-        /// <param name="Words">Word elements in the image.</param>
-        public OcrPageResultWithWordsWithLocation(int? PageNumber = default(int?), bool? Successful = default(bool?), List<OcrWordElement> Words = default(List<OcrWordElement>))
+        /// <param name="pageNumber">Page number of the page that was OCR-ed, starting with 1 for the first page in the PDF file.</param>
+        /// <param name="successful">True if successful, false otherwise.</param>
+        /// <param name="words">Word elements in the image.</param>
+        public OcrPageResultWithWordsWithLocation(int? pageNumber = default(int?), bool? successful = default(bool?), List<OcrWordElement> words = default(List<OcrWordElement>))
         {
-            this.PageNumber = PageNumber;
-            this.Successful = Successful;
-            this.Words = Words;
+            this.PageNumber = pageNumber;
+            this.Successful = successful;
+            this.Words = words;
         }
         
         /// <summary>
@@ -83,7 +83,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

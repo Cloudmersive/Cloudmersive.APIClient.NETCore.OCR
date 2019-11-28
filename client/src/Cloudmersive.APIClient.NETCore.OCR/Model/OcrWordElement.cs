@@ -33,30 +33,30 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OcrWordElement" /> class.
         /// </summary>
-        /// <param name="WordText">Text of the word.</param>
-        /// <param name="LineNumber">Line number of the word.</param>
-        /// <param name="WordNumber">Index of the word in the line.</param>
-        /// <param name="XLeft">X location of the left edge of the word in pixels.</param>
-        /// <param name="YTop">Y location of the top edge of the word in pixels.</param>
-        /// <param name="Width">Width of the word in pixels.</param>
-        /// <param name="Height">Height of the word in pixels.</param>
-        /// <param name="ConfidenceLevel">Confidence level of the machine learning result; possible values are 0.0 (lowest accuracy) - 1.0 (highest accuracy).</param>
-        /// <param name="BlockNumber">Index of the containing block.</param>
-        /// <param name="ParagraphNumber">Index of the containing paragraph.</param>
-        /// <param name="PageNumber">Index of the containing page.</param>
-        public OcrWordElement(string WordText = default(string), int? LineNumber = default(int?), int? WordNumber = default(int?), int? XLeft = default(int?), int? YTop = default(int?), int? Width = default(int?), int? Height = default(int?), double? ConfidenceLevel = default(double?), int? BlockNumber = default(int?), int? ParagraphNumber = default(int?), int? PageNumber = default(int?))
+        /// <param name="wordText">Text of the word.</param>
+        /// <param name="lineNumber">Line number of the word.</param>
+        /// <param name="wordNumber">Index of the word in the line.</param>
+        /// <param name="xLeft">X location of the left edge of the word in pixels.</param>
+        /// <param name="yTop">Y location of the top edge of the word in pixels.</param>
+        /// <param name="width">Width of the word in pixels.</param>
+        /// <param name="height">Height of the word in pixels.</param>
+        /// <param name="confidenceLevel">Confidence level of the machine learning result; possible values are 0.0 (lowest accuracy) - 1.0 (highest accuracy).</param>
+        /// <param name="blockNumber">Index of the containing block.</param>
+        /// <param name="paragraphNumber">Index of the containing paragraph.</param>
+        /// <param name="pageNumber">Index of the containing page.</param>
+        public OcrWordElement(string wordText = default(string), int? lineNumber = default(int?), int? wordNumber = default(int?), int? xLeft = default(int?), int? yTop = default(int?), int? width = default(int?), int? height = default(int?), double? confidenceLevel = default(double?), int? blockNumber = default(int?), int? paragraphNumber = default(int?), int? pageNumber = default(int?))
         {
-            this.WordText = WordText;
-            this.LineNumber = LineNumber;
-            this.WordNumber = WordNumber;
-            this.XLeft = XLeft;
-            this.YTop = YTop;
-            this.Width = Width;
-            this.Height = Height;
-            this.ConfidenceLevel = ConfidenceLevel;
-            this.BlockNumber = BlockNumber;
-            this.ParagraphNumber = ParagraphNumber;
-            this.PageNumber = PageNumber;
+            this.WordText = wordText;
+            this.LineNumber = lineNumber;
+            this.WordNumber = wordNumber;
+            this.XLeft = xLeft;
+            this.YTop = yTop;
+            this.Width = width;
+            this.Height = height;
+            this.ConfidenceLevel = confidenceLevel;
+            this.BlockNumber = blockNumber;
+            this.ParagraphNumber = paragraphNumber;
+            this.PageNumber = pageNumber;
         }
         
         /// <summary>
@@ -163,7 +163,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

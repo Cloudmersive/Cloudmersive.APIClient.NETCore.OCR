@@ -33,16 +33,16 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="FormTableDefinition" /> class.
         /// </summary>
-        /// <param name="TableID">Optional; the ID of the table.</param>
-        /// <param name="ColumnDefinitions">Definition of the columns in the table.</param>
-        /// <param name="TargetTableHeightRelative">Optional - scale factor for target table height - relative to maximum height of headers of columns.</param>
-        /// <param name="TargetRowHeightRelative">Optional - scale factor for target row height - relative to height of column header.</param>
-        public FormTableDefinition(string TableID = default(string), List<FormTableColumnDefinition> ColumnDefinitions = default(List<FormTableColumnDefinition>), double? TargetTableHeightRelative = default(double?), double? TargetRowHeightRelative = default(double?))
+        /// <param name="tableID">Optional; the ID of the table.</param>
+        /// <param name="columnDefinitions">Definition of the columns in the table.</param>
+        /// <param name="targetTableHeightRelative">Optional - scale factor for target table height - relative to maximum height of headers of columns.</param>
+        /// <param name="targetRowHeightRelative">Optional - scale factor for target row height - relative to height of column header.</param>
+        public FormTableDefinition(string tableID = default(string), List<FormTableColumnDefinition> columnDefinitions = default(List<FormTableColumnDefinition>), double? targetTableHeightRelative = default(double?), double? targetRowHeightRelative = default(double?))
         {
-            this.TableID = TableID;
-            this.ColumnDefinitions = ColumnDefinitions;
-            this.TargetTableHeightRelative = TargetTableHeightRelative;
-            this.TargetRowHeightRelative = TargetRowHeightRelative;
+            this.TableID = tableID;
+            this.ColumnDefinitions = columnDefinitions;
+            this.TargetTableHeightRelative = targetTableHeightRelative;
+            this.TargetRowHeightRelative = targetRowHeightRelative;
         }
         
         /// <summary>
@@ -93,7 +93,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

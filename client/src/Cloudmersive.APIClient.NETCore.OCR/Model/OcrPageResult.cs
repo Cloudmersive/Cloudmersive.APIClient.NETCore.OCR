@@ -33,14 +33,14 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="OcrPageResult" /> class.
         /// </summary>
-        /// <param name="PageNumber">Page number of the page that was OCR-ed, starting with 1 for the first page in the PDF file.</param>
-        /// <param name="MeanConfidenceLevel">Confidence level rating of the OCR operation; ratings above 80% are strong..</param>
-        /// <param name="TextResult">Converted text string from the image input..</param>
-        public OcrPageResult(int? PageNumber = default(int?), float? MeanConfidenceLevel = default(float?), string TextResult = default(string))
+        /// <param name="pageNumber">Page number of the page that was OCR-ed, starting with 1 for the first page in the PDF file.</param>
+        /// <param name="meanConfidenceLevel">Confidence level rating of the OCR operation; ratings above 80% are strong..</param>
+        /// <param name="textResult">Converted text string from the image input..</param>
+        public OcrPageResult(int? pageNumber = default(int?), float? meanConfidenceLevel = default(float?), string textResult = default(string))
         {
-            this.PageNumber = PageNumber;
-            this.MeanConfidenceLevel = MeanConfidenceLevel;
-            this.TextResult = TextResult;
+            this.PageNumber = pageNumber;
+            this.MeanConfidenceLevel = meanConfidenceLevel;
+            this.TextResult = textResult;
         }
         
         /// <summary>
@@ -83,7 +83,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

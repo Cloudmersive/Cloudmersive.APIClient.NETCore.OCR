@@ -33,12 +33,12 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="FieldResult" /> class.
         /// </summary>
-        /// <param name="TargetField">Target field to extract from the form.</param>
-        /// <param name="FieldValues">Result field value(s) extracted.</param>
-        public FieldResult(FormFieldDefinition TargetField = default(FormFieldDefinition), List<OcrPhotoTextElement> FieldValues = default(List<OcrPhotoTextElement>))
+        /// <param name="targetField">Target field to extract from the form.</param>
+        /// <param name="fieldValues">Result field value(s) extracted.</param>
+        public FieldResult(FormFieldDefinition targetField = default(FormFieldDefinition), List<OcrPhotoTextElement> fieldValues = default(List<OcrPhotoTextElement>))
         {
-            this.TargetField = TargetField;
-            this.FieldValues = FieldValues;
+            this.TargetField = targetField;
+            this.FieldValues = fieldValues;
         }
         
         /// <summary>
@@ -73,7 +73,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

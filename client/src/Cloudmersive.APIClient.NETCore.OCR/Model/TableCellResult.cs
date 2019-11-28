@@ -33,12 +33,12 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TableCellResult" /> class.
         /// </summary>
-        /// <param name="ColumnID">The ID of the column.</param>
-        /// <param name="CellValues">Result cell value(s) extracted.</param>
-        public TableCellResult(string ColumnID = default(string), List<OcrPhotoTextElement> CellValues = default(List<OcrPhotoTextElement>))
+        /// <param name="columnID">The ID of the column.</param>
+        /// <param name="cellValues">Result cell value(s) extracted.</param>
+        public TableCellResult(string columnID = default(string), List<OcrPhotoTextElement> cellValues = default(List<OcrPhotoTextElement>))
         {
-            this.ColumnID = ColumnID;
-            this.CellValues = CellValues;
+            this.ColumnID = columnID;
+            this.CellValues = cellValues;
         }
         
         /// <summary>
@@ -73,7 +73,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

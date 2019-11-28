@@ -33,24 +33,24 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BusinessCardRecognitionResult" /> class.
         /// </summary>
-        /// <param name="Successful">True if the operation was successful, false otherwise.</param>
-        /// <param name="PersonName">The name of the person printed on the business card (if included on the business card).</param>
-        /// <param name="PersonTitle">The title of the person printed on the business card (if included on the business card).</param>
-        /// <param name="BusinessName">The name of the business printed on the business card (if included on the business card).</param>
-        /// <param name="AddressString">The address printed on the business card (if included on the business card).</param>
-        /// <param name="PhoneNumber">The phone number printed on the business card (if included on the business card).</param>
-        /// <param name="EmailAddress">The email address printed on the business card (if included on the business card).</param>
-        /// <param name="Timestamp">The date and time printed on the business card (if included on the business card).</param>
-        public BusinessCardRecognitionResult(bool? Successful = default(bool?), string PersonName = default(string), string PersonTitle = default(string), string BusinessName = default(string), string AddressString = default(string), string PhoneNumber = default(string), string EmailAddress = default(string), DateTime? Timestamp = default(DateTime?))
+        /// <param name="successful">True if the operation was successful, false otherwise.</param>
+        /// <param name="personName">The name of the person printed on the business card (if included on the business card).</param>
+        /// <param name="personTitle">The title of the person printed on the business card (if included on the business card).</param>
+        /// <param name="businessName">The name of the business printed on the business card (if included on the business card).</param>
+        /// <param name="addressString">The address printed on the business card (if included on the business card).</param>
+        /// <param name="phoneNumber">The phone number printed on the business card (if included on the business card).</param>
+        /// <param name="emailAddress">The email address printed on the business card (if included on the business card).</param>
+        /// <param name="timestamp">The date and time printed on the business card (if included on the business card).</param>
+        public BusinessCardRecognitionResult(bool? successful = default(bool?), string personName = default(string), string personTitle = default(string), string businessName = default(string), string addressString = default(string), string phoneNumber = default(string), string emailAddress = default(string), DateTime? timestamp = default(DateTime?))
         {
-            this.Successful = Successful;
-            this.PersonName = PersonName;
-            this.PersonTitle = PersonTitle;
-            this.BusinessName = BusinessName;
-            this.AddressString = AddressString;
-            this.PhoneNumber = PhoneNumber;
-            this.EmailAddress = EmailAddress;
-            this.Timestamp = Timestamp;
+            this.Successful = successful;
+            this.PersonName = personName;
+            this.PersonTitle = personTitle;
+            this.BusinessName = businessName;
+            this.AddressString = addressString;
+            this.PhoneNumber = phoneNumber;
+            this.EmailAddress = emailAddress;
+            this.Timestamp = timestamp;
         }
         
         /// <summary>
@@ -133,7 +133,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

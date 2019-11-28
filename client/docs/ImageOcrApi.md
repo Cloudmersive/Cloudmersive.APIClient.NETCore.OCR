@@ -223,7 +223,7 @@ Name | Type | Description  | Notes
 
 <a name="imageocrphotorecognizeform"></a>
 # **ImageOcrPhotoRecognizeForm**
-> FormRecognitionResult ImageOcrPhotoRecognizeForm (System.IO.Stream imageFile, string formTemplateDefinition = null, string recognitionMode = null, string preprocessing = null, string diagnostics = null, string language = null)
+> FormRecognitionResult ImageOcrPhotoRecognizeForm (System.IO.Stream imageFile, Object formTemplateDefinition = null, string recognitionMode = null, string preprocessing = null, string diagnostics = null, string language = null)
 
 Recognize a photo of a form, extract key fields and business information
 
@@ -250,7 +250,7 @@ namespace Example
 
             var apiInstance = new ImageOcrApi();
             var imageFile = new System.IO.Stream(); // System.IO.Stream | Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.
-            var formTemplateDefinition = formTemplateDefinition_example;  // string | Form field definitions (optional) 
+            var formTemplateDefinition = new Object(); // Object | Form field definitions (optional) 
             var recognitionMode = recognitionMode_example;  // string | Optional, enable advanced recognition mode by specifying 'Advanced', enable handwriting recognition by specifying 'EnableHandwriting'.  Default is disabled. (optional) 
             var preprocessing = preprocessing_example;  // string | Optional, preprocessing mode, default is 'Auto'.  Possible values are None (no preprocessing of the image), and Auto (automatic image enhancement of the image - including automatic unrotation of the image - before OCR is applied; this is recommended).  Set this to 'None' if you do not want to use automatic image unrotation and enhancement. (optional) 
             var diagnostics = diagnostics_example;  // string | Optional, diagnostics mode, default is 'false'.  Possible values are 'true' (will set DiagnosticImage to a diagnostic PNG image in the result), and 'false' (no diagnostics are enabled; this is recommended for best performance). (optional) 
@@ -276,7 +276,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **imageFile** | **System.IO.Stream**| Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported. | 
- **formTemplateDefinition** | **string**| Form field definitions | [optional] 
+ **formTemplateDefinition** | [**Object**](Object.md)| Form field definitions | [optional] 
  **recognitionMode** | **string**| Optional, enable advanced recognition mode by specifying &#39;Advanced&#39;, enable handwriting recognition by specifying &#39;EnableHandwriting&#39;.  Default is disabled. | [optional] 
  **preprocessing** | **string**| Optional, preprocessing mode, default is &#39;Auto&#39;.  Possible values are None (no preprocessing of the image), and Auto (automatic image enhancement of the image - including automatic unrotation of the image - before OCR is applied; this is recommended).  Set this to &#39;None&#39; if you do not want to use automatic image unrotation and enhancement. | [optional] 
  **diagnostics** | **string**| Optional, diagnostics mode, default is &#39;false&#39;.  Possible values are &#39;true&#39; (will set DiagnosticImage to a diagnostic PNG image in the result), and &#39;false&#39; (no diagnostics are enabled; this is recommended for best performance). | [optional] 

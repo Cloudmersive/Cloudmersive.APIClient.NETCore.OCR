@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **FieldID** | **string** | The identifier of the field; use this to identify which field is being referenced | [optional] 
 **LeftAnchor** | **string** | Optional - the left-hand anchor of the field | [optional] 
 **TopAnchor** | **string** | Optional - the top anchor of the field | [optional] 
+**BottomAnchor** | **string** | Optional - the bottom anchor of the field | [optional] 
 **AnchorMode** | **string** | Optional - the matching mode for the anchor.  Possible values are Complete (requires the entire anchor to match) and Partial (allows only part of the anchor to match) and Horizontal (anchor must be laid out horizontally).  Default is Partial. | [optional] 
 **DataType** | **string** | The data type of the field; possible values are INTEGER (Integer value), STRING (Arbitrary string value, spaces are permitted), DATE (Date in a structured format), DECIMAL (Decimal number), ALPHANUMERIC (Continuous alphanumeric string with no spaces), STRINGNOWHITESPACE (A string that contains no whitespace characters), SERIALNUMBER (A serial-number style string that contains letters and numbers, and certain symbols; must contain at least one number), ALPHAONLY (Alphabet characters only, no numbers or symbols or whitespace) | [optional] 
 **TargetDigitCount** | **int?** | Optional - the target number of digits in the field; useful for fixed-length fields | [optional] 
