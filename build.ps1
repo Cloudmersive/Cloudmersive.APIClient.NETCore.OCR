@@ -11,6 +11,8 @@
 (Get-Content ./client/src/Cloudmersive.APIClient.NETCore.OCR/Cloudmersive.APIClient.NETCore.OCR.csproj).replace('<TargetFramework>net45</TargetFramework>', "<TargetFramework>netcoreapp2.1</TargetFramework>") | Set-Content ./client/src/Cloudmersive.APIClient.NETCore.OCR/Cloudmersive.APIClient.NETCore.OCR.csproj
 (Get-Content ./client/src/Cloudmersive.APIClient.NETCore.OCR/Cloudmersive.APIClient.NETCore.OCR.csproj).replace('</PropertyGroup>', "<PackageIconUrl>https://cloudmersive.com/images/cmsdk_core.png</PackageIconUrl><PackageLicenseExpression>Apache-2.0</PackageLicenseExpression><PackageProjectUrl>https://cloudmersive.com/ocr-api</PackageProjectUrl></PropertyGroup>") | Set-Content ./client/src/Cloudmersive.APIClient.NETCore.OCR/Cloudmersive.APIClient.NETCore.OCR.csproj
 (Get-Content '.\client\src\Cloudmersive.APIClient.NETCore.OCR\Client\Configuration.cs').replace('Timeout = 100000;', "Timeout = 900000;") | Set-Content '.\client\src\Cloudmersive.APIClient.NETCore.OCR\Client\Configuration.cs'
+(Get-Content '.\client\src\Cloudmersive.APIClient.NETCore.OCR\Cloudmersive.APIClient.NETCore.OCR.csproj').replace('<PackageReference Include="RestSharp" Version="105.1.0" />', '<PackageReference Include="RestSharp" Version="106.6.10" />') | Set-Content '.\client\src\Cloudmersive.APIClient.NETCore.OCR\Cloudmersive.APIClient.NETCore.OCR.csproj'
+(Get-Content '.\client\src\Cloudmersive.APIClient.NETCore.OCR\Client\ApiClient.cs').replace('request.AddFile(param.Value.Name, param.Value.Writer, param.Value.FileName, param.Value.ContentType);', 'request.AddFile(param.Value.Name, param.Value.Writer, param.Value.FileName, param.Value.ContentLength, param.Value.ContentType);') | Set-Content '.\client\src\Cloudmersive.APIClient.NETCore.OCR\Client\ApiClient.cs'
 
 
 
