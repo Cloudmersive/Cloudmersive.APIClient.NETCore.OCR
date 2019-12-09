@@ -33,7 +33,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="FormFieldDefinition" /> class.
         /// </summary>
-        /// <param name="fieldID">The identifier of the field; use this to identify which field is being referenced.</param>
+        /// <param name="fieldID">The identifier of the field; use this to identify which field is being referenced.  Set to SkipField if you do not wish to return the value of this field in the result..</param>
         /// <param name="leftAnchor">Optional - the left-hand anchor of the field.</param>
         /// <param name="topAnchor">Optional - the top anchor of the field.</param>
         /// <param name="bottomAnchor">Optional - the bottom anchor of the field.</param>
@@ -70,9 +70,9 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         }
         
         /// <summary>
-        /// The identifier of the field; use this to identify which field is being referenced
+        /// The identifier of the field; use this to identify which field is being referenced.  Set to SkipField if you do not wish to return the value of this field in the result.
         /// </summary>
-        /// <value>The identifier of the field; use this to identify which field is being referenced</value>
+        /// <value>The identifier of the field; use this to identify which field is being referenced.  Set to SkipField if you do not wish to return the value of this field in the result.</value>
         [DataMember(Name="FieldID", EmitDefaultValue=false)]
         public string FieldID { get; set; }
 

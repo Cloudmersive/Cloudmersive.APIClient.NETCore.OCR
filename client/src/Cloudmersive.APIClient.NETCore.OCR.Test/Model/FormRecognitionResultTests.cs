@@ -98,6 +98,14 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Test
         {
             // TODO unit test for the property 'Diagnostics'
         }
+        /// <summary>
+        /// Test the property 'BestMatchFormSettingName'
+        /// </summary>
+        [Test]
+        public void BestMatchFormSettingNameTest()
+        {
+            // TODO unit test for the property 'BestMatchFormSettingName'
+        }
 
     }
 

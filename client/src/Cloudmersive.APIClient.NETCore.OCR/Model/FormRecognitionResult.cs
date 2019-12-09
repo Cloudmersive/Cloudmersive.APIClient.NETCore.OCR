@@ -37,12 +37,14 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <param name="fieldValueExtractionResult">Result of form field OCR data extraction.</param>
         /// <param name="tableValueExtractionResults">Result of form table OCR data extraction.</param>
         /// <param name="diagnostics">Diagnostic images - default is null, enable diagnostics&#x3D;true to populate this parameter with one image per field.</param>
-        public FormRecognitionResult(bool? successful = default(bool?), List<FieldResult> fieldValueExtractionResult = default(List<FieldResult>), List<TableResult> tableValueExtractionResults = default(List<TableResult>), List<string> diagnostics = default(List<string>))
+        /// <param name="bestMatchFormSettingName">Optional; populated when using photo/recognize/form/advanced with the Setting Name of the best-matching highest-relevance form.</param>
+        public FormRecognitionResult(bool? successful = default(bool?), List<FieldResult> fieldValueExtractionResult = default(List<FieldResult>), List<TableResult> tableValueExtractionResults = default(List<TableResult>), List<string> diagnostics = default(List<string>), string bestMatchFormSettingName = default(string))
         {
             this.Successful = successful;
             this.FieldValueExtractionResult = fieldValueExtractionResult;
             this.TableValueExtractionResults = tableValueExtractionResults;
             this.Diagnostics = diagnostics;
+            this.BestMatchFormSettingName = bestMatchFormSettingName;
         }
         
         /// <summary>
@@ -74,6 +76,13 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         public List<string> Diagnostics { get; set; }
 
         /// <summary>
+        /// Optional; populated when using photo/recognize/form/advanced with the Setting Name of the best-matching highest-relevance form
+        /// </summary>
+        /// <value>Optional; populated when using photo/recognize/form/advanced with the Setting Name of the best-matching highest-relevance form</value>
+        [DataMember(Name="BestMatchFormSettingName", EmitDefaultValue=false)]
+        public string BestMatchFormSettingName { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -85,6 +94,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
             sb.Append("  FieldValueExtractionResult: ").Append(FieldValueExtractionResult).Append("\n");
             sb.Append("  TableValueExtractionResults: ").Append(TableValueExtractionResults).Append("\n");
             sb.Append("  Diagnostics: ").Append(Diagnostics).Append("\n");
+            sb.Append("  BestMatchFormSettingName: ").Append(BestMatchFormSettingName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -138,6 +148,11 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
                     this.Diagnostics == input.Diagnostics ||
                     this.Diagnostics != null &&
                     this.Diagnostics.SequenceEqual(input.Diagnostics)
+                ) && 
+                (
+                    this.BestMatchFormSettingName == input.BestMatchFormSettingName ||
+                    (this.BestMatchFormSettingName != null &&
+                    this.BestMatchFormSettingName.Equals(input.BestMatchFormSettingName))
                 );
         }
 
@@ -158,6 +173,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
                     hashCode = hashCode * 59 + this.TableValueExtractionResults.GetHashCode();
                 if (this.Diagnostics != null)
                     hashCode = hashCode * 59 + this.Diagnostics.GetHashCode();
+                if (this.BestMatchFormSettingName != null)
+                    hashCode = hashCode * 59 + this.BestMatchFormSettingName.GetHashCode();
                 return hashCode;
             }
         }

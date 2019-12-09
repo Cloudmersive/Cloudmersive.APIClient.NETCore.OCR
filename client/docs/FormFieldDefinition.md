@@ -3,7 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**FieldID** | **string** | The identifier of the field; use this to identify which field is being referenced | [optional] 
+**FieldID** | **string** | The identifier of the field; use this to identify which field is being referenced.  Set to SkipField if you do not wish to return the value of this field in the result. | [optional] 
 **LeftAnchor** | **string** | Optional - the left-hand anchor of the field | [optional] 
 **TopAnchor** | **string** | Optional - the top anchor of the field | [optional] 
 **BottomAnchor** | **string** | Optional - the bottom anchor of the field | [optional] 
