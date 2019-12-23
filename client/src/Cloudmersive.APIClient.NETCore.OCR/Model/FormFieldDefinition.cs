@@ -49,7 +49,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <param name="targetFieldHorizontalAdjustment">Optional - horizontal adjestment in relative width of the field.</param>
         /// <param name="targetFieldVerticalAdjustment">Optional - vertical adjestment in relative height of the field.</param>
         /// <param name="ignore">Optional - Ignore any result items that contain a partial or complete match with these text strings.</param>
-        public FormFieldDefinition(string fieldID = default(string), string leftAnchor = default(string), string topAnchor = default(string), string bottomAnchor = default(string), string anchorMode = default(string), string dataType = default(string), int? targetDigitCount = default(int?), int? minimumCharacterCount = default(int?), bool? allowNumericDigits = default(bool?), string verticalAlignmentType = default(string), string horizontalAlignmentType = default(string), double? targetFieldWidthRelative = default(double?), double? targetFieldHeightRelative = default(double?), double? targetFieldHorizontalAdjustment = default(double?), double? targetFieldVerticalAdjustment = default(double?), List<string> ignore = default(List<string>))
+        /// <param name="options">Optional - additional options that can be set for this field definition, separated by commas.  Possible values are AllowMultiMatch (allow the same anchor to be matched to multiple fields).</param>
+        public FormFieldDefinition(string fieldID = default(string), string leftAnchor = default(string), string topAnchor = default(string), string bottomAnchor = default(string), string anchorMode = default(string), string dataType = default(string), int? targetDigitCount = default(int?), int? minimumCharacterCount = default(int?), bool? allowNumericDigits = default(bool?), string verticalAlignmentType = default(string), string horizontalAlignmentType = default(string), double? targetFieldWidthRelative = default(double?), double? targetFieldHeightRelative = default(double?), double? targetFieldHorizontalAdjustment = default(double?), double? targetFieldVerticalAdjustment = default(double?), List<string> ignore = default(List<string>), string options = default(string))
         {
             this.FieldID = fieldID;
             this.LeftAnchor = leftAnchor;
@@ -67,6 +68,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
             this.TargetFieldHorizontalAdjustment = targetFieldHorizontalAdjustment;
             this.TargetFieldVerticalAdjustment = targetFieldVerticalAdjustment;
             this.Ignore = ignore;
+            this.Options = options;
         }
         
         /// <summary>
@@ -182,6 +184,13 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         public List<string> Ignore { get; set; }
 
         /// <summary>
+        /// Optional - additional options that can be set for this field definition, separated by commas.  Possible values are AllowMultiMatch (allow the same anchor to be matched to multiple fields)
+        /// </summary>
+        /// <value>Optional - additional options that can be set for this field definition, separated by commas.  Possible values are AllowMultiMatch (allow the same anchor to be matched to multiple fields)</value>
+        [DataMember(Name="Options", EmitDefaultValue=false)]
+        public string Options { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -205,6 +214,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
             sb.Append("  TargetFieldHorizontalAdjustment: ").Append(TargetFieldHorizontalAdjustment).Append("\n");
             sb.Append("  TargetFieldVerticalAdjustment: ").Append(TargetFieldVerticalAdjustment).Append("\n");
             sb.Append("  Ignore: ").Append(Ignore).Append("\n");
+            sb.Append("  Options: ").Append(Options).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -318,6 +328,11 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
                     this.Ignore == input.Ignore ||
                     this.Ignore != null &&
                     this.Ignore.SequenceEqual(input.Ignore)
+                ) && 
+                (
+                    this.Options == input.Options ||
+                    (this.Options != null &&
+                    this.Options.Equals(input.Options))
                 );
         }
 
@@ -362,6 +377,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
                     hashCode = hashCode * 59 + this.TargetFieldVerticalAdjustment.GetHashCode();
                 if (this.Ignore != null)
                     hashCode = hashCode * 59 + this.Ignore.GetHashCode();
+                if (this.Options != null)
+                    hashCode = hashCode * 59 + this.Options.GetHashCode();
                 return hashCode;
             }
         }

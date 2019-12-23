@@ -194,6 +194,14 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Test
         {
             // TODO unit test for the property 'Ignore'
         }
+        /// <summary>
+        /// Test the property 'Options'
+        /// </summary>
+        [Test]
+        public void OptionsTest()
+        {
+            // TODO unit test for the property 'Options'
+        }
 
     }
 

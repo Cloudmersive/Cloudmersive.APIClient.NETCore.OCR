@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **TargetFieldHorizontalAdjustment** | **double?** | Optional - horizontal adjestment in relative width of the field | [optional] 
 **TargetFieldVerticalAdjustment** | **double?** | Optional - vertical adjestment in relative height of the field | [optional] 
 **Ignore** | **List&lt;string&gt;** | Optional - Ignore any result items that contain a partial or complete match with these text strings | [optional] 
+**Options** | **string** | Optional - additional options that can be set for this field definition, separated by commas.  Possible values are AllowMultiMatch (allow the same anchor to be matched to multiple fields) | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
