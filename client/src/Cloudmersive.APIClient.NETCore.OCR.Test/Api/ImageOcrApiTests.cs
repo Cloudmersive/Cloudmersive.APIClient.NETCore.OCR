@@ -161,8 +161,9 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //System.IO.Stream imageFile = null;
+            //string recognitionMode = null;
             //string language = null;
-            //var response = instance.ImageOcrPhotoToText(imageFile, language);
+            //var response = instance.ImageOcrPhotoToText(imageFile, recognitionMode, language);
             //Assert.IsInstanceOf<ImageToTextResponse> (response, "response is ImageToTextResponse");
         }
         
@@ -174,10 +175,11 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //System.IO.Stream imageFile = null;
+            //string recognitionMode = null;
             //string language = null;
             //string preprocessing = null;
             //string diagnostics = null;
-            //var response = instance.ImageOcrPhotoWordsWithLocation(imageFile, language, preprocessing, diagnostics);
+            //var response = instance.ImageOcrPhotoWordsWithLocation(imageFile, recognitionMode, language, preprocessing, diagnostics);
             //Assert.IsInstanceOf<PhotoToWordsWithLocationResult> (response, "response is PhotoToWordsWithLocationResult");
         }
         
@@ -189,9 +191,10 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Test
         {
             // TODO uncomment below to test the method and replace null with proper value
             //System.IO.Stream imageFile = null;
+            //string recognitionMode = null;
             //string language = null;
             //string preprocessing = null;
-            //var response = instance.ImageOcrPost(imageFile, language, preprocessing);
+            //var response = instance.ImageOcrPost(imageFile, recognitionMode, language, preprocessing);
             //Assert.IsInstanceOf<ImageToTextResponse> (response, "response is ImageToTextResponse");
         }
         
