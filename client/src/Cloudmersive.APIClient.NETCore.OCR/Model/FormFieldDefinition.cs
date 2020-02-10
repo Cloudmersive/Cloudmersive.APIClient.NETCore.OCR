@@ -37,6 +37,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <param name="leftAnchor">Optional - the left-hand anchor of the field.</param>
         /// <param name="topAnchor">Optional - the top anchor of the field.</param>
         /// <param name="bottomAnchor">Optional - the bottom anchor of the field.</param>
+        /// <param name="alternateAnchor">Optional - alterate match text for the specified anchor.</param>
         /// <param name="anchorMode">Optional - the matching mode for the anchor.  Possible values are Complete (requires the entire anchor to match) and Partial (allows only part of the anchor to match) and Horizontal (anchor must be laid out horizontally).  Default is Partial..</param>
         /// <param name="dataType">The data type of the field; possible values are INTEGER (Integer value), STRING (Arbitrary string value, spaces are permitted), DATE (Date in a structured format), DECIMAL (Decimal number), ALPHANUMERIC (Continuous alphanumeric string with no spaces), STRINGNOWHITESPACE (A string that contains no whitespace characters), SERIALNUMBER (A serial-number style string that contains letters and numbers, and certain symbols; must contain at least one number), ALPHAONLY (Alphabet characters only, no numbers or symbols or whitespace).</param>
         /// <param name="targetDigitCount">Optional - the target number of digits in the field; useful for fixed-length fields.</param>
@@ -50,12 +51,13 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <param name="targetFieldVerticalAdjustment">Optional - vertical adjestment in relative height of the field.</param>
         /// <param name="ignore">Optional - Ignore any result items that contain a partial or complete match with these text strings.</param>
         /// <param name="options">Optional - additional options that can be set for this field definition, separated by commas.  Possible values are AllowMultiMatch (allow the same anchor to be matched to multiple fields).</param>
-        public FormFieldDefinition(string fieldID = default(string), string leftAnchor = default(string), string topAnchor = default(string), string bottomAnchor = default(string), string anchorMode = default(string), string dataType = default(string), int? targetDigitCount = default(int?), int? minimumCharacterCount = default(int?), bool? allowNumericDigits = default(bool?), string verticalAlignmentType = default(string), string horizontalAlignmentType = default(string), double? targetFieldWidthRelative = default(double?), double? targetFieldHeightRelative = default(double?), double? targetFieldHorizontalAdjustment = default(double?), double? targetFieldVerticalAdjustment = default(double?), List<string> ignore = default(List<string>), string options = default(string))
+        public FormFieldDefinition(string fieldID = default(string), string leftAnchor = default(string), string topAnchor = default(string), string bottomAnchor = default(string), string alternateAnchor = default(string), string anchorMode = default(string), string dataType = default(string), int? targetDigitCount = default(int?), int? minimumCharacterCount = default(int?), bool? allowNumericDigits = default(bool?), string verticalAlignmentType = default(string), string horizontalAlignmentType = default(string), double? targetFieldWidthRelative = default(double?), double? targetFieldHeightRelative = default(double?), double? targetFieldHorizontalAdjustment = default(double?), double? targetFieldVerticalAdjustment = default(double?), List<string> ignore = default(List<string>), string options = default(string))
         {
             this.FieldID = fieldID;
             this.LeftAnchor = leftAnchor;
             this.TopAnchor = topAnchor;
             this.BottomAnchor = bottomAnchor;
+            this.AlternateAnchor = alternateAnchor;
             this.AnchorMode = anchorMode;
             this.DataType = dataType;
             this.TargetDigitCount = targetDigitCount;
@@ -98,6 +100,13 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// <value>Optional - the bottom anchor of the field</value>
         [DataMember(Name="BottomAnchor", EmitDefaultValue=false)]
         public string BottomAnchor { get; set; }
+
+        /// <summary>
+        /// Optional - alterate match text for the specified anchor
+        /// </summary>
+        /// <value>Optional - alterate match text for the specified anchor</value>
+        [DataMember(Name="AlternateAnchor", EmitDefaultValue=false)]
+        public string AlternateAnchor { get; set; }
 
         /// <summary>
         /// Optional - the matching mode for the anchor.  Possible values are Complete (requires the entire anchor to match) and Partial (allows only part of the anchor to match) and Horizontal (anchor must be laid out horizontally).  Default is Partial.
@@ -202,6 +211,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
             sb.Append("  LeftAnchor: ").Append(LeftAnchor).Append("\n");
             sb.Append("  TopAnchor: ").Append(TopAnchor).Append("\n");
             sb.Append("  BottomAnchor: ").Append(BottomAnchor).Append("\n");
+            sb.Append("  AlternateAnchor: ").Append(AlternateAnchor).Append("\n");
             sb.Append("  AnchorMode: ").Append(AnchorMode).Append("\n");
             sb.Append("  DataType: ").Append(DataType).Append("\n");
             sb.Append("  TargetDigitCount: ").Append(TargetDigitCount).Append("\n");
@@ -268,6 +278,11 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
                     this.BottomAnchor == input.BottomAnchor ||
                     (this.BottomAnchor != null &&
                     this.BottomAnchor.Equals(input.BottomAnchor))
+                ) && 
+                (
+                    this.AlternateAnchor == input.AlternateAnchor ||
+                    (this.AlternateAnchor != null &&
+                    this.AlternateAnchor.Equals(input.AlternateAnchor))
                 ) && 
                 (
                     this.AnchorMode == input.AnchorMode ||
@@ -353,6 +368,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
                     hashCode = hashCode * 59 + this.TopAnchor.GetHashCode();
                 if (this.BottomAnchor != null)
                     hashCode = hashCode * 59 + this.BottomAnchor.GetHashCode();
+                if (this.AlternateAnchor != null)
+                    hashCode = hashCode * 59 + this.AlternateAnchor.GetHashCode();
                 if (this.AnchorMode != null)
                     hashCode = hashCode * 59 + this.AnchorMode.GetHashCode();
                 if (this.DataType != null)

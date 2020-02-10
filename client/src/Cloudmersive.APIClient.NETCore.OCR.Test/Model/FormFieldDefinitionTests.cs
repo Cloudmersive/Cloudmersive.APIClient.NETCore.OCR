@@ -99,6 +99,14 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Test
             // TODO unit test for the property 'BottomAnchor'
         }
         /// <summary>
+        /// Test the property 'AlternateAnchor'
+        /// </summary>
+        [Test]
+        public void AlternateAnchorTest()
+        {
+            // TODO unit test for the property 'AlternateAnchor'
+        }
+        /// <summary>
         /// Test the property 'AnchorMode'
         /// </summary>
         [Test]
