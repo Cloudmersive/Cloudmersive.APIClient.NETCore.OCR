@@ -12,7 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
+using RestSharp.Portable;
 using Cloudmersive.APIClient.NETCore.OCR.Client;
 using Cloudmersive.APIClient.NETCore.OCR.Model;
 
@@ -402,7 +402,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             if (imageFile == null)
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling PreprocessingApi->PreprocessingBinarize");
 
-            var localVarPath = "/ocr/preprocessing/image/binarize";
+            var localVarPath = "./ocr/preprocessing/image/binarize";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -449,7 +449,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             }
 
             return new ApiResponse<byte[]>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (byte[]) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(byte[])));
         }
 
@@ -478,7 +478,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             if (imageFile == null)
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling PreprocessingApi->PreprocessingBinarize");
 
-            var localVarPath = "/ocr/preprocessing/image/binarize";
+            var localVarPath = "./ocr/preprocessing/image/binarize";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -525,7 +525,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             }
 
             return new ApiResponse<byte[]>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (byte[]) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(byte[])));
         }
 
@@ -553,7 +553,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             if (imageFile == null)
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling PreprocessingApi->PreprocessingBinarizeAdvanced");
 
-            var localVarPath = "/ocr/preprocessing/image/binarize/advanced";
+            var localVarPath = "./ocr/preprocessing/image/binarize/advanced";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -600,7 +600,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             }
 
             return new ApiResponse<byte[]>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (byte[]) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(byte[])));
         }
 
@@ -629,7 +629,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             if (imageFile == null)
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling PreprocessingApi->PreprocessingBinarizeAdvanced");
 
-            var localVarPath = "/ocr/preprocessing/image/binarize/advanced";
+            var localVarPath = "./ocr/preprocessing/image/binarize/advanced";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -676,7 +676,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             }
 
             return new ApiResponse<byte[]>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (byte[]) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(byte[])));
         }
 
@@ -704,7 +704,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             if (imageFile == null)
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling PreprocessingApi->PreprocessingGetPageAngle");
 
-            var localVarPath = "/ocr/preprocessing/image/get-page-angle";
+            var localVarPath = "./ocr/preprocessing/image/get-page-angle";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -751,7 +751,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             }
 
             return new ApiResponse<GetPageAngleResult>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (GetPageAngleResult) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetPageAngleResult)));
         }
 
@@ -780,7 +780,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             if (imageFile == null)
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling PreprocessingApi->PreprocessingGetPageAngle");
 
-            var localVarPath = "/ocr/preprocessing/image/get-page-angle";
+            var localVarPath = "./ocr/preprocessing/image/get-page-angle";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -827,7 +827,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             }
 
             return new ApiResponse<GetPageAngleResult>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (GetPageAngleResult) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(GetPageAngleResult)));
         }
 
@@ -855,7 +855,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             if (imageFile == null)
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling PreprocessingApi->PreprocessingUnrotate");
 
-            var localVarPath = "/ocr/preprocessing/image/unrotate";
+            var localVarPath = "./ocr/preprocessing/image/unrotate";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -902,7 +902,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             }
 
             return new ApiResponse<byte[]>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (byte[]) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(byte[])));
         }
 
@@ -931,7 +931,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             if (imageFile == null)
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling PreprocessingApi->PreprocessingUnrotate");
 
-            var localVarPath = "/ocr/preprocessing/image/unrotate";
+            var localVarPath = "./ocr/preprocessing/image/unrotate";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -978,7 +978,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             }
 
             return new ApiResponse<byte[]>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (byte[]) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(byte[])));
         }
 
@@ -1006,7 +1006,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             if (imageFile == null)
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling PreprocessingApi->PreprocessingUnrotateAdvanced");
 
-            var localVarPath = "/ocr/preprocessing/image/unrotate/advanced";
+            var localVarPath = "./ocr/preprocessing/image/unrotate/advanced";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1053,7 +1053,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             }
 
             return new ApiResponse<byte[]>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (byte[]) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(byte[])));
         }
 
@@ -1082,7 +1082,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             if (imageFile == null)
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling PreprocessingApi->PreprocessingUnrotateAdvanced");
 
-            var localVarPath = "/ocr/preprocessing/image/unrotate/advanced";
+            var localVarPath = "./ocr/preprocessing/image/unrotate/advanced";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1129,7 +1129,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             }
 
             return new ApiResponse<byte[]>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (byte[]) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(byte[])));
         }
 
@@ -1157,7 +1157,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             if (imageFile == null)
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling PreprocessingApi->PreprocessingUnskew");
 
-            var localVarPath = "/ocr/preprocessing/image/unskew";
+            var localVarPath = "./ocr/preprocessing/image/unskew";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1204,7 +1204,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             }
 
             return new ApiResponse<byte[]>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (byte[]) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(byte[])));
         }
 
@@ -1233,7 +1233,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             if (imageFile == null)
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling PreprocessingApi->PreprocessingUnskew");
 
-            var localVarPath = "/ocr/preprocessing/image/unskew";
+            var localVarPath = "./ocr/preprocessing/image/unskew";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1280,7 +1280,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             }
 
             return new ApiResponse<byte[]>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (byte[]) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(byte[])));
         }
 

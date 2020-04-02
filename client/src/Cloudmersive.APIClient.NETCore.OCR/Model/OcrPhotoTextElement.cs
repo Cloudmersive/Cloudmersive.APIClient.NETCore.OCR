@@ -12,14 +12,12 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = Cloudmersive.APIClient.NETCore.OCR.Client.SwaggerDateConverter;
 
 namespace Cloudmersive.APIClient.NETCore.OCR.Model
@@ -28,7 +26,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
     /// A single text in an OCR document
     /// </summary>
     [DataContract]
-    public partial class OcrPhotoTextElement :  IEquatable<OcrPhotoTextElement>, IValidatableObject
+    public partial class OcrPhotoTextElement :  IEquatable<OcrPhotoTextElement>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OcrPhotoTextElement" /> class.
@@ -211,16 +209,6 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
                     hashCode = hashCode * 59 + this.ConfidenceLevel.GetHashCode();
                 return hashCode;
             }
-        }
-
-        /// <summary>
-        /// To validate all properties of the instance
-        /// </summary>
-        /// <param name="validationContext">Validation context</param>
-        /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-        {
-            yield break;
         }
     }
 

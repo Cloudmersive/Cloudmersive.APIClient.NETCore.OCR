@@ -12,7 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
+using RestSharp.Portable;
 using Cloudmersive.APIClient.NETCore.OCR.Client;
 using Cloudmersive.APIClient.NETCore.OCR.Model;
 
@@ -308,7 +308,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             if (imageFile == null)
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling PdfOcrApi->PdfOcrPdfToLinesWithLocation");
 
-            var localVarPath = "/ocr/pdf/to/lines-with-location";
+            var localVarPath = "./ocr/pdf/to/lines-with-location";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -357,7 +357,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             }
 
             return new ApiResponse<PdfToLinesWithLocationResult>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (PdfToLinesWithLocationResult) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PdfToLinesWithLocationResult)));
         }
 
@@ -390,7 +390,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             if (imageFile == null)
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling PdfOcrApi->PdfOcrPdfToLinesWithLocation");
 
-            var localVarPath = "/ocr/pdf/to/lines-with-location";
+            var localVarPath = "./ocr/pdf/to/lines-with-location";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -439,7 +439,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             }
 
             return new ApiResponse<PdfToLinesWithLocationResult>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (PdfToLinesWithLocationResult) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PdfToLinesWithLocationResult)));
         }
 
@@ -471,7 +471,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             if (imageFile == null)
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling PdfOcrApi->PdfOcrPdfToWordsWithLocation");
 
-            var localVarPath = "/ocr/pdf/to/words-with-location";
+            var localVarPath = "./ocr/pdf/to/words-with-location";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -520,7 +520,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             }
 
             return new ApiResponse<PdfToWordsWithLocationResult>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (PdfToWordsWithLocationResult) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PdfToWordsWithLocationResult)));
         }
 
@@ -553,7 +553,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             if (imageFile == null)
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling PdfOcrApi->PdfOcrPdfToWordsWithLocation");
 
-            var localVarPath = "/ocr/pdf/to/words-with-location";
+            var localVarPath = "./ocr/pdf/to/words-with-location";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -602,7 +602,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             }
 
             return new ApiResponse<PdfToWordsWithLocationResult>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (PdfToWordsWithLocationResult) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PdfToWordsWithLocationResult)));
         }
 
@@ -636,7 +636,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             if (imageFile == null)
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling PdfOcrApi->PdfOcrPost");
 
-            var localVarPath = "/ocr/pdf/toText";
+            var localVarPath = "./ocr/pdf/toText";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -686,7 +686,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             }
 
             return new ApiResponse<PdfToTextResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (PdfToTextResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PdfToTextResponse)));
         }
 
@@ -721,7 +721,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             if (imageFile == null)
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling PdfOcrApi->PdfOcrPost");
 
-            var localVarPath = "/ocr/pdf/toText";
+            var localVarPath = "./ocr/pdf/toText";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -771,7 +771,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             }
 
             return new ApiResponse<PdfToTextResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (PdfToTextResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PdfToTextResponse)));
         }
 

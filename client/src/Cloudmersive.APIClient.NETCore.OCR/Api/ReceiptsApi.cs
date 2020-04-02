@@ -12,7 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
+using RestSharp.Portable;
 using Cloudmersive.APIClient.NETCore.OCR.Client;
 
 namespace Cloudmersive.APIClient.NETCore.OCR.Api
@@ -191,7 +191,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             if (imageFile == null)
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling ReceiptsApi->ReceiptsPhotoToCSV");
 
-            var localVarPath = "/ocr/receipts/photo/to/csv";
+            var localVarPath = "./ocr/receipts/photo/to/csv";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -238,7 +238,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
         }
 
@@ -267,7 +267,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             if (imageFile == null)
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling ReceiptsApi->ReceiptsPhotoToCSV");
 
-            var localVarPath = "/ocr/receipts/photo/to/csv";
+            var localVarPath = "./ocr/receipts/photo/to/csv";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -314,7 +314,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             }
 
             return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
         }
 

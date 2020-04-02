@@ -12,7 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RestSharp;
+using RestSharp.Portable;
 using Cloudmersive.APIClient.NETCore.OCR.Client;
 using Cloudmersive.APIClient.NETCore.OCR.Model;
 
@@ -636,7 +636,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             if (imageFile == null)
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling ImageOcrApi->ImageOcrImageLinesWithLocation");
 
-            var localVarPath = "/ocr/image/to/lines-with-location";
+            var localVarPath = "./ocr/image/to/lines-with-location";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -685,7 +685,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             }
 
             return new ApiResponse<ImageToLinesWithLocationResult>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (ImageToLinesWithLocationResult) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ImageToLinesWithLocationResult)));
         }
 
@@ -718,7 +718,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             if (imageFile == null)
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling ImageOcrApi->ImageOcrImageLinesWithLocation");
 
-            var localVarPath = "/ocr/image/to/lines-with-location";
+            var localVarPath = "./ocr/image/to/lines-with-location";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -767,7 +767,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             }
 
             return new ApiResponse<ImageToLinesWithLocationResult>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (ImageToLinesWithLocationResult) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ImageToLinesWithLocationResult)));
         }
 
@@ -799,7 +799,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             if (imageFile == null)
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling ImageOcrApi->ImageOcrImageWordsWithLocation");
 
-            var localVarPath = "/ocr/image/to/words-with-location";
+            var localVarPath = "./ocr/image/to/words-with-location";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -848,7 +848,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             }
 
             return new ApiResponse<ImageToWordsWithLocationResult>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (ImageToWordsWithLocationResult) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ImageToWordsWithLocationResult)));
         }
 
@@ -881,7 +881,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             if (imageFile == null)
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling ImageOcrApi->ImageOcrImageWordsWithLocation");
 
-            var localVarPath = "/ocr/image/to/words-with-location";
+            var localVarPath = "./ocr/image/to/words-with-location";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -930,7 +930,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             }
 
             return new ApiResponse<ImageToWordsWithLocationResult>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (ImageToWordsWithLocationResult) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ImageToWordsWithLocationResult)));
         }
 
@@ -958,7 +958,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             if (imageFile == null)
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling ImageOcrApi->ImageOcrPhotoRecognizeBusinessCard");
 
-            var localVarPath = "/ocr/photo/recognize/business-card";
+            var localVarPath = "./ocr/photo/recognize/business-card";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1005,7 +1005,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             }
 
             return new ApiResponse<BusinessCardRecognitionResult>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (BusinessCardRecognitionResult) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BusinessCardRecognitionResult)));
         }
 
@@ -1034,7 +1034,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             if (imageFile == null)
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling ImageOcrApi->ImageOcrPhotoRecognizeBusinessCard");
 
-            var localVarPath = "/ocr/photo/recognize/business-card";
+            var localVarPath = "./ocr/photo/recognize/business-card";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1081,7 +1081,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             }
 
             return new ApiResponse<BusinessCardRecognitionResult>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (BusinessCardRecognitionResult) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BusinessCardRecognitionResult)));
         }
 
@@ -1119,7 +1119,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             if (imageFile == null)
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling ImageOcrApi->ImageOcrPhotoRecognizeForm");
 
-            var localVarPath = "/ocr/photo/recognize/form";
+            var localVarPath = "./ocr/photo/recognize/form";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1171,7 +1171,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             }
 
             return new ApiResponse<FormRecognitionResult>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (FormRecognitionResult) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FormRecognitionResult)));
         }
 
@@ -1210,7 +1210,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             if (imageFile == null)
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling ImageOcrApi->ImageOcrPhotoRecognizeForm");
 
-            var localVarPath = "/ocr/photo/recognize/form";
+            var localVarPath = "./ocr/photo/recognize/form";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1262,7 +1262,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             }
 
             return new ApiResponse<FormRecognitionResult>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (FormRecognitionResult) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FormRecognitionResult)));
         }
 
@@ -1300,7 +1300,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             if (imageFile == null)
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling ImageOcrApi->ImageOcrPhotoRecognizeFormAdvanced");
 
-            var localVarPath = "/ocr/photo/recognize/form/advanced";
+            var localVarPath = "./ocr/photo/recognize/form/advanced";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1352,7 +1352,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             }
 
             return new ApiResponse<FormRecognitionResult>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (FormRecognitionResult) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FormRecognitionResult)));
         }
 
@@ -1391,7 +1391,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             if (imageFile == null)
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling ImageOcrApi->ImageOcrPhotoRecognizeFormAdvanced");
 
-            var localVarPath = "/ocr/photo/recognize/form/advanced";
+            var localVarPath = "./ocr/photo/recognize/form/advanced";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1443,7 +1443,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             }
 
             return new ApiResponse<FormRecognitionResult>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (FormRecognitionResult) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FormRecognitionResult)));
         }
 
@@ -1477,7 +1477,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             if (imageFile == null)
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling ImageOcrApi->ImageOcrPhotoRecognizeReceipt");
 
-            var localVarPath = "/ocr/photo/recognize/receipt";
+            var localVarPath = "./ocr/photo/recognize/receipt";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1527,7 +1527,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             }
 
             return new ApiResponse<ReceiptRecognitionResult>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (ReceiptRecognitionResult) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ReceiptRecognitionResult)));
         }
 
@@ -1562,7 +1562,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             if (imageFile == null)
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling ImageOcrApi->ImageOcrPhotoRecognizeReceipt");
 
-            var localVarPath = "/ocr/photo/recognize/receipt";
+            var localVarPath = "./ocr/photo/recognize/receipt";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1612,7 +1612,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             }
 
             return new ApiResponse<ReceiptRecognitionResult>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (ReceiptRecognitionResult) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ReceiptRecognitionResult)));
         }
 
@@ -1644,7 +1644,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             if (imageFile == null)
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling ImageOcrApi->ImageOcrPhotoToText");
 
-            var localVarPath = "/ocr/photo/toText";
+            var localVarPath = "./ocr/photo/toText";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1693,7 +1693,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             }
 
             return new ApiResponse<ImageToTextResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (ImageToTextResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ImageToTextResponse)));
         }
 
@@ -1726,7 +1726,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             if (imageFile == null)
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling ImageOcrApi->ImageOcrPhotoToText");
 
-            var localVarPath = "/ocr/photo/toText";
+            var localVarPath = "./ocr/photo/toText";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1775,7 +1775,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             }
 
             return new ApiResponse<ImageToTextResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (ImageToTextResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ImageToTextResponse)));
         }
 
@@ -1811,7 +1811,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             if (imageFile == null)
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling ImageOcrApi->ImageOcrPhotoWordsWithLocation");
 
-            var localVarPath = "/ocr/photo/to/words-with-location";
+            var localVarPath = "./ocr/photo/to/words-with-location";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1862,7 +1862,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             }
 
             return new ApiResponse<PhotoToWordsWithLocationResult>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (PhotoToWordsWithLocationResult) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PhotoToWordsWithLocationResult)));
         }
 
@@ -1899,7 +1899,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             if (imageFile == null)
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling ImageOcrApi->ImageOcrPhotoWordsWithLocation");
 
-            var localVarPath = "/ocr/photo/to/words-with-location";
+            var localVarPath = "./ocr/photo/to/words-with-location";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -1950,7 +1950,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             }
 
             return new ApiResponse<PhotoToWordsWithLocationResult>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (PhotoToWordsWithLocationResult) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PhotoToWordsWithLocationResult)));
         }
 
@@ -1984,7 +1984,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             if (imageFile == null)
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling ImageOcrApi->ImageOcrPost");
 
-            var localVarPath = "/ocr/image/toText";
+            var localVarPath = "./ocr/image/toText";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -2034,7 +2034,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             }
 
             return new ApiResponse<ImageToTextResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (ImageToTextResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ImageToTextResponse)));
         }
 
@@ -2069,7 +2069,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             if (imageFile == null)
                 throw new ApiException(400, "Missing required parameter 'imageFile' when calling ImageOcrApi->ImageOcrPost");
 
-            var localVarPath = "/ocr/image/toText";
+            var localVarPath = "./ocr/image/toText";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -2119,7 +2119,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
             }
 
             return new ApiResponse<ImageToTextResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (ImageToTextResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ImageToTextResponse)));
         }
 

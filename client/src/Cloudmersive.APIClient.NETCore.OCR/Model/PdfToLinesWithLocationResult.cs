@@ -12,14 +12,12 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = Cloudmersive.APIClient.NETCore.OCR.Client.SwaggerDateConverter;
 
 namespace Cloudmersive.APIClient.NETCore.OCR.Model
@@ -28,7 +26,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
     /// Response from an OCR to lines with location operation.  Includes the confience rating and converted text result, along with the locations of the lines in the pages.
     /// </summary>
     [DataContract]
-    public partial class PdfToLinesWithLocationResult :  IEquatable<PdfToLinesWithLocationResult>, IValidatableObject
+    public partial class PdfToLinesWithLocationResult :  IEquatable<PdfToLinesWithLocationResult>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PdfToLinesWithLocationResult" /> class.
@@ -126,16 +124,6 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
                     hashCode = hashCode * 59 + this.OcrPages.GetHashCode();
                 return hashCode;
             }
-        }
-
-        /// <summary>
-        /// To validate all properties of the instance
-        /// </summary>
-        /// <param name="validationContext">Validation context</param>
-        /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-        {
-            yield break;
         }
     }
 

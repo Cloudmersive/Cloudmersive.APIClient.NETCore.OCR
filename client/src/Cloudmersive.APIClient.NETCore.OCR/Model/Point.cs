@@ -12,14 +12,12 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = Cloudmersive.APIClient.NETCore.OCR.Client.SwaggerDateConverter;
 
 namespace Cloudmersive.APIClient.NETCore.OCR.Model
@@ -28,7 +26,7 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
     /// Point location in 2D in an image, where 0, 0 represents the top/left corner of the image
     /// </summary>
     [DataContract]
-    public partial class Point :  IEquatable<Point>, IValidatableObject
+    public partial class Point :  IEquatable<Point>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Point" /> class.
@@ -126,16 +124,6 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
                     hashCode = hashCode * 59 + this.Y.GetHashCode();
                 return hashCode;
             }
-        }
-
-        /// <summary>
-        /// To validate all properties of the instance
-        /// </summary>
-        /// <param name="validationContext">Validation context</param>
-        /// <returns>Validation Result</returns>
-        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
-        {
-            yield break;
         }
     }
 
