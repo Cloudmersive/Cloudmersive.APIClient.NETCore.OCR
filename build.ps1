@@ -14,7 +14,7 @@
 (Get-Content '.\client\src\Cloudmersive.APIClient.NETCore.OCR\Cloudmersive.APIClient.NETCore.OCR.csproj').replace('<PackageReference Include="RestSharp" Version="105.1.0" />', '<PackageReference Include="RestSharp" Version="106.6.10" />') | Set-Content '.\client\src\Cloudmersive.APIClient.NETCore.OCR\Cloudmersive.APIClient.NETCore.OCR.csproj'
 (Get-Content '.\client\src\Cloudmersive.APIClient.NETCore.OCR\Client\ApiClient.cs').replace('request.AddFile(param.Value.Name, param.Value.Writer, param.Value.FileName, param.Value.ContentType);', 'request.AddFile(param.Value.Name, param.Value.Writer, param.Value.FileName, param.Value.ContentLength, param.Value.ContentType);') | Set-Content '.\client\src\Cloudmersive.APIClient.NETCore.OCR\Client\ApiClient.cs'
 
-
+(Get-Content ./client/src/Cloudmersive.APIClient.NETCore.OCR/Cloudmersive.APIClient.NETCore.OCR.csproj).replace('</ItemGroup>', '</ItemGroup><Target Name="PostBuild" AfterTargets="PostBuildEvent">    <Exec Command="call powershell C:\CodeSigning\sign.ps1  $(TargetPath)" />  </Target>') | Set-Content ./client/src/Cloudmersive.APIClient.NETCore.OCR/Cloudmersive.APIClient.NETCore.OCR.csproj
 
 #& npm build ./client
 & dotnet build ./client/src/Cloudmersive.APIClient.NETCore.OCR/Cloudmersive.APIClient.NETCore.OCR.csproj -c Release
