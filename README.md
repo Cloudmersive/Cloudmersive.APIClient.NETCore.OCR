@@ -5,7 +5,7 @@ The powerful Optical Character Recognition (OCR) APIs let you convert scanned im
 This C# SDK is for the [Cloudmersive OCR API](https://www.cloudmersive.com/ocr-api):
 
 - API version: v1
-- SDK version: 2.0.3
+- SDK version: 3.0.1
 - Build package: io.swagger.codegen.languages.CSharpClientCodegen
 
 <a name="frameworks-supported"></a>
@@ -90,6 +90,7 @@ Class | Method | HTTP request | Description
 *ImageOcrApi* | [**ImageOcrPhotoToText**](docs/ImageOcrApi.md#imageocrphotototext) | **POST** /ocr/photo/toText | Convert a photo of a document into text
 *ImageOcrApi* | [**ImageOcrPhotoWordsWithLocation**](docs/ImageOcrApi.md#imageocrphotowordswithlocation) | **POST** /ocr/photo/to/words-with-location | Convert a photo of a document or receipt into words with location
 *ImageOcrApi* | [**ImageOcrPost**](docs/ImageOcrApi.md#imageocrpost) | **POST** /ocr/image/toText | Convert a scanned image into text
+*PdfOcrApi* | [**PdfOcrGetAsyncJobStatus**](docs/PdfOcrApi.md#pdfocrgetasyncjobstatus) | **GET** /ocr/pdf/get-job-status | Returns the result of the Async Job - possible states can be STARTED or COMPLETED
 *PdfOcrApi* | [**PdfOcrPdfToLinesWithLocation**](docs/PdfOcrApi.md#pdfocrpdftolineswithlocation) | **POST** /ocr/pdf/to/lines-with-location | Convert a PDF into text lines with location
 *PdfOcrApi* | [**PdfOcrPdfToWordsWithLocation**](docs/PdfOcrApi.md#pdfocrpdftowordswithlocation) | **POST** /ocr/pdf/to/words-with-location | Convert a PDF into words with location
 *PdfOcrApi* | [**PdfOcrPost**](docs/PdfOcrApi.md#pdfocrpost) | **POST** /ocr/pdf/toText | Converts an uploaded PDF file into text via Optical Character Recognition.

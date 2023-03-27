@@ -4,10 +4,75 @@ All URIs are relative to *https://api.cloudmersive.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**PdfOcrGetAsyncJobStatus**](PdfOcrApi.md#pdfocrgetasyncjobstatus) | **GET** /ocr/pdf/get-job-status | Returns the result of the Async Job - possible states can be STARTED or COMPLETED
 [**PdfOcrPdfToLinesWithLocation**](PdfOcrApi.md#pdfocrpdftolineswithlocation) | **POST** /ocr/pdf/to/lines-with-location | Convert a PDF into text lines with location
 [**PdfOcrPdfToWordsWithLocation**](PdfOcrApi.md#pdfocrpdftowordswithlocation) | **POST** /ocr/pdf/to/words-with-location | Convert a PDF into words with location
 [**PdfOcrPost**](PdfOcrApi.md#pdfocrpost) | **POST** /ocr/pdf/toText | Converts an uploaded PDF file into text via Optical Character Recognition.
 
+
+<a name="pdfocrgetasyncjobstatus"></a>
+# **PdfOcrGetAsyncJobStatus**
+> PdfToTextResponse PdfOcrGetAsyncJobStatus (string asyncJobID)
+
+Returns the result of the Async Job - possible states can be STARTED or COMPLETED
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using Cloudmersive.APIClient.NETCore.OCR.Api;
+using Cloudmersive.APIClient.NETCore.OCR.Client;
+using Cloudmersive.APIClient.NETCore.OCR.Model;
+
+namespace Example
+{
+    public class PdfOcrGetAsyncJobStatusExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: Apikey
+            Configuration.Default.AddApiKey("Apikey", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("Apikey", "Bearer");
+
+            var apiInstance = new PdfOcrApi();
+            var asyncJobID = asyncJobID_example;  // string | 
+
+            try
+            {
+                // Returns the result of the Async Job - possible states can be STARTED or COMPLETED
+                PdfToTextResponse result = apiInstance.PdfOcrGetAsyncJobStatus(asyncJobID);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling PdfOcrApi.PdfOcrGetAsyncJobStatus: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **asyncJobID** | **string**|  | 
+
+### Return type
+
+[**PdfToTextResponse**](PdfToTextResponse.md)
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="pdfocrpdftolineswithlocation"></a>
 # **PdfOcrPdfToLinesWithLocation**

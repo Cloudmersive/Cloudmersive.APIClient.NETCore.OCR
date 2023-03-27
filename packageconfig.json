@@ -1,8 +1,8 @@
 ﻿{
 
-  "packageName" : "Cloudmersive.APIClient.NETCore.OCR",
-  "packageVersion": "2.0.3",
-  "netCoreProjectFile": "true",
-  "packageGuid": "b7c26f5a-99f4-469d-9930-cd456f072821",
-  "targetFramework": "v5.0"
-}  
+    "packageName": "Cloudmersive.APIClient.NETCore.OCR",
+    "packageVersion": "3.0.1",
+    "netCoreProjectFile": "true",
+    "packageGuid": "b7c26f5a-99f4-469d-9930-cd456f072821",
+    "targetFramework": "v5.0"
+}

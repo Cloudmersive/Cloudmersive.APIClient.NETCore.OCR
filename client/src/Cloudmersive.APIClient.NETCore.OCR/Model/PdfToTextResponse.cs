@@ -33,10 +33,14 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         /// </summary>
         /// <param name="successful">True if successful, false otherwise.</param>
         /// <param name="ocrPages">Page OCR results.</param>
-        public PdfToTextResponse(bool? successful = default(bool?), List<OcrPageResult> ocrPages = default(List<OcrPageResult>))
+        /// <param name="asyncJobID">When the job exceeds 25 pages, an Async Job ID is returned.  Use the CheckPdfOcrJobStatus API to check on the status of this job using the AsyncJobID and get the result when it finishes.</param>
+        /// <param name="asyncJobStatus">Returns the job status of the Async Job, if applicable.  Possible states are STARTED and COMPLETED.</param>
+        public PdfToTextResponse(bool? successful = default(bool?), List<OcrPageResult> ocrPages = default(List<OcrPageResult>), string asyncJobID = default(string), string asyncJobStatus = default(string))
         {
             this.Successful = successful;
             this.OcrPages = ocrPages;
+            this.AsyncJobID = asyncJobID;
+            this.AsyncJobStatus = asyncJobStatus;
         }
         
         /// <summary>
@@ -54,6 +58,20 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
         public List<OcrPageResult> OcrPages { get; set; }
 
         /// <summary>
+        /// When the job exceeds 25 pages, an Async Job ID is returned.  Use the CheckPdfOcrJobStatus API to check on the status of this job using the AsyncJobID and get the result when it finishes
+        /// </summary>
+        /// <value>When the job exceeds 25 pages, an Async Job ID is returned.  Use the CheckPdfOcrJobStatus API to check on the status of this job using the AsyncJobID and get the result when it finishes</value>
+        [DataMember(Name="AsyncJobID", EmitDefaultValue=false)]
+        public string AsyncJobID { get; set; }
+
+        /// <summary>
+        /// Returns the job status of the Async Job, if applicable.  Possible states are STARTED and COMPLETED
+        /// </summary>
+        /// <value>Returns the job status of the Async Job, if applicable.  Possible states are STARTED and COMPLETED</value>
+        [DataMember(Name="AsyncJobStatus", EmitDefaultValue=false)]
+        public string AsyncJobStatus { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -63,6 +81,8 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
             sb.Append("class PdfToTextResponse {\n");
             sb.Append("  Successful: ").Append(Successful).Append("\n");
             sb.Append("  OcrPages: ").Append(OcrPages).Append("\n");
+            sb.Append("  AsyncJobID: ").Append(AsyncJobID).Append("\n");
+            sb.Append("  AsyncJobStatus: ").Append(AsyncJobStatus).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -106,6 +126,16 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
                     this.OcrPages == input.OcrPages ||
                     this.OcrPages != null &&
                     this.OcrPages.SequenceEqual(input.OcrPages)
+                ) && 
+                (
+                    this.AsyncJobID == input.AsyncJobID ||
+                    (this.AsyncJobID != null &&
+                    this.AsyncJobID.Equals(input.AsyncJobID))
+                ) && 
+                (
+                    this.AsyncJobStatus == input.AsyncJobStatus ||
+                    (this.AsyncJobStatus != null &&
+                    this.AsyncJobStatus.Equals(input.AsyncJobStatus))
                 );
         }
 
@@ -122,6 +152,10 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Model
                     hashCode = hashCode * 59 + this.Successful.GetHashCode();
                 if (this.OcrPages != null)
                     hashCode = hashCode * 59 + this.OcrPages.GetHashCode();
+                if (this.AsyncJobID != null)
+                    hashCode = hashCode * 59 + this.AsyncJobID.GetHashCode();
+                if (this.AsyncJobStatus != null)
+                    hashCode = hashCode * 59 + this.AsyncJobStatus.GetHashCode();
                 return hashCode;
             }
         }

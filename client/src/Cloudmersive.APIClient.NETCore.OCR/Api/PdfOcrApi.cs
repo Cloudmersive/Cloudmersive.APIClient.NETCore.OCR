@@ -25,6 +25,27 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
     {
         #region Synchronous Operations
         /// <summary>
+        /// Returns the result of the Async Job - possible states can be STARTED or COMPLETED
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="asyncJobID"></param>
+        /// <returns>PdfToTextResponse</returns>
+        PdfToTextResponse PdfOcrGetAsyncJobStatus (string asyncJobID);
+
+        /// <summary>
+        /// Returns the result of the Async Job - possible states can be STARTED or COMPLETED
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="asyncJobID"></param>
+        /// <returns>ApiResponse of PdfToTextResponse</returns>
+        ApiResponse<PdfToTextResponse> PdfOcrGetAsyncJobStatusWithHttpInfo (string asyncJobID);
+        /// <summary>
         /// Convert a PDF into text lines with location
         /// </summary>
         /// <remarks>
@@ -103,6 +124,27 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         ApiResponse<PdfToTextResponse> PdfOcrPostWithHttpInfo (System.IO.Stream imageFile, string recognitionMode = null, string language = null, string preprocessing = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
+        /// <summary>
+        /// Returns the result of the Async Job - possible states can be STARTED or COMPLETED
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="asyncJobID"></param>
+        /// <returns>Task of PdfToTextResponse</returns>
+        System.Threading.Tasks.Task<PdfToTextResponse> PdfOcrGetAsyncJobStatusAsync (string asyncJobID);
+
+        /// <summary>
+        /// Returns the result of the Async Job - possible states can be STARTED or COMPLETED
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="asyncJobID"></param>
+        /// <returns>Task of ApiResponse (PdfToTextResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<PdfToTextResponse>> PdfOcrGetAsyncJobStatusAsyncWithHttpInfo (string asyncJobID);
         /// <summary>
         /// Convert a PDF into text lines with location
         /// </summary>
@@ -278,6 +320,155 @@ namespace Cloudmersive.APIClient.NETCore.OCR.Api
         public void AddDefaultHeader(string key, string value)
         {
             this.Configuration.AddDefaultHeader(key, value);
+        }
+
+        /// <summary>
+        /// Returns the result of the Async Job - possible states can be STARTED or COMPLETED 
+        /// </summary>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="asyncJobID"></param>
+        /// <returns>PdfToTextResponse</returns>
+        public PdfToTextResponse PdfOcrGetAsyncJobStatus (string asyncJobID)
+        {
+             ApiResponse<PdfToTextResponse> localVarResponse = PdfOcrGetAsyncJobStatusWithHttpInfo(asyncJobID);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Returns the result of the Async Job - possible states can be STARTED or COMPLETED 
+        /// </summary>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="asyncJobID"></param>
+        /// <returns>ApiResponse of PdfToTextResponse</returns>
+        public ApiResponse< PdfToTextResponse > PdfOcrGetAsyncJobStatusWithHttpInfo (string asyncJobID)
+        {
+            // verify the required parameter 'asyncJobID' is set
+            if (asyncJobID == null)
+                throw new ApiException(400, "Missing required parameter 'asyncJobID' when calling PdfOcrApi->PdfOcrGetAsyncJobStatus");
+
+            var localVarPath = "./ocr/pdf/get-job-status";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (asyncJobID != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "AsyncJobID", asyncJobID)); // query parameter
+
+            // authentication (Apikey) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Apikey")))
+            {
+                localVarHeaderParams["Apikey"] = this.Configuration.GetApiKeyWithPrefix("Apikey");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("PdfOcrGetAsyncJobStatus", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<PdfToTextResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (PdfToTextResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PdfToTextResponse)));
+        }
+
+        /// <summary>
+        /// Returns the result of the Async Job - possible states can be STARTED or COMPLETED 
+        /// </summary>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="asyncJobID"></param>
+        /// <returns>Task of PdfToTextResponse</returns>
+        public async System.Threading.Tasks.Task<PdfToTextResponse> PdfOcrGetAsyncJobStatusAsync (string asyncJobID)
+        {
+             ApiResponse<PdfToTextResponse> localVarResponse = await PdfOcrGetAsyncJobStatusAsyncWithHttpInfo(asyncJobID);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Returns the result of the Async Job - possible states can be STARTED or COMPLETED 
+        /// </summary>
+        /// <exception cref="Cloudmersive.APIClient.NETCore.OCR.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="asyncJobID"></param>
+        /// <returns>Task of ApiResponse (PdfToTextResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<PdfToTextResponse>> PdfOcrGetAsyncJobStatusAsyncWithHttpInfo (string asyncJobID)
+        {
+            // verify the required parameter 'asyncJobID' is set
+            if (asyncJobID == null)
+                throw new ApiException(400, "Missing required parameter 'asyncJobID' when calling PdfOcrApi->PdfOcrGetAsyncJobStatus");
+
+            var localVarPath = "./ocr/pdf/get-job-status";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (asyncJobID != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "AsyncJobID", asyncJobID)); // query parameter
+
+            // authentication (Apikey) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Apikey")))
+            {
+                localVarHeaderParams["Apikey"] = this.Configuration.GetApiKeyWithPrefix("Apikey");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("PdfOcrGetAsyncJobStatus", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<PdfToTextResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (PdfToTextResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PdfToTextResponse)));
         }
 
         /// <summary>
